@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace qlns
 {
-	public partial class Form1 : Form
+	public partial class frmDangNhap : Form
 	{
-		public Form1()
+		public frmDangNhap()
 		{
 			InitializeComponent();
-		}
-
-		private void Form1_Load(object sender, EventArgs e)
-		{
-			int c = 1;
-			float d;
-
 		}
 	}
 }
