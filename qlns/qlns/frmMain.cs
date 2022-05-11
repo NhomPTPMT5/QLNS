@@ -24,5 +24,15 @@ namespace qlns
 			if (h == DialogResult.OK)
 				Application.Exit();
 		}
+
+		private void btnHome_Click(object sender, EventArgs e)
+		{
+			Reset();
+		}
+
+		private static void Reset()
+		{
+			
+		}
 	}
 }

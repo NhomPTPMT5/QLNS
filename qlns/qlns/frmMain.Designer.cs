@@ -28,33 +28,38 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
 			this.pnMain = new System.Windows.Forms.Panel();
 			this.ibtnThem = new FontAwesome.Sharp.IconButton();
 			this.pnLogo = new System.Windows.Forms.Panel();
-			this.iconButton1 = new FontAwesome.Sharp.IconButton();
-			this.iconButton2 = new FontAwesome.Sharp.IconButton();
-			this.iconButton3 = new FontAwesome.Sharp.IconButton();
-			this.iconButton4 = new FontAwesome.Sharp.IconButton();
-			this.iconButton5 = new FontAwesome.Sharp.IconButton();
-			this.iconButton6 = new FontAwesome.Sharp.IconButton();
+			this.ibtnXoa = new FontAwesome.Sharp.IconButton();
+			this.ibtnCapNhat = new FontAwesome.Sharp.IconButton();
+			this.ibtnLuu = new FontAwesome.Sharp.IconButton();
+			this.ibtnChamCong = new FontAwesome.Sharp.IconButton();
+			this.ibtnAI = new FontAwesome.Sharp.IconButton();
+			this.ibtnThoat = new FontAwesome.Sharp.IconButton();
+			this.btnHome = new System.Windows.Forms.PictureBox();
+			this.pnTitle = new System.Windows.Forms.Panel();
 			this.pnMain.SuspendLayout();
+			this.pnLogo.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// pnMain
 			// 
 			this.pnMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-			this.pnMain.Controls.Add(this.iconButton6);
-			this.pnMain.Controls.Add(this.iconButton5);
-			this.pnMain.Controls.Add(this.iconButton4);
-			this.pnMain.Controls.Add(this.iconButton3);
-			this.pnMain.Controls.Add(this.iconButton2);
-			this.pnMain.Controls.Add(this.iconButton1);
+			this.pnMain.Controls.Add(this.ibtnThoat);
+			this.pnMain.Controls.Add(this.ibtnAI);
+			this.pnMain.Controls.Add(this.ibtnChamCong);
+			this.pnMain.Controls.Add(this.ibtnLuu);
+			this.pnMain.Controls.Add(this.ibtnCapNhat);
+			this.pnMain.Controls.Add(this.ibtnXoa);
 			this.pnMain.Controls.Add(this.ibtnThem);
 			this.pnMain.Controls.Add(this.pnLogo);
 			this.pnMain.Dock = System.Windows.Forms.DockStyle.Left;
 			this.pnMain.Location = new System.Drawing.Point(0, 0);
 			this.pnMain.Name = "pnMain";
-			this.pnMain.Size = new System.Drawing.Size(154, 592);
+			this.pnMain.Size = new System.Drawing.Size(167, 501);
 			this.pnMain.TabIndex = 0;
 			// 
 			// ibtnThem
@@ -62,14 +67,16 @@
 			this.ibtnThem.Dock = System.Windows.Forms.DockStyle.Top;
 			this.ibtnThem.FlatAppearance.BorderSize = 0;
 			this.ibtnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.ibtnThem.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.ibtnThem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
 			this.ibtnThem.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
 			this.ibtnThem.IconColor = System.Drawing.Color.LightGray;
 			this.ibtnThem.IconFont = FontAwesome.Sharp.IconFont.Auto;
 			this.ibtnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.ibtnThem.Location = new System.Drawing.Point(0, 114);
+			this.ibtnThem.Location = new System.Drawing.Point(0, 139);
 			this.ibtnThem.Name = "ibtnThem";
-			this.ibtnThem.Size = new System.Drawing.Size(154, 47);
+			this.ibtnThem.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+			this.ibtnThem.Size = new System.Drawing.Size(167, 47);
 			this.ibtnThem.TabIndex = 1;
 			this.ibtnThem.Text = "Thêm";
 			this.ibtnThem.UseMnemonic = false;
@@ -77,130 +84,168 @@
 			// 
 			// pnLogo
 			// 
+			this.pnLogo.Controls.Add(this.btnHome);
 			this.pnLogo.Dock = System.Windows.Forms.DockStyle.Top;
 			this.pnLogo.Location = new System.Drawing.Point(0, 0);
 			this.pnLogo.Name = "pnLogo";
-			this.pnLogo.Size = new System.Drawing.Size(154, 114);
+			this.pnLogo.Size = new System.Drawing.Size(167, 139);
 			this.pnLogo.TabIndex = 0;
 			// 
-			// iconButton1
+			// ibtnXoa
 			// 
-			this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
-			this.iconButton1.FlatAppearance.BorderSize = 0;
-			this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.iconButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Trash;
-			this.iconButton1.IconColor = System.Drawing.Color.LightGray;
-			this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-			this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.iconButton1.Location = new System.Drawing.Point(0, 161);
-			this.iconButton1.Name = "iconButton1";
-			this.iconButton1.Size = new System.Drawing.Size(154, 47);
-			this.iconButton1.TabIndex = 2;
-			this.iconButton1.Text = "Xóa";
-			this.iconButton1.UseMnemonic = false;
-			this.iconButton1.UseVisualStyleBackColor = true;
+			this.ibtnXoa.Dock = System.Windows.Forms.DockStyle.Top;
+			this.ibtnXoa.FlatAppearance.BorderSize = 0;
+			this.ibtnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.ibtnXoa.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.ibtnXoa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.ibtnXoa.IconChar = FontAwesome.Sharp.IconChar.Trash;
+			this.ibtnXoa.IconColor = System.Drawing.Color.LightGray;
+			this.ibtnXoa.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.ibtnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.ibtnXoa.Location = new System.Drawing.Point(0, 186);
+			this.ibtnXoa.Name = "ibtnXoa";
+			this.ibtnXoa.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+			this.ibtnXoa.Size = new System.Drawing.Size(167, 47);
+			this.ibtnXoa.TabIndex = 2;
+			this.ibtnXoa.Text = "Xóa";
+			this.ibtnXoa.UseMnemonic = false;
+			this.ibtnXoa.UseVisualStyleBackColor = true;
 			// 
-			// iconButton2
+			// ibtnCapNhat
 			// 
-			this.iconButton2.Dock = System.Windows.Forms.DockStyle.Top;
-			this.iconButton2.FlatAppearance.BorderSize = 0;
-			this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.iconButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Edit;
-			this.iconButton2.IconColor = System.Drawing.Color.LightGray;
-			this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-			this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.iconButton2.Location = new System.Drawing.Point(0, 208);
-			this.iconButton2.Name = "iconButton2";
-			this.iconButton2.Size = new System.Drawing.Size(154, 47);
-			this.iconButton2.TabIndex = 3;
-			this.iconButton2.Text = "Cập nhật";
-			this.iconButton2.UseMnemonic = false;
-			this.iconButton2.UseVisualStyleBackColor = true;
+			this.ibtnCapNhat.Dock = System.Windows.Forms.DockStyle.Top;
+			this.ibtnCapNhat.FlatAppearance.BorderSize = 0;
+			this.ibtnCapNhat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.ibtnCapNhat.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.ibtnCapNhat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.ibtnCapNhat.IconChar = FontAwesome.Sharp.IconChar.Edit;
+			this.ibtnCapNhat.IconColor = System.Drawing.Color.LightGray;
+			this.ibtnCapNhat.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.ibtnCapNhat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.ibtnCapNhat.Location = new System.Drawing.Point(0, 233);
+			this.ibtnCapNhat.Name = "ibtnCapNhat";
+			this.ibtnCapNhat.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+			this.ibtnCapNhat.Size = new System.Drawing.Size(167, 47);
+			this.ibtnCapNhat.TabIndex = 3;
+			this.ibtnCapNhat.Text = "Cập nhật";
+			this.ibtnCapNhat.UseMnemonic = false;
+			this.ibtnCapNhat.UseVisualStyleBackColor = true;
 			// 
-			// iconButton3
+			// ibtnLuu
 			// 
-			this.iconButton3.Dock = System.Windows.Forms.DockStyle.Top;
-			this.iconButton3.FlatAppearance.BorderSize = 0;
-			this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.iconButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.Save;
-			this.iconButton3.IconColor = System.Drawing.Color.LightGray;
-			this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-			this.iconButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.iconButton3.Location = new System.Drawing.Point(0, 255);
-			this.iconButton3.Name = "iconButton3";
-			this.iconButton3.Size = new System.Drawing.Size(154, 47);
-			this.iconButton3.TabIndex = 4;
-			this.iconButton3.Text = "Lưu";
-			this.iconButton3.UseMnemonic = false;
-			this.iconButton3.UseVisualStyleBackColor = true;
+			this.ibtnLuu.Dock = System.Windows.Forms.DockStyle.Top;
+			this.ibtnLuu.FlatAppearance.BorderSize = 0;
+			this.ibtnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.ibtnLuu.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.ibtnLuu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.ibtnLuu.IconChar = FontAwesome.Sharp.IconChar.Save;
+			this.ibtnLuu.IconColor = System.Drawing.Color.LightGray;
+			this.ibtnLuu.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.ibtnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.ibtnLuu.Location = new System.Drawing.Point(0, 280);
+			this.ibtnLuu.Name = "ibtnLuu";
+			this.ibtnLuu.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+			this.ibtnLuu.Size = new System.Drawing.Size(167, 47);
+			this.ibtnLuu.TabIndex = 4;
+			this.ibtnLuu.Text = "Lưu";
+			this.ibtnLuu.UseMnemonic = false;
+			this.ibtnLuu.UseVisualStyleBackColor = true;
 			// 
-			// iconButton4
+			// ibtnChamCong
 			// 
-			this.iconButton4.Dock = System.Windows.Forms.DockStyle.Top;
-			this.iconButton4.FlatAppearance.BorderSize = 0;
-			this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.iconButton4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.Fax;
-			this.iconButton4.IconColor = System.Drawing.Color.LightGray;
-			this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-			this.iconButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.iconButton4.Location = new System.Drawing.Point(0, 302);
-			this.iconButton4.Name = "iconButton4";
-			this.iconButton4.Size = new System.Drawing.Size(154, 47);
-			this.iconButton4.TabIndex = 5;
-			this.iconButton4.Text = "Chấm công";
-			this.iconButton4.UseMnemonic = false;
-			this.iconButton4.UseVisualStyleBackColor = true;
+			this.ibtnChamCong.Dock = System.Windows.Forms.DockStyle.Top;
+			this.ibtnChamCong.FlatAppearance.BorderSize = 0;
+			this.ibtnChamCong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.ibtnChamCong.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.ibtnChamCong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.ibtnChamCong.IconChar = FontAwesome.Sharp.IconChar.Fax;
+			this.ibtnChamCong.IconColor = System.Drawing.Color.LightGray;
+			this.ibtnChamCong.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.ibtnChamCong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.ibtnChamCong.Location = new System.Drawing.Point(0, 327);
+			this.ibtnChamCong.Name = "ibtnChamCong";
+			this.ibtnChamCong.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+			this.ibtnChamCong.Size = new System.Drawing.Size(167, 47);
+			this.ibtnChamCong.TabIndex = 5;
+			this.ibtnChamCong.Text = "    Chấm công";
+			this.ibtnChamCong.UseMnemonic = false;
+			this.ibtnChamCong.UseVisualStyleBackColor = true;
 			// 
-			// iconButton5
+			// ibtnAI
 			// 
-			this.iconButton5.Dock = System.Windows.Forms.DockStyle.Top;
-			this.iconButton5.FlatAppearance.BorderSize = 0;
-			this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.iconButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.Rocketchat;
-			this.iconButton5.IconColor = System.Drawing.Color.LightGray;
-			this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-			this.iconButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.iconButton5.Location = new System.Drawing.Point(0, 349);
-			this.iconButton5.Name = "iconButton5";
-			this.iconButton5.Size = new System.Drawing.Size(154, 47);
-			this.iconButton5.TabIndex = 6;
-			this.iconButton5.Text = "Hỗ trợ ";
-			this.iconButton5.UseMnemonic = false;
-			this.iconButton5.UseVisualStyleBackColor = true;
+			this.ibtnAI.Dock = System.Windows.Forms.DockStyle.Top;
+			this.ibtnAI.FlatAppearance.BorderSize = 0;
+			this.ibtnAI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.ibtnAI.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.ibtnAI.ForeColor = System.Drawing.Color.Gainsboro;
+			this.ibtnAI.IconChar = FontAwesome.Sharp.IconChar.Rocketchat;
+			this.ibtnAI.IconColor = System.Drawing.Color.LightGray;
+			this.ibtnAI.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.ibtnAI.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.ibtnAI.Location = new System.Drawing.Point(0, 374);
+			this.ibtnAI.Name = "ibtnAI";
+			this.ibtnAI.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+			this.ibtnAI.Size = new System.Drawing.Size(167, 47);
+			this.ibtnAI.TabIndex = 6;
+			this.ibtnAI.Text = "        Khen thưởng";
+			this.ibtnAI.UseMnemonic = false;
+			this.ibtnAI.UseVisualStyleBackColor = true;
 			// 
-			// iconButton6
+			// ibtnThoat
 			// 
-			this.iconButton6.Dock = System.Windows.Forms.DockStyle.Top;
-			this.iconButton6.FlatAppearance.BorderSize = 0;
-			this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.iconButton6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.ArrowCircleLeft;
-			this.iconButton6.IconColor = System.Drawing.Color.LightGray;
-			this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-			this.iconButton6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.iconButton6.Location = new System.Drawing.Point(0, 396);
-			this.iconButton6.Name = "iconButton6";
-			this.iconButton6.Size = new System.Drawing.Size(154, 47);
-			this.iconButton6.TabIndex = 7;
-			this.iconButton6.Text = "Thoát ";
-			this.iconButton6.UseMnemonic = false;
-			this.iconButton6.UseVisualStyleBackColor = true;
-			this.iconButton6.Click += new System.EventHandler(this.iconButton6_Click);
+			this.ibtnThoat.Dock = System.Windows.Forms.DockStyle.Top;
+			this.ibtnThoat.FlatAppearance.BorderSize = 0;
+			this.ibtnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.ibtnThoat.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.ibtnThoat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.ibtnThoat.IconChar = FontAwesome.Sharp.IconChar.ArrowCircleLeft;
+			this.ibtnThoat.IconColor = System.Drawing.Color.LightGray;
+			this.ibtnThoat.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.ibtnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.ibtnThoat.Location = new System.Drawing.Point(0, 421);
+			this.ibtnThoat.Name = "ibtnThoat";
+			this.ibtnThoat.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+			this.ibtnThoat.Size = new System.Drawing.Size(167, 47);
+			this.ibtnThoat.TabIndex = 7;
+			this.ibtnThoat.Text = "Thoát ";
+			this.ibtnThoat.UseMnemonic = false;
+			this.ibtnThoat.UseVisualStyleBackColor = true;
+			this.ibtnThoat.Click += new System.EventHandler(this.iconButton6_Click);
+			// 
+			// btnHome
+			// 
+			this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
+			this.btnHome.Location = new System.Drawing.Point(12, 43);
+			this.btnHome.Name = "btnHome";
+			this.btnHome.Size = new System.Drawing.Size(139, 51);
+			this.btnHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+			this.btnHome.TabIndex = 0;
+			this.btnHome.TabStop = false;
+			this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+			// 
+			// pnTitle
+			// 
+			this.pnTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.pnTitle.Dock = System.Windows.Forms.DockStyle.Top;
+			this.pnTitle.Location = new System.Drawing.Point(167, 0);
+			this.pnTitle.Name = "pnTitle";
+			this.pnTitle.Size = new System.Drawing.Size(767, 63);
+			this.pnTitle.TabIndex = 1;
 			// 
 			// frmMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(884, 592);
+			this.ClientSize = new System.Drawing.Size(934, 501);
+			this.Controls.Add(this.pnTitle);
 			this.Controls.Add(this.pnMain);
 			this.Name = "frmMain";
 			this.Text = "frmMain";
 			this.pnMain.ResumeLayout(false);
+			this.pnLogo.ResumeLayout(false);
+			this.pnLogo.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -210,11 +255,13 @@
 		private System.Windows.Forms.Panel pnMain;
 		private FontAwesome.Sharp.IconButton ibtnThem;
 		private System.Windows.Forms.Panel pnLogo;
-		private FontAwesome.Sharp.IconButton iconButton6;
-		private FontAwesome.Sharp.IconButton iconButton5;
-		private FontAwesome.Sharp.IconButton iconButton4;
-		private FontAwesome.Sharp.IconButton iconButton3;
-		private FontAwesome.Sharp.IconButton iconButton2;
-		private FontAwesome.Sharp.IconButton iconButton1;
+		private FontAwesome.Sharp.IconButton ibtnThoat;
+		private FontAwesome.Sharp.IconButton ibtnAI;
+		private FontAwesome.Sharp.IconButton ibtnChamCong;
+		private FontAwesome.Sharp.IconButton ibtnLuu;
+		private FontAwesome.Sharp.IconButton ibtnCapNhat;
+		private FontAwesome.Sharp.IconButton ibtnXoa;
+		private System.Windows.Forms.PictureBox btnHome;
+		private System.Windows.Forms.Panel pnTitle;
 	}
 }
