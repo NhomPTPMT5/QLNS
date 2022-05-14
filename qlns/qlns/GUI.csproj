@@ -52,11 +52,47 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmThem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThem.Designer.cs">
+      <DependentUpon>frmThem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmXoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmXoa.Designer.cs">
+      <DependentUpon>frmXoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCapNhat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCapNhat.Designer.cs">
+      <DependentUpon>frmCapNhat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChamCong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChamCong.Designer.cs">
+      <DependentUpon>frmChamCong.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmKhenThuong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKhenThuong.Designer.cs">
+      <DependentUpon>frmKhenThuong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLuu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLuu.Designer.cs">
+      <DependentUpon>frmLuu.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -66,6 +102,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmThem.resx">
+      <DependentUpon>frmThem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmXoa.resx">
+      <DependentUpon>frmXoa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>

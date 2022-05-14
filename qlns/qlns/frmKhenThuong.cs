@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace qlns
 {
-	public partial class B : Form
+	public partial class frmKhenThuong : Form
 	{
-		public B()
+		public frmKhenThuong()
 		{
 			InitializeComponent();
 		}
