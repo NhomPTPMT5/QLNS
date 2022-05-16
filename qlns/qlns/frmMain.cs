@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using BLL;
 namespace qlns
 {
 	public partial class frmMain : Form
@@ -17,6 +17,8 @@ namespace qlns
 		{
 			InitializeComponent();
 		}
+
+		Nhanvien nv = new Nhanvien();
 
 		public void OpenChildForm(Form childFrom)
 		{
@@ -94,6 +96,11 @@ namespace qlns
 				currentChildForm.Close();
 				label1.Text = "Home";
 			}
+		}
+
+		private void frmMain_Load(object sender, EventArgs e)
+		{
+			dvgMain.DataSource = nv.LoadData();
 		}
 	}
 }

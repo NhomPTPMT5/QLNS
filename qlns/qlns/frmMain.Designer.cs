@@ -40,12 +40,15 @@
 			this.pnLogo = new System.Windows.Forms.Panel();
 			this.btnHome = new System.Windows.Forms.PictureBox();
 			this.pnBody = new System.Windows.Forms.Panel();
+			this.dvgMain = new System.Windows.Forms.DataGridView();
 			this.label1 = new System.Windows.Forms.Label();
 			this.pnTitle = new System.Windows.Forms.Panel();
 			this.label2 = new System.Windows.Forms.Label();
 			this.pnMain.SuspendLayout();
 			this.pnLogo.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
+			this.pnBody.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dvgMain)).BeginInit();
 			this.pnTitle.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -237,11 +240,22 @@
 			// pnBody
 			// 
 			this.pnBody.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.pnBody.Controls.Add(this.dvgMain);
 			this.pnBody.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.pnBody.Location = new System.Drawing.Point(167, 63);
 			this.pnBody.Name = "pnBody";
 			this.pnBody.Size = new System.Drawing.Size(767, 438);
 			this.pnBody.TabIndex = 2;
+			// 
+			// dvgMain
+			// 
+			this.dvgMain.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.dvgMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dvgMain.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.dvgMain.Location = new System.Drawing.Point(0, 0);
+			this.dvgMain.Name = "dvgMain";
+			this.dvgMain.Size = new System.Drawing.Size(767, 438);
+			this.dvgMain.TabIndex = 0;
 			// 
 			// label1
 			// 
@@ -286,10 +300,13 @@
 			this.Controls.Add(this.pnMain);
 			this.Name = "frmMain";
 			this.Text = "frmMain";
+			this.Load += new System.EventHandler(this.frmMain_Load);
 			this.pnMain.ResumeLayout(false);
 			this.pnLogo.ResumeLayout(false);
 			this.pnLogo.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();
+			this.pnBody.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.dvgMain)).EndInit();
 			this.pnTitle.ResumeLayout(false);
 			this.pnTitle.PerformLayout();
 			this.ResumeLayout(false);
@@ -312,5 +329,6 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Panel pnTitle;
 		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.DataGridView dvgMain;
 	}
 }
