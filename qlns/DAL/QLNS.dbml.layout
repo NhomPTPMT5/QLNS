@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.25, 19.375" name="QLNS">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.625, 19.375" name="QLNS">
   <DataContextMoniker Name="/QLNSDataContext" />
   <nestedChildShapes>
     <classShape Id="4e8eb5ff-b1c7-465c-b0c0-ff03469a9f87" absoluteBounds="9, 17.125, 2, 1.9631982421875023">
@@ -8,10 +8,10 @@
         <elementListCompartment Id="0531b8e4-efdd-4c61-9039-78470decc705" absoluteBounds="9.015, 17.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="76da656d-b3af-405c-8357-c97e63f0912c" absoluteBounds="9, 7.625, 2, 1.3862939453124996">
+    <classShape Id="76da656d-b3af-405c-8357-c97e63f0912c" absoluteBounds="9, 7.625, 2.375, 1.3862939453124996">
       <DataClassMoniker Name="/QLNSDataContext/ChamCong" />
       <nestedChildShapes>
-        <elementListCompartment Id="aa7f9dec-23cf-4475-a5de-a2c759ae4496" absoluteBounds="9.015, 8.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="aa7f9dec-23cf-4475-a5de-a2c759ae4496" absoluteBounds="9.015, 8.085, 2.3449999999999998, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="3d36eb07-9656-4c4e-a638-149f30e11d9c" absoluteBounds="0.75, 7.875, 2, 1.1939925130208344">
@@ -89,7 +89,7 @@
         <classShapeMoniker Id="0211aab5-14f0-4129-a67c-0c6cfd3b5424" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(7.5 : 8.12660970052083); (7.5 : 18.1065991210938); (9 : 18.1065991210938)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(7.5 : 8.12660970052083); (7.5 : 18.1065991210938); (9 : 18.1065991210938)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLNSDataContext/NhanVien/NhanVien_BaoHiem" />
       <nodes>
         <classShapeMoniker Id="2faa9a52-20a3-4386-9c27-213410728f1e" />
@@ -103,49 +103,49 @@
         <classShapeMoniker Id="76da656d-b3af-405c-8357-c97e63f0912c" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(6.5 : 7.87580485026042); (5.5 : 7.87580485026042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(6.5 : 7.87580485026042); (5.5 : 7.87580485026042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLNSDataContext/NhanVien/NhanVien_ctChucVu" />
       <nodes>
         <classShapeMoniker Id="2faa9a52-20a3-4386-9c27-213410728f1e" />
         <classShapeMoniker Id="f9822a8e-097d-42af-8846-f7e018aab644" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 4.3124995); (7.5 : 4.3124995); (7.5 : 4.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 4.3124995); (7.5 : 4.3124995); (7.5 : 4.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLNSDataContext/Luong/Luong_NhanVien" />
       <nodes>
         <classShapeMoniker Id="4dc974d4-d56c-4371-a13c-8011c331c5b1" />
         <classShapeMoniker Id="2faa9a52-20a3-4386-9c27-213410728f1e" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 5.51044840494792); (6.5 : 5.51044840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 5.51044840494792); (6.5 : 5.51044840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLNSDataContext/HopDong/HopDong_NhanVien" />
       <nodes>
         <classShapeMoniker Id="0211aab5-14f0-4129-a67c-0c6cfd3b5424" />
         <classShapeMoniker Id="2faa9a52-20a3-4386-9c27-213410728f1e" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 6.13544840494792); (3.04166666666667 : 6.13544840494792 : JumpStart); (3.20833333333333 : 6.13544840494792 : JumpEnd); (3.5 : 6.13544840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.75 : 6.13544840494792); (3.5 : 6.13544840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLNSDataContext/PhongBan/PhongBan_HopDong" />
       <nodes>
         <classShapeMoniker Id="46bd288b-3cfd-4dd2-b08b-815df28b4ef8" />
         <classShapeMoniker Id="0211aab5-14f0-4129-a67c-0c6cfd3b5424" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 6.76369466145833); (3.04166666666667 : 6.76369466145833 : JumpStart); (3.20833333333333 : 6.76369466145833 : JumpEnd); (6.5 : 6.76369466145833)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 6.76369466145833); (3.04166666666667 : 6.76369466145833 : JumpStart); (3.20833333333333 : 6.76369466145833 : JumpEnd); (6.5 : 6.76369466145833)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLNSDataContext/PhongBan/PhongBan_NhanVien" />
       <nodes>
         <classShapeMoniker Id="46bd288b-3cfd-4dd2-b08b-815df28b4ef8" />
         <classShapeMoniker Id="2faa9a52-20a3-4386-9c27-213410728f1e" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.0312525 : 8.12660970052083); (8.0312525 : 13.0104484049479); (8.21354541666667 : 13.0104484049479 : JumpStart); (8.38021208333334 : 13.0104484049479 : JumpEnd); (9 : 13.0104484049479)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.0312525 : 8.12660970052083); (8.0312525 : 13.0104484049479); (8.21354541666667 : 13.0104484049479 : JumpStart); (8.38021208333334 : 13.0104484049479 : JumpEnd); (9 : 13.0104484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLNSDataContext/NhanVien/NhanVien_PhuCap" />
       <nodes>
         <classShapeMoniker Id="2faa9a52-20a3-4386-9c27-213410728f1e" />
         <classShapeMoniker Id="27ab0698-357d-4cda-bd8f-b21f00f32020" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(6.9687475 : 8.12660970052083); (6.9687475 : 10.5392976888021); (7.41666666666667 : 10.5392976888021 : JumpStart); (7.58333333333333 : 10.5392976888021 : JumpEnd); (7.94791916666667 : 10.5392976888021 : JumpStart); (8.11458583333333 : 10.5392976888021 : JumpEnd); (8.21354541666667 : 10.5392976888021 : JumpStart); (8.38021208333334 : 10.5392976888021 : JumpEnd); (9 : 10.5392976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(6.9687475 : 8.12660970052083); (6.9687475 : 10.5392976888021); (7.41666666666667 : 10.5392976888021 : JumpStart); (7.58333333333333 : 10.5392976888021 : JumpEnd); (7.94791916666667 : 10.5392976888021 : JumpStart); (8.11458583333333 : 10.5392976888021 : JumpEnd); (8.21354541666667 : 10.5392976888021 : JumpStart); (8.38021208333334 : 10.5392976888021 : JumpEnd); (9 : 10.5392976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLNSDataContext/NhanVien/NhanVien_Taikhoan" />
       <nodes>
         <classShapeMoniker Id="2faa9a52-20a3-4386-9c27-213410728f1e" />

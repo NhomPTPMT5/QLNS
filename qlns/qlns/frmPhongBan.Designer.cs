@@ -1,6 +1,6 @@
 ﻿namespace qlns
 {
-	partial class frmLuu
+	partial class frmPhongBan
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -28,10 +28,18 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.components = new System.ComponentModel.Container();
+			this.SuspendLayout();
+			// 
+			// frmPhongBan
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackColor = System.Drawing.Color.LightSkyBlue;
 			this.ClientSize = new System.Drawing.Size(800, 450);
-			this.Text = "frmLuu";
+			this.Name = "frmPhongBan";
+			this.Text = "frmCapNhat";
+			this.ResumeLayout(false);
+
 		}
 
 		#endregion

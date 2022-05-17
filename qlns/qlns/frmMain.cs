@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+
 namespace qlns
 {
 	public partial class frmMain : Form
@@ -47,38 +48,33 @@ namespace qlns
 
 		private void ibtnThem_Click(object sender, EventArgs e)
 		{
-			OpenChildForm(new frmThem());
-			label1.Text = ibtnThem.Text;
+			OpenChildForm(new frmUser());
+			label1.Text = btnUser.Text;
 		}
 
 		private void ibtnXoa_Click(object sender, EventArgs e)
 		{
-			OpenChildForm(new frmXoa());
-			label1.Text = ibtnXoa.Text;
+			OpenChildForm(new frmNhanVien());
+			label1.Text = btnNhanVien.Text;
 		}
 
 		private void ibtnCapNhat_Click(object sender, EventArgs e)
 		{
-			OpenChildForm(new frmCapNhat());
-			label1.Text = ibtnCapNhat.Text;
+			OpenChildForm(new frmPhongBan());
+			label1.Text = btnPhongBan.Text;
 		}
 
-		private void ibtnLuu_Click(object sender, EventArgs e)
-		{
-			OpenChildForm(new frmLuu());
-			label1.Text = ibtnLuu.Text;
-		}
 
 		private void ibtnChamCong_Click(object sender, EventArgs e)
 		{
 			OpenChildForm(new frmChamCong());
-			label1.Text = ibtnChamCong.Text;
+			label1.Text = btnChamCong.Text;
 		}
 
 		private void ibtnKhenThuong_Click(object sender, EventArgs e)
 		{
 			OpenChildForm(new frmKhenThuong());
-			label1.Text = ibtnKhenThuong.Text;
+			label1.Text = btnKhenThuong.Text;
 		}
 
 		private void ibtnThoat_Click(object sender, EventArgs e)
@@ -100,7 +96,7 @@ namespace qlns
 
 		private void frmMain_Load(object sender, EventArgs e)
 		{
-			dvgMain.DataSource = nv.LoadData();
+			
 		}
 	}
 }
