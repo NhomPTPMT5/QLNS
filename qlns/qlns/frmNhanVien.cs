@@ -26,7 +26,7 @@ namespace qlns
 
 		private void frmNhanVien_Load(object sender, EventArgs e)
 		{
-			dgvNhanVien.DataSource = nv.LoadData();
+			//dgvNhanVien.DataSource = nv.LoadNV();
 		}
 	}
 }

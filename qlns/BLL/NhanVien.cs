@@ -6,17 +6,19 @@ using System.Threading.Tasks;
 using System.Data.Linq;
 using DAL;
 
+
 namespace BLL
 {
-    public class Nhanvien
-    {
+	public class Nhanvien
+	{
 		QLNSDataContext qlns = new QLNSDataContext();
 
-		public List<NhanVien> LoadData()
+		public IQueryable<NhanVien> LoadNV()
 		{
-
-			return qlns.NhanViens.ToList();
-			
+			var nhanviens = from nv in qlns.NhanViens
+							select nv;
+			return nhanviens;
 		}
-    }
+		
+	}
 }
