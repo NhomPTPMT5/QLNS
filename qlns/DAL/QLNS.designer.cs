@@ -179,9 +179,9 @@ namespace DAL
 		
 		private string _SoThe;
 		
-		private System.Nullable<System.DateTime> _NgayCap;
+		private string _NgayCap;
 		
-		private System.Nullable<System.DateTime> _NgayHetHan;
+		private string _NgayHetHan;
 		
 		private string _NoiCap;
 		
@@ -237,8 +237,8 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayCap", DbType="Date")]
-		public System.Nullable<System.DateTime> NgayCap
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayCap", DbType="Char(50)")]
+		public string NgayCap
 		{
 			get
 			{
@@ -253,8 +253,8 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayHetHan", DbType="Date")]
-		public System.Nullable<System.DateTime> NgayHetHan
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayHetHan", DbType="Char(50)")]
+		public string NgayHetHan
 		{
 			get
 			{
@@ -292,7 +292,7 @@ namespace DAL
 		
 		private string _MaNhanVien;
 		
-		private System.DateTime _Ngay;
+		private char _Ngay;
 		
 		private string _TinhTrang;
 		
@@ -316,8 +316,8 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ngay", DbType="Date NOT NULL")]
-		public System.DateTime Ngay
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ngay", DbType="Char(1) NOT NULL")]
+		public char Ngay
 		{
 			get
 			{
@@ -471,9 +471,9 @@ namespace DAL
 		
 		private string _MaCV;
 		
-		private System.Nullable<System.DateTime> _NgayBatDau;
+		private string _NgayBatDau;
 		
-		private System.Nullable<System.DateTime> _NgayKetThuc;
+		private string _NgayKetThuc;
 		
 		private string _LyDo;
 		
@@ -513,8 +513,8 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayBatDau", DbType="Date")]
-		public System.Nullable<System.DateTime> NgayBatDau
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayBatDau", DbType="Char(50)")]
+		public string NgayBatDau
 		{
 			get
 			{
@@ -529,8 +529,8 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayKetThuc", DbType="Date")]
-		public System.Nullable<System.DateTime> NgayKetThuc
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayKetThuc", DbType="Char(50)")]
+		public string NgayKetThuc
 		{
 			get
 			{
@@ -570,7 +570,7 @@ namespace DAL
 		
 		private string _MaHD;
 		
-		private System.DateTime _NgayVaoLam;
+		private string _NgayVaoLam;
 		
 		private int _HeSoLuong;
 		
@@ -592,7 +592,7 @@ namespace DAL
     partial void OnCreated();
     partial void OnMaHDChanging(string value);
     partial void OnMaHDChanged();
-    partial void OnNgayVaoLamChanging(System.DateTime value);
+    partial void OnNgayVaoLamChanging(string value);
     partial void OnNgayVaoLamChanged();
     partial void OnHeSoLuongChanging(int value);
     partial void OnHeSoLuongChanged();
@@ -631,8 +631,8 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayVaoLam", DbType="Date NOT NULL")]
-		public System.DateTime NgayVaoLam
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayVaoLam", DbType="Char(50) NOT NULL", CanBeNull=false)]
+		public string NgayVaoLam
 		{
 			get
 			{
@@ -1031,21 +1031,11 @@ namespace DAL
 		
 		private string _GioiTinh;
 		
-		private System.DateTime _NgaySinh;
+		private string _NgaySinh;
 		
 		private string _SoCM;
 		
 		private string _DienThoai;
-		
-		private string _TrinhDoHV;
-		
-		private string _DiaChi;
-		
-		private string _Email;
-		
-		private string _Hinh;
-		
-		private string _TTHonNhan;
 		
 		private EntitySet<Taikhoan> _Taikhoans;
 		
@@ -1071,22 +1061,12 @@ namespace DAL
     partial void OnTenNVChanged();
     partial void OnGioiTinhChanging(string value);
     partial void OnGioiTinhChanged();
-    partial void OnNgaySinhChanging(System.DateTime value);
+    partial void OnNgaySinhChanging(string value);
     partial void OnNgaySinhChanged();
     partial void OnSoCMChanging(string value);
     partial void OnSoCMChanged();
     partial void OnDienThoaiChanging(string value);
     partial void OnDienThoaiChanged();
-    partial void OnTrinhDoHVChanging(string value);
-    partial void OnTrinhDoHVChanged();
-    partial void OnDiaChiChanging(string value);
-    partial void OnDiaChiChanged();
-    partial void OnEmailChanging(string value);
-    partial void OnEmailChanged();
-    partial void OnHinhChanging(string value);
-    partial void OnHinhChanged();
-    partial void OnTTHonNhanChanging(string value);
-    partial void OnTTHonNhanChanged();
     #endregion
 		
 		public NhanVien()
@@ -1230,8 +1210,8 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgaySinh", DbType="Date NOT NULL")]
-		public System.DateTime NgaySinh
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgaySinh", DbType="Char(50) NOT NULL", CanBeNull=false)]
+		public string NgaySinh
 		{
 			get
 			{
@@ -1286,106 +1266,6 @@ namespace DAL
 					this._DienThoai = value;
 					this.SendPropertyChanged("DienThoai");
 					this.OnDienThoaiChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TrinhDoHV", DbType="NVarChar(30) NOT NULL", CanBeNull=false)]
-		public string TrinhDoHV
-		{
-			get
-			{
-				return this._TrinhDoHV;
-			}
-			set
-			{
-				if ((this._TrinhDoHV != value))
-				{
-					this.OnTrinhDoHVChanging(value);
-					this.SendPropertyChanging();
-					this._TrinhDoHV = value;
-					this.SendPropertyChanged("TrinhDoHV");
-					this.OnTrinhDoHVChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiaChi", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string DiaChi
-		{
-			get
-			{
-				return this._DiaChi;
-			}
-			set
-			{
-				if ((this._DiaChi != value))
-				{
-					this.OnDiaChiChanging(value);
-					this.SendPropertyChanging();
-					this._DiaChi = value;
-					this.SendPropertyChanged("DiaChi");
-					this.OnDiaChiChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(20)")]
-		public string Email
-		{
-			get
-			{
-				return this._Email;
-			}
-			set
-			{
-				if ((this._Email != value))
-				{
-					this.OnEmailChanging(value);
-					this.SendPropertyChanging();
-					this._Email = value;
-					this.SendPropertyChanged("Email");
-					this.OnEmailChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hinh", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string Hinh
-		{
-			get
-			{
-				return this._Hinh;
-			}
-			set
-			{
-				if ((this._Hinh != value))
-				{
-					this.OnHinhChanging(value);
-					this.SendPropertyChanging();
-					this._Hinh = value;
-					this.SendPropertyChanged("Hinh");
-					this.OnHinhChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TTHonNhan", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
-		public string TTHonNhan
-		{
-			get
-			{
-				return this._TTHonNhan;
-			}
-			set
-			{
-				if ((this._TTHonNhan != value))
-				{
-					this.OnTTHonNhanChanging(value);
-					this.SendPropertyChanging();
-					this._TTHonNhan = value;
-					this.SendPropertyChanged("TTHonNhan");
-					this.OnTTHonNhanChanged();
 				}
 			}
 		}
@@ -1690,9 +1570,9 @@ namespace DAL
 		
 		private System.Nullable<int> _Tien;
 		
-		private System.Nullable<System.DateTime> _TuNgay;
+		private string _TuNgay;
 		
-		private System.Nullable<System.DateTime> _DenNgay;
+		private string _DenNgay;
 		
 		public PhuCap()
 		{
@@ -1746,8 +1626,8 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TuNgay", DbType="Date")]
-		public System.Nullable<System.DateTime> TuNgay
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TuNgay", DbType="Char(50)")]
+		public string TuNgay
 		{
 			get
 			{
@@ -1762,8 +1642,8 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DenNgay", DbType="Date")]
-		public System.Nullable<System.DateTime> DenNgay
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DenNgay", DbType="Char(50)")]
+		public string DenNgay
 		{
 			get
 			{
@@ -1966,7 +1846,7 @@ namespace DAL
 		
 		private string _LyDo;
 		
-		private System.Nullable<System.DateTime> _Ngay;
+		private string _Ngay;
 		
 		public ThuongPhat()
 		{
@@ -2036,8 +1916,8 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ngay", DbType="Date")]
-		public System.Nullable<System.DateTime> Ngay
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ngay", DbType="Char(50)")]
+		public string Ngay
 		{
 			get
 			{

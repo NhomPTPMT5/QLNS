@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using DTO;
+
 namespace qlns
 {
 	public partial class frmNhanVien : Form
@@ -17,7 +19,7 @@ namespace qlns
 			InitializeComponent();
 		}
 
-		Nhanvien nv = new Nhanvien();
+		//NhanVienBLL nvbll = new NhanVienBLL();
 
 		private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
@@ -26,7 +28,9 @@ namespace qlns
 
 		private void frmNhanVien_Load(object sender, EventArgs e)
 		{
-			//dgvNhanVien.DataSource = nv.LoadNV();
+			//dgvNhanVien.DataSource = nvbll.LoadNV();
+			List<NhanVienDTO> dsNhanVien = BLL.NhanVienBLL.LoadNV();
+			dgvNhanVien.DataSource = dsNhanVien;
 		}
 	}
 }

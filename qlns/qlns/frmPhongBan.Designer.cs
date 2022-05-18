@@ -37,7 +37,7 @@
 			this.BackColor = System.Drawing.Color.LightSkyBlue;
 			this.ClientSize = new System.Drawing.Size(800, 450);
 			this.Name = "frmPhongBan";
-			this.Text = "frmCapNhat";
+			this.Text = "PhongBan";
 			this.ResumeLayout(false);
 
 		}

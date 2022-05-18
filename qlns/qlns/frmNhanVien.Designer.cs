@@ -33,6 +33,8 @@
 			this.comboBox1 = new System.Windows.Forms.ComboBox();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+			this.button1 = new System.Windows.Forms.Button();
 			this.button4 = new System.Windows.Forms.Button();
 			this.button3 = new System.Windows.Forms.Button();
 			this.button2 = new System.Windows.Forms.Button();
@@ -40,11 +42,9 @@
 			this.label3 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
-			this.button1 = new System.Windows.Forms.Button();
-			this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-			this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Manhanvien1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Mapb = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.PhongBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
@@ -55,16 +55,19 @@
 			// 
 			// dgvNhanVien
 			// 
+			this.dgvNhanVien.AllowUserToAddRows = false;
+			this.dgvNhanVien.AllowUserToDeleteRows = false;
 			this.dgvNhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvNhanVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaNV,
+            this.Manhanvien1,
+            this.Mapb,
             this.TenNV,
-            this.PhongBan,
             this.NgaySinh,
             this.SDT});
 			this.dgvNhanVien.Location = new System.Drawing.Point(6, 19);
 			this.dgvNhanVien.Name = "dgvNhanVien";
+			this.dgvNhanVien.ReadOnly = true;
 			this.dgvNhanVien.Size = new System.Drawing.Size(647, 348);
 			this.dgvNhanVien.TabIndex = 5;
 			this.dgvNhanVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -113,6 +116,29 @@
 			this.groupBox2.TabIndex = 10;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Nhân viên";
+			// 
+			// iconPictureBox1
+			// 
+			this.iconPictureBox1.BackColor = System.Drawing.Color.LightSteelBlue;
+			this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.None;
+			this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
+			this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.iconPictureBox1.IconSize = 65;
+			this.iconPictureBox1.Location = new System.Drawing.Point(13, 19);
+			this.iconPictureBox1.Name = "iconPictureBox1";
+			this.iconPictureBox1.Size = new System.Drawing.Size(74, 65);
+			this.iconPictureBox1.TabIndex = 18;
+			this.iconPictureBox1.TabStop = false;
+			// 
+			// button1
+			// 
+			this.button1.Location = new System.Drawing.Point(28, 218);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(75, 23);
+			this.button1.TabIndex = 17;
+			this.button1.Text = "Xóa";
+			this.button1.UseVisualStyleBackColor = true;
 			// 
 			// button4
 			// 
@@ -175,53 +201,35 @@
 			this.label1.TabIndex = 10;
 			this.label1.Text = "Mã NV:";
 			// 
-			// button1
+			// Manhanvien1
 			// 
-			this.button1.Location = new System.Drawing.Point(28, 218);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(75, 23);
-			this.button1.TabIndex = 17;
-			this.button1.Text = "Xóa";
-			this.button1.UseVisualStyleBackColor = true;
+			this.Manhanvien1.HeaderText = "Mã nhân viên";
+			this.Manhanvien1.Name = "Manhanvien1";
+			this.Manhanvien1.ReadOnly = true;
 			// 
-			// iconPictureBox1
+			// Mapb
 			// 
-			this.iconPictureBox1.BackColor = System.Drawing.Color.LightSteelBlue;
-			this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.None;
-			this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
-			this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-			this.iconPictureBox1.IconSize = 65;
-			this.iconPictureBox1.Location = new System.Drawing.Point(13, 19);
-			this.iconPictureBox1.Name = "iconPictureBox1";
-			this.iconPictureBox1.Size = new System.Drawing.Size(74, 65);
-			this.iconPictureBox1.TabIndex = 18;
-			this.iconPictureBox1.TabStop = false;
-			// 
-			// MaNV
-			// 
-			this.MaNV.HeaderText = "Mã nhân vien";
-			this.MaNV.Name = "MaNV";
+			this.Mapb.HeaderText = "Phòng ban";
+			this.Mapb.Name = "Mapb";
+			this.Mapb.ReadOnly = true;
 			// 
 			// TenNV
 			// 
 			this.TenNV.HeaderText = "Tên nhân viên";
 			this.TenNV.Name = "TenNV";
-			// 
-			// PhongBan
-			// 
-			this.PhongBan.HeaderText = "Phòng ban";
-			this.PhongBan.Name = "PhongBan";
+			this.TenNV.ReadOnly = true;
 			// 
 			// NgaySinh
 			// 
 			this.NgaySinh.HeaderText = "Ngày Sinh ";
 			this.NgaySinh.Name = "NgaySinh";
+			this.NgaySinh.ReadOnly = true;
 			// 
 			// SDT
 			// 
 			this.SDT.HeaderText = "SDT";
 			this.SDT.Name = "SDT";
+			this.SDT.ReadOnly = true;
 			// 
 			// frmNhanVien
 			// 
@@ -231,7 +239,7 @@
 			this.ClientSize = new System.Drawing.Size(933, 397);
 			this.Controls.Add(this.groupBox1);
 			this.Name = "frmNhanVien";
-			this.Text = "B";
+			this.Text = "NhanVien";
 			this.Load += new System.EventHandler(this.frmNhanVien_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).EndInit();
 			this.groupBox1.ResumeLayout(false);
@@ -258,9 +266,9 @@
 		private System.Windows.Forms.Label label1;
 		private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
 		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Manhanvien1;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Mapb;
 		private System.Windows.Forms.DataGridViewTextBoxColumn TenNV;
-		private System.Windows.Forms.DataGridViewTextBoxColumn PhongBan;
 		private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
 		private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
 	}

@@ -19,7 +19,7 @@ namespace qlns
 			InitializeComponent();
 		}
 
-		Nhanvien nv = new Nhanvien();
+		NhanVienBLL nvbll = new NhanVienBLL();
 
 		public void OpenChildForm(Form childFrom)
 		{
@@ -96,7 +96,7 @@ namespace qlns
 
 		private void frmMain_Load(object sender, EventArgs e)
 		{
-			
+		
 		}
 	}
 }
