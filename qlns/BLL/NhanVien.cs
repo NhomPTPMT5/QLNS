@@ -16,7 +16,8 @@ namespace BLL
 		public IQueryable<NhanVien> LoadNV()
 		{
 			var nhanviens = from nv in qlns.NhanViens
-							select nv;
+							select new
+							{ nv.MaNhanVien, nv.TenNV, nv.PhongBan, nv.NgaySinh, };
 			return nhanviens;
 		}
 		

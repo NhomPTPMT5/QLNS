@@ -43,6 +43,10 @@
 			this.button1 = new System.Windows.Forms.Button();
 			this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
 			this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.PhongBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
@@ -54,7 +58,11 @@
 			this.dgvNhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvNhanVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaNV});
+            this.MaNV,
+            this.TenNV,
+            this.PhongBan,
+            this.NgaySinh,
+            this.SDT});
 			this.dgvNhanVien.Location = new System.Drawing.Point(6, 19);
 			this.dgvNhanVien.Name = "dgvNhanVien";
 			this.dgvNhanVien.Size = new System.Drawing.Size(647, 348);
@@ -192,8 +200,28 @@
 			// 
 			// MaNV
 			// 
-			this.MaNV.HeaderText = "mã nhân vien";
+			this.MaNV.HeaderText = "Mã nhân vien";
 			this.MaNV.Name = "MaNV";
+			// 
+			// TenNV
+			// 
+			this.TenNV.HeaderText = "Tên nhân viên";
+			this.TenNV.Name = "TenNV";
+			// 
+			// PhongBan
+			// 
+			this.PhongBan.HeaderText = "Phòng ban";
+			this.PhongBan.Name = "PhongBan";
+			// 
+			// NgaySinh
+			// 
+			this.NgaySinh.HeaderText = "Ngày Sinh ";
+			this.NgaySinh.Name = "NgaySinh";
+			// 
+			// SDT
+			// 
+			this.SDT.HeaderText = "SDT";
+			this.SDT.Name = "SDT";
 			// 
 			// frmNhanVien
 			// 
@@ -231,5 +259,9 @@
 		private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
+		private System.Windows.Forms.DataGridViewTextBoxColumn TenNV;
+		private System.Windows.Forms.DataGridViewTextBoxColumn PhongBan;
+		private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
+		private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
 	}
 }
