@@ -10,7 +10,7 @@ namespace DAL
 	//private string manhanvien;
 	//private string mapb;
 	//private string mahd;
-	//private int hesoluong;
+	//private string hesoluong;
 	//private string tennv;
 	//private string gioitinh;
 	//private string ngaysinh;
@@ -29,18 +29,38 @@ namespace DAL
 				{
 					NhanVienDTO nvdto = new NhanVienDTO();
 					nvdto.Manhanvien = row.MaNhanVien;
-					nvdto.Mapb = row.MaPB;
+					nvdto.Tenpb = row.TenPB;
 					nvdto.Mahd = row.MaHD;
 					nvdto.Hesoluong = row.HeSoLuong;
 					nvdto.Tennv = row.TenNV;
 					nvdto.Gioitinh = row.GioiTinh;
-					//nvdto.Ngaysinh = row.NgaySinh;
+					nvdto.Ngaysinh = row.NgaySinh;
 					nvdto.Socm = row.SoCM;
 					nvdto.Dienthoai = row.DienThoai;
 					dsNhanVien.Add(nvdto);
 				}
 
 				return dsNhanVien;
+			}
+		}
+
+		public static void insertNV(string manv, string tenpb, string mahd, string hesl, string tennv, string gt, string ns, string socm, string dt)
+		{
+			using (QLNSDataContext qlns = new QLNSDataContext())
+			{
+				NhanVien nv = new NhanVien();
+				nv.MaNhanVien = manv;
+				nv.TenPB = tenpb;
+				nv.MaHD = mahd;
+				nv.HeSoLuong = hesl;
+				nv.TenNV = tennv;
+				nv.GioiTinh = gt;
+				nv.NgaySinh = ns;
+				nv.SoCM = socm;
+				nv.DienThoai = dt;
+
+				qlns.NhanViens.InsertOnSubmit(nv);
+				qlns.SubmitChanges();
 			}
 		}
 	}
