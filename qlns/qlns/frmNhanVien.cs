@@ -18,7 +18,7 @@ namespace qlns
 		{
 			InitializeComponent();
 		}
-
+		
 		//NhanVienBLL nvbll = new NhanVienBLL();
 
 		private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -26,13 +26,26 @@ namespace qlns
 
 		}
 
+		//public void loadcbo()
+		//{
+		//	List<ComboBox> lis
+		//}
+
 		private void frmNhanVien_Load(object sender, EventArgs e)
 		{
 			//dgvNhanVien.DataSource = nvbll.LoadNV();
+
 			List<NhanVienDTO> dsNhanVien = BLL.NhanVienBLL.LoadNV();
 			dgvNhanVien.DataSource = dsNhanVien;
 
+
+			List<PhongBanDTO> dsPhongBan = BLL.PhongBanBLL.LoadcboPB();
+			cboPhongBan.DisplayMember = "TenPB";
+			cboPhongBan.DataSource = dsPhongBan;
+			
 		}
+
+
 
 		private void btnThem_Click(object sender, EventArgs e)
 		{
@@ -53,11 +66,14 @@ namespace qlns
 			{
 				 gt = "Nữ";
 			}
-			string ns = txtNgaySinh.Text;
-			string socm = txtCMND.Text;
-			string tenpb=textBox1.Text;
-			string mahd=textBox2.Text;
-			BLL.NhanVienBLL.insertNV(manv, tenpb, mahd, hesl, tennv, gt, ns, socm, dt);
+			string ns = txtNS.Text;
+
+			string tenpb = cboPhongBan.Text;
+			
+			BLL.NhanVienBLL.insertNV(manv, tenpb, hesl, tennv, gt, ns, dt);
+			List<NhanVienDTO> dsNhanVien = BLL.NhanVienBLL.LoadNV();
+			dgvNhanVien.DataSource = dsNhanVien;
+			
 		}
 	}
 }

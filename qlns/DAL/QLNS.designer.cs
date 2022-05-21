@@ -141,19 +141,19 @@ namespace DAL
 			}
 		}
 		
-		public System.Data.Linq.Table<ThuongPhat> ThuongPhats
-		{
-			get
-			{
-				return this.GetTable<ThuongPhat>();
-			}
-		}
-		
 		public System.Data.Linq.Table<PhuCap> PhuCaps
 		{
 			get
 			{
 				return this.GetTable<PhuCap>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ThuongPhat> ThuongPhats
+		{
+			get
+			{
+				return this.GetTable<ThuongPhat>();
 			}
 		}
 	}
@@ -567,8 +567,6 @@ namespace DAL
 		
 		private string _TenPB;
 		
-		private EntitySet<NhanVien> _NhanViens;
-		
 		private EntityRef<ChucVu> _ChucVu;
 		
 		private EntityRef<Luong> _Luong;
@@ -593,7 +591,6 @@ namespace DAL
 		
 		public HopDong()
 		{
-			this._NhanViens = new EntitySet<NhanVien>(new Action<NhanVien>(this.attach_NhanViens), new Action<NhanVien>(this.detach_NhanViens));
 			this._ChucVu = default(EntityRef<ChucVu>);
 			this._Luong = default(EntityRef<Luong>);
 			this._PhongBan = default(EntityRef<PhongBan>);
@@ -709,19 +706,6 @@ namespace DAL
 					this.SendPropertyChanged("TenPB");
 					this.OnTenPBChanged();
 				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="HopDong_NhanVien", Storage="_NhanViens", ThisKey="MaHD", OtherKey="MaHD")]
-		public EntitySet<NhanVien> NhanViens
-		{
-			get
-			{
-				return this._NhanViens;
-			}
-			set
-			{
-				this._NhanViens.Assign(value);
 			}
 		}
 		
@@ -845,18 +829,6 @@ namespace DAL
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_NhanViens(NhanVien entity)
-		{
-			this.SendPropertyChanging();
-			entity.HopDong = this;
-		}
-		
-		private void detach_NhanViens(NhanVien entity)
-		{
-			this.SendPropertyChanging();
-			entity.HopDong = null;
 		}
 	}
 	
@@ -1010,25 +982,19 @@ namespace DAL
 		
 		private string _MaNhanVien;
 		
+		private string _TenNV;
+		
 		private string _TenPB;
 		
-		private string _MaHD;
-		
 		private string _HeSoLuong;
-		
-		private string _TenNV;
 		
 		private string _GioiTinh;
 		
 		private string _NgaySinh;
 		
-		private string _SoCM;
-		
 		private string _DienThoai;
 		
 		private EntityRef<Luong> _Luong;
-		
-		private EntityRef<HopDong> _HopDong;
 		
 		private EntityRef<PhongBan> _PhongBan;
 		
@@ -1038,20 +1004,16 @@ namespace DAL
     partial void OnCreated();
     partial void OnMaNhanVienChanging(string value);
     partial void OnMaNhanVienChanged();
-    partial void OnTenPBChanging(string value);
-    partial void OnTenPBChanged();
-    partial void OnMaHDChanging(string value);
-    partial void OnMaHDChanged();
-    partial void OnHeSoLuongChanging(string value);
-    partial void OnHeSoLuongChanged();
     partial void OnTenNVChanging(string value);
     partial void OnTenNVChanged();
+    partial void OnTenPBChanging(string value);
+    partial void OnTenPBChanged();
+    partial void OnHeSoLuongChanging(string value);
+    partial void OnHeSoLuongChanged();
     partial void OnGioiTinhChanging(string value);
     partial void OnGioiTinhChanged();
     partial void OnNgaySinhChanging(string value);
     partial void OnNgaySinhChanged();
-    partial void OnSoCMChanging(string value);
-    partial void OnSoCMChanged();
     partial void OnDienThoaiChanging(string value);
     partial void OnDienThoaiChanged();
     #endregion
@@ -1059,7 +1021,6 @@ namespace DAL
 		public NhanVien()
 		{
 			this._Luong = default(EntityRef<Luong>);
-			this._HopDong = default(EntityRef<HopDong>);
 			this._PhongBan = default(EntityRef<PhongBan>);
 			OnCreated();
 		}
@@ -1080,6 +1041,26 @@ namespace DAL
 					this._MaNhanVien = value;
 					this.SendPropertyChanged("MaNhanVien");
 					this.OnMaNhanVienChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenNV", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string TenNV
+		{
+			get
+			{
+				return this._TenNV;
+			}
+			set
+			{
+				if ((this._TenNV != value))
+				{
+					this.OnTenNVChanging(value);
+					this.SendPropertyChanging();
+					this._TenNV = value;
+					this.SendPropertyChanged("TenNV");
+					this.OnTenNVChanged();
 				}
 			}
 		}
@@ -1108,30 +1089,6 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaHD", DbType="VarChar(5) NOT NULL", CanBeNull=false)]
-		public string MaHD
-		{
-			get
-			{
-				return this._MaHD;
-			}
-			set
-			{
-				if ((this._MaHD != value))
-				{
-					if (this._HopDong.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMaHDChanging(value);
-					this.SendPropertyChanging();
-					this._MaHD = value;
-					this.SendPropertyChanged("MaHD");
-					this.OnMaHDChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HeSoLuong", DbType="Char(100) NOT NULL", CanBeNull=false)]
 		public string HeSoLuong
 		{
@@ -1152,26 +1109,6 @@ namespace DAL
 					this._HeSoLuong = value;
 					this.SendPropertyChanged("HeSoLuong");
 					this.OnHeSoLuongChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenNV", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string TenNV
-		{
-			get
-			{
-				return this._TenNV;
-			}
-			set
-			{
-				if ((this._TenNV != value))
-				{
-					this.OnTenNVChanging(value);
-					this.SendPropertyChanging();
-					this._TenNV = value;
-					this.SendPropertyChanged("TenNV");
-					this.OnTenNVChanged();
 				}
 			}
 		}
@@ -1212,26 +1149,6 @@ namespace DAL
 					this._NgaySinh = value;
 					this.SendPropertyChanged("NgaySinh");
 					this.OnNgaySinhChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoCM", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string SoCM
-		{
-			get
-			{
-				return this._SoCM;
-			}
-			set
-			{
-				if ((this._SoCM != value))
-				{
-					this.OnSoCMChanging(value);
-					this.SendPropertyChanging();
-					this._SoCM = value;
-					this.SendPropertyChanged("SoCM");
-					this.OnSoCMChanged();
 				}
 			}
 		}
@@ -1286,40 +1203,6 @@ namespace DAL
 						this._HeSoLuong = default(string);
 					}
 					this.SendPropertyChanged("Luong");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="HopDong_NhanVien", Storage="_HopDong", ThisKey="MaHD", OtherKey="MaHD", IsForeignKey=true)]
-		public HopDong HopDong
-		{
-			get
-			{
-				return this._HopDong.Entity;
-			}
-			set
-			{
-				HopDong previousValue = this._HopDong.Entity;
-				if (((previousValue != value) 
-							|| (this._HopDong.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._HopDong.Entity = null;
-						previousValue.NhanViens.Remove(this);
-					}
-					this._HopDong.Entity = value;
-					if ((value != null))
-					{
-						value.NhanViens.Add(this);
-						this._MaHD = value.MaHD;
-					}
-					else
-					{
-						this._MaHD = default(string);
-					}
-					this.SendPropertyChanged("HopDong");
 				}
 			}
 		}
@@ -1521,105 +1404,6 @@ namespace DAL
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ThuongPhat")]
-	public partial class ThuongPhat
-	{
-		
-		private string _MaNhanVien;
-		
-		private string _Loai;
-		
-		private string _Tien;
-		
-		private string _LyDo;
-		
-		private string _Ngay;
-		
-		public ThuongPhat()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaNhanVien", DbType="VarChar(5) NOT NULL", CanBeNull=false)]
-		public string MaNhanVien
-		{
-			get
-			{
-				return this._MaNhanVien;
-			}
-			set
-			{
-				if ((this._MaNhanVien != value))
-				{
-					this._MaNhanVien = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Loai", DbType="NVarChar(50)")]
-		public string Loai
-		{
-			get
-			{
-				return this._Loai;
-			}
-			set
-			{
-				if ((this._Loai != value))
-				{
-					this._Loai = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tien", DbType="Char(100)")]
-		public string Tien
-		{
-			get
-			{
-				return this._Tien;
-			}
-			set
-			{
-				if ((this._Tien != value))
-				{
-					this._Tien = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LyDo", DbType="NVarChar(MAX)")]
-		public string LyDo
-		{
-			get
-			{
-				return this._LyDo;
-			}
-			set
-			{
-				if ((this._LyDo != value))
-				{
-					this._LyDo = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ngay", DbType="Char(50)")]
-		public string Ngay
-		{
-			get
-			{
-				return this._Ngay;
-			}
-			set
-			{
-				if ((this._Ngay != value))
-				{
-					this._Ngay = value;
-				}
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PhuCap")]
 	public partial class PhuCap
 	{
@@ -1714,6 +1498,105 @@ namespace DAL
 				if ((this._DenNgay != value))
 				{
 					this._DenNgay = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ThuongPhat")]
+	public partial class ThuongPhat
+	{
+		
+		private string _MaNhanVien;
+		
+		private string _Loai;
+		
+		private string _Tien;
+		
+		private string _LyDo;
+		
+		private string _Ngay;
+		
+		public ThuongPhat()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaNhanVien", DbType="VarChar(5) NOT NULL", CanBeNull=false)]
+		public string MaNhanVien
+		{
+			get
+			{
+				return this._MaNhanVien;
+			}
+			set
+			{
+				if ((this._MaNhanVien != value))
+				{
+					this._MaNhanVien = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Loai", DbType="NVarChar(50)")]
+		public string Loai
+		{
+			get
+			{
+				return this._Loai;
+			}
+			set
+			{
+				if ((this._Loai != value))
+				{
+					this._Loai = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tien", DbType="Char(100)")]
+		public string Tien
+		{
+			get
+			{
+				return this._Tien;
+			}
+			set
+			{
+				if ((this._Tien != value))
+				{
+					this._Tien = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LyDo", DbType="NVarChar(MAX)")]
+		public string LyDo
+		{
+			get
+			{
+				return this._LyDo;
+			}
+			set
+			{
+				if ((this._LyDo != value))
+				{
+					this._LyDo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ngay", DbType="Char(50)")]
+		public string Ngay
+		{
+			get
+			{
+				return this._Ngay;
+			}
+			set
+			{
+				if ((this._Ngay != value))
+				{
+					this._Ngay = value;
 				}
 			}
 		}
