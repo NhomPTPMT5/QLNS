@@ -19,5 +19,7 @@ namespace BLL
 		{
 			return DAL.PhongBanDAL.loadPB();
 		}
+
+		
 	}
 }

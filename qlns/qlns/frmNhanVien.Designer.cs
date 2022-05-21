@@ -29,9 +29,18 @@
 		private void InitializeComponent()
 		{
 			this.dgvNhanVien = new System.Windows.Forms.DataGridView();
+			this.MaNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.txtMaNV = new System.Windows.Forms.TextBox();
 			this.gbNhanVien = new System.Windows.Forms.GroupBox();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.cboPhongBan = new System.Windows.Forms.ComboBox();
+			this.txtNS = new System.Windows.Forms.DateTimePicker();
 			this.rdNu = new System.Windows.Forms.RadioButton();
 			this.rdNam = new System.Windows.Forms.RadioButton();
 			this.label7 = new System.Windows.Forms.Label();
@@ -50,15 +59,6 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-			this.txtNS = new System.Windows.Forms.DateTimePicker();
-			this.cboPhongBan = new System.Windows.Forms.ComboBox();
-			this.MaNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
 			this.gbNhanVien.SuspendLayout();
 			this.groupBox2.SuspendLayout();
@@ -87,6 +87,61 @@
 			this.dgvNhanVien.Size = new System.Drawing.Size(659, 348);
 			this.dgvNhanVien.TabIndex = 5;
 			this.dgvNhanVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+			// 
+			// MaNhanVien
+			// 
+			this.MaNhanVien.DataPropertyName = "MaNhanVien";
+			this.MaNhanVien.FillWeight = 59.36768F;
+			this.MaNhanVien.HeaderText = "Mã nhân viên";
+			this.MaNhanVien.Name = "MaNhanVien";
+			this.MaNhanVien.ReadOnly = true;
+			// 
+			// Column4
+			// 
+			this.Column4.DataPropertyName = "TenNV";
+			this.Column4.FillWeight = 141.3516F;
+			this.Column4.HeaderText = "Tên nhân viên";
+			this.Column4.Name = "Column4";
+			this.Column4.ReadOnly = true;
+			// 
+			// Column1
+			// 
+			this.Column1.DataPropertyName = "TenPB";
+			this.Column1.HeaderText = "Phòng ban";
+			this.Column1.Name = "Column1";
+			this.Column1.ReadOnly = true;
+			// 
+			// Column3
+			// 
+			this.Column3.DataPropertyName = "HeSoLuong";
+			this.Column3.FillWeight = 59.36768F;
+			this.Column3.HeaderText = "Hệ số lương";
+			this.Column3.Name = "Column3";
+			this.Column3.ReadOnly = true;
+			// 
+			// Column5
+			// 
+			this.Column5.DataPropertyName = "GioiTinh";
+			this.Column5.FillWeight = 59.36768F;
+			this.Column5.HeaderText = "Giới tính";
+			this.Column5.Name = "Column5";
+			this.Column5.ReadOnly = true;
+			// 
+			// Column6
+			// 
+			this.Column6.DataPropertyName = "NgaySinh";
+			this.Column6.FillWeight = 59.36768F;
+			this.Column6.HeaderText = "Ngày sinh";
+			this.Column6.Name = "Column6";
+			this.Column6.ReadOnly = true;
+			// 
+			// Column8
+			// 
+			this.Column8.DataPropertyName = "DienThoai";
+			this.Column8.FillWeight = 59.36768F;
+			this.Column8.HeaderText = "SDT";
+			this.Column8.Name = "Column8";
+			this.Column8.ReadOnly = true;
 			// 
 			// txtMaNV
 			// 
@@ -133,6 +188,23 @@
 			this.groupBox2.TabIndex = 10;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Nhân viên";
+			// 
+			// cboPhongBan
+			// 
+			this.cboPhongBan.FormattingEnabled = true;
+			this.cboPhongBan.Location = new System.Drawing.Point(74, 156);
+			this.cboPhongBan.Name = "cboPhongBan";
+			this.cboPhongBan.Size = new System.Drawing.Size(131, 21);
+			this.cboPhongBan.TabIndex = 32;
+			// 
+			// txtNS
+			// 
+			this.txtNS.CustomFormat = "dd-MM-yyyy";
+			this.txtNS.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+			this.txtNS.Location = new System.Drawing.Point(74, 232);
+			this.txtNS.Name = "txtNS";
+			this.txtNS.Size = new System.Drawing.Size(132, 20);
+			this.txtNS.TabIndex = 31;
 			// 
 			// rdNu
 			// 
@@ -238,6 +310,7 @@
 			this.btnSua.TabIndex = 16;
 			this.btnSua.Text = "Sửa";
 			this.btnSua.UseVisualStyleBackColor = true;
+			this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
 			// 
 			// btnTimKiem
 			// 
@@ -256,6 +329,7 @@
 			this.btnXoa.TabIndex = 14;
 			this.btnXoa.Text = "Xóa";
 			this.btnXoa.UseVisualStyleBackColor = true;
+			this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
 			// 
 			// txtHeSL
 			// 
@@ -290,78 +364,6 @@
 			this.label1.Size = new System.Drawing.Size(43, 13);
 			this.label1.TabIndex = 10;
 			this.label1.Text = "Mã NV:";
-			// 
-			// txtNS
-			// 
-			this.txtNS.CustomFormat = "dd-MM-yyyy";
-			this.txtNS.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-			this.txtNS.Location = new System.Drawing.Point(74, 232);
-			this.txtNS.Name = "txtNS";
-			this.txtNS.Size = new System.Drawing.Size(132, 20);
-			this.txtNS.TabIndex = 31;
-			// 
-			// cboPhongBan
-			// 
-			this.cboPhongBan.FormattingEnabled = true;
-			this.cboPhongBan.Location = new System.Drawing.Point(74, 156);
-			this.cboPhongBan.Name = "cboPhongBan";
-			this.cboPhongBan.Size = new System.Drawing.Size(131, 21);
-			this.cboPhongBan.TabIndex = 32;
-			// 
-			// MaNhanVien
-			// 
-			this.MaNhanVien.DataPropertyName = "MaNhanVien";
-			this.MaNhanVien.FillWeight = 59.36768F;
-			this.MaNhanVien.HeaderText = "Mã nhân viên";
-			this.MaNhanVien.Name = "MaNhanVien";
-			this.MaNhanVien.ReadOnly = true;
-			// 
-			// Column4
-			// 
-			this.Column4.DataPropertyName = "TenNV";
-			this.Column4.FillWeight = 141.3516F;
-			this.Column4.HeaderText = "Tên nhân viên";
-			this.Column4.Name = "Column4";
-			this.Column4.ReadOnly = true;
-			// 
-			// Column1
-			// 
-			this.Column1.DataPropertyName = "TenPB";
-			this.Column1.HeaderText = "Phòng ban";
-			this.Column1.Name = "Column1";
-			this.Column1.ReadOnly = true;
-			// 
-			// Column3
-			// 
-			this.Column3.DataPropertyName = "HeSoLuong";
-			this.Column3.FillWeight = 59.36768F;
-			this.Column3.HeaderText = "Hệ số lương";
-			this.Column3.Name = "Column3";
-			this.Column3.ReadOnly = true;
-			// 
-			// Column5
-			// 
-			this.Column5.DataPropertyName = "GioiTinh";
-			this.Column5.FillWeight = 59.36768F;
-			this.Column5.HeaderText = "Giới tính";
-			this.Column5.Name = "Column5";
-			this.Column5.ReadOnly = true;
-			// 
-			// Column6
-			// 
-			this.Column6.DataPropertyName = "NgaySinh";
-			this.Column6.FillWeight = 59.36768F;
-			this.Column6.HeaderText = "Ngày sinh";
-			this.Column6.Name = "Column6";
-			this.Column6.ReadOnly = true;
-			// 
-			// Column8
-			// 
-			this.Column8.DataPropertyName = "DienThoai";
-			this.Column8.FillWeight = 59.36768F;
-			this.Column8.HeaderText = "SDT";
-			this.Column8.Name = "Column8";
-			this.Column8.ReadOnly = true;
 			// 
 			// frmNhanVien
 			// 

@@ -15,9 +15,19 @@ namespace BLL
 			return DAL.NhanVienDAL.LoadNV();
 		}
 
-		public static void insertNV(string manv, string tenpb, string hesl, string tennv, string gt, string ns, string dt)
+		public static void insertNV(string manv, string tennv, string tenpb, string hesl, string gt, string ns, string dt)
 		{
 			 DAL.NhanVienDAL.insertNV(manv,tenpb,hesl,tennv,gt,ns,dt);
+		}
+
+		public static void deleteNV(string manv)
+		{
+			DAL.NhanVienDAL.deleteNV(manv);
+		}
+
+		public static void updateNV(string manv, string tennv, string tenpb, string hesl, string gt, string ns, string dt)
+		{
+			DAL.NhanVienDAL.updateNV(manv, tenpb, hesl, tennv, gt, ns, dt);
 		}
 	}
 
