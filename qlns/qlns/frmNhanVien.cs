@@ -40,7 +40,7 @@ namespace qlns
 
 
 			List<PhongBanDTO> dsPhongBan = BLL.PhongBanBLL.LoadcboPB();
-			cboPhongBan.DisplayMember = "TenPB";
+			cboPhongBan.DisplayMember = "MaPB";
 			cboPhongBan.DataSource = dsPhongBan;
 			
 		}
@@ -50,22 +50,21 @@ namespace qlns
 		private void btnThem_Click(object sender, EventArgs e)
 		{
 			string manv = txtMaNV.Text;
-			string hesl = txtHeSL.Text;		
 			string tennv = txtTenNV.Text;
-			string dt = txtSDT.Text;
+			string mapb = cboPhongBan.Text;
+			string hesl = txtHeSL.Text;
 			string gt = "";
 			if (rdNam.Checked == true)
 			{
-				 gt = "Nam";
+				gt = "Nam";
 			}
 			if (rdNu.Checked == true)
 			{
-				 gt = "Nữ";
+				gt = "Nữ";
 			}
 			string ns = txtNS.Text;
-			string tenpb = cboPhongBan.Text;
-			
-			BLL.NhanVienBLL.insertNV(manv, tenpb, hesl, tennv, gt, ns, dt);
+			string dt = txtSDT.Text;
+			BLL.NhanVienBLL.insertNV(manv, tennv, mapb, hesl, gt, ns, dt);
 			List<NhanVienDTO> dsNhanVien = BLL.NhanVienBLL.LoadNV();
 			dgvNhanVien.DataSource = dsNhanVien;
 		}
@@ -83,18 +82,11 @@ namespace qlns
 		private void btnSua_Click(object sender, EventArgs e)
 		{
 			
-			//foreach (DataGridViewRow r in dgvNhanVien.Rows)
-			//{
-			//	if (r.Selected == true)
-			//	{
-			//		 id = r.Index;
-			//		 idNV = dgvNhanVien.Rows[id].Cells["manv"].Value.ToString();
-			//	}
-			//}
+		
 			string manv = txtMaNV.Text;
-			string hesl = txtHeSL.Text;
 			string tennv = txtTenNV.Text;
-			string dt = txtSDT.Text;
+			string mapb = cboPhongBan.Text;
+			string hesl = txtHeSL.Text;
 			string gt = "";
 			if (rdNam.Checked == true)
 			{
@@ -105,8 +97,8 @@ namespace qlns
 				gt = "Nữ";
 			}
 			string ns = txtNS.Text;
-			string tenpb = cboPhongBan.Text;
-			BLL.NhanVienBLL.updateNV(manv, tenpb, hesl, tennv, gt, ns, dt);
+			string dt = txtSDT.Text;
+			BLL.NhanVienBLL.updateNV(manv, tennv, mapb, hesl, gt, ns, dt);
 			List<NhanVienDTO> dsNhanVien = BLL.NhanVienBLL.LoadNV();
 			dgvNhanVien.DataSource = dsNhanVien;
 		}

@@ -565,7 +565,7 @@ namespace DAL
 		
 		private string _MaCV;
 		
-		private string _TenPB;
+		private string _MaPB;
 		
 		private EntityRef<ChucVu> _ChucVu;
 		
@@ -585,8 +585,8 @@ namespace DAL
     partial void OnHeSoLuongChanged();
     partial void OnMaCVChanging(string value);
     partial void OnMaCVChanged();
-    partial void OnTenPBChanging(string value);
-    partial void OnTenPBChanged();
+    partial void OnMaPBChanging(string value);
+    partial void OnMaPBChanged();
     #endregion
 		
 		public HopDong()
@@ -685,26 +685,26 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenPB", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
-		public string TenPB
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaPB", DbType="VarChar(5) NOT NULL", CanBeNull=false)]
+		public string MaPB
 		{
 			get
 			{
-				return this._TenPB;
+				return this._MaPB;
 			}
 			set
 			{
-				if ((this._TenPB != value))
+				if ((this._MaPB != value))
 				{
 					if (this._PhongBan.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnTenPBChanging(value);
+					this.OnMaPBChanging(value);
 					this.SendPropertyChanging();
-					this._TenPB = value;
-					this.SendPropertyChanged("TenPB");
-					this.OnTenPBChanged();
+					this._MaPB = value;
+					this.SendPropertyChanged("MaPB");
+					this.OnMaPBChanged();
 				}
 			}
 		}
@@ -777,7 +777,7 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PhongBan_HopDong", Storage="_PhongBan", ThisKey="TenPB", OtherKey="TenPB", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PhongBan_HopDong", Storage="_PhongBan", ThisKey="MaPB", OtherKey="MaPB", IsForeignKey=true)]
 		public PhongBan PhongBan
 		{
 			get
@@ -800,11 +800,11 @@ namespace DAL
 					if ((value != null))
 					{
 						value.HopDongs.Add(this);
-						this._TenPB = value.TenPB;
+						this._MaPB = value.MaPB;
 					}
 					else
 					{
-						this._TenPB = default(string);
+						this._MaPB = default(string);
 					}
 					this.SendPropertyChanged("PhongBan");
 				}
@@ -984,7 +984,7 @@ namespace DAL
 		
 		private string _TenNV;
 		
-		private string _TenPB;
+		private string _MaPB;
 		
 		private string _HeSoLuong;
 		
@@ -1006,8 +1006,8 @@ namespace DAL
     partial void OnMaNhanVienChanged();
     partial void OnTenNVChanging(string value);
     partial void OnTenNVChanged();
-    partial void OnTenPBChanging(string value);
-    partial void OnTenPBChanged();
+    partial void OnMaPBChanging(string value);
+    partial void OnMaPBChanged();
     partial void OnHeSoLuongChanging(string value);
     partial void OnHeSoLuongChanged();
     partial void OnGioiTinhChanging(string value);
@@ -1065,26 +1065,26 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenPB", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
-		public string TenPB
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaPB", DbType="VarChar(5) NOT NULL", CanBeNull=false)]
+		public string MaPB
 		{
 			get
 			{
-				return this._TenPB;
+				return this._MaPB;
 			}
 			set
 			{
-				if ((this._TenPB != value))
+				if ((this._MaPB != value))
 				{
 					if (this._PhongBan.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnTenPBChanging(value);
+					this.OnMaPBChanging(value);
 					this.SendPropertyChanging();
-					this._TenPB = value;
-					this.SendPropertyChanged("TenPB");
-					this.OnTenPBChanged();
+					this._MaPB = value;
+					this.SendPropertyChanged("MaPB");
+					this.OnMaPBChanged();
 				}
 			}
 		}
@@ -1207,7 +1207,7 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PhongBan_NhanVien", Storage="_PhongBan", ThisKey="TenPB", OtherKey="TenPB", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PhongBan_NhanVien", Storage="_PhongBan", ThisKey="MaPB", OtherKey="MaPB", IsForeignKey=true)]
 		public PhongBan PhongBan
 		{
 			get
@@ -1230,11 +1230,11 @@ namespace DAL
 					if ((value != null))
 					{
 						value.NhanViens.Add(this);
-						this._TenPB = value.TenPB;
+						this._MaPB = value.MaPB;
 					}
 					else
 					{
-						this._TenPB = default(string);
+						this._MaPB = default(string);
 					}
 					this.SendPropertyChanged("PhongBan");
 				}
@@ -1293,7 +1293,7 @@ namespace DAL
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaPB", DbType="VarChar(5) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaPB", DbType="VarChar(5) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string MaPB
 		{
 			get
@@ -1313,7 +1313,7 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenPB", DbType="NVarChar(20) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenPB", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
 		public string TenPB
 		{
 			get
@@ -1333,7 +1333,7 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PhongBan_HopDong", Storage="_HopDongs", ThisKey="TenPB", OtherKey="TenPB")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PhongBan_HopDong", Storage="_HopDongs", ThisKey="MaPB", OtherKey="MaPB")]
 		public EntitySet<HopDong> HopDongs
 		{
 			get
@@ -1346,7 +1346,7 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PhongBan_NhanVien", Storage="_NhanViens", ThisKey="TenPB", OtherKey="TenPB")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PhongBan_NhanVien", Storage="_NhanViens", ThisKey="MaPB", OtherKey="MaPB")]
 		public EntitySet<NhanVien> NhanViens
 		{
 			get

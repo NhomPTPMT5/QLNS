@@ -29,9 +29,10 @@ namespace DAL
 				{
 					NhanVienDTO nvdto = new NhanVienDTO();
 					nvdto.Manhanvien = row.MaNhanVien;
-					nvdto.Tenpb = row.TenPB;
-					nvdto.Hesoluong = row.HeSoLuong;
 					nvdto.Tennv = row.TenNV;
+					nvdto.Mapb = row.MaPB;
+					nvdto.Hesoluong = row.HeSoLuong;
+					
 					nvdto.Gioitinh = row.GioiTinh;
 					nvdto.Ngaysinh = row.NgaySinh;
 					
@@ -43,15 +44,15 @@ namespace DAL
 			}
 		}
 
-		public static void insertNV(string manv, string tennv, string tenpb, string hesl, string gt, string ns, string dt)
+		public static void insertNV(string manv, string tennv, string mapb, string hesl, string gt, string ns, string dt)
 		{
 			using (QLNSDataContext qlns = new QLNSDataContext())
 			{
 				NhanVien nv = new NhanVien();
 				nv.MaNhanVien = manv;
-				nv.TenPB = tenpb;		
-				nv.HeSoLuong = hesl;
 				nv.TenNV = tennv;
+				nv.MaPB = mapb;		
+				nv.HeSoLuong = hesl;
 				nv.GioiTinh = gt;
 				nv.NgaySinh = ns;
 				nv.DienThoai = dt;
@@ -59,8 +60,8 @@ namespace DAL
 				qlns.NhanViens.InsertOnSubmit(nv);
 				qlns.SubmitChanges();
 
-				var nhanviens = from nv1 in qlns.NhanViens
-								select nv1;
+				//var nhanviens = from nv1 in qlns.NhanViens
+				//				select nv1;
 
 			}
 		}
@@ -78,7 +79,7 @@ namespace DAL
 			}
 		}
 
-		public static void updateNV(string manv, string tennv, string tenpb, string hesl, string gt, string ns, string dt)
+		public static void updateNV(string manv, string tennv, string mapb, string hesl, string gt, string ns, string dt)
 		{
 			using (QLNSDataContext qlns = new QLNSDataContext())
 			{
@@ -88,7 +89,7 @@ namespace DAL
 
 				nvs.MaNhanVien = manv;
 				nvs.TenNV = tennv;
-				nvs.TenPB = tenpb;
+				nvs.MaPB = mapb;
 				nvs.HeSoLuong = hesl;
 				nvs.GioiTinh = gt;
 				nvs.NgaySinh = ns;

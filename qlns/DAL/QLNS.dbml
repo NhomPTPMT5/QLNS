@@ -44,10 +44,10 @@
       <Column Name="NgayVaoLam" Type="System.String" DbType="Char(50) NOT NULL" CanBeNull="false" />
       <Column Name="HeSoLuong" Type="System.String" DbType="Char(100) NOT NULL" CanBeNull="false" />
       <Column Name="MaCV" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
-      <Column Name="TenPB" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="MaPB" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
       <Association Name="ChucVu_HopDong" Member="ChucVu" ThisKey="MaCV" OtherKey="MaCV" Type="ChucVu" IsForeignKey="true" />
       <Association Name="Luong_HopDong" Member="Luong" ThisKey="HeSoLuong" OtherKey="HeSoLuong" Type="Luong" IsForeignKey="true" />
-      <Association Name="PhongBan_HopDong" Member="PhongBan" ThisKey="TenPB" OtherKey="TenPB" Type="PhongBan" IsForeignKey="true" />
+      <Association Name="PhongBan_HopDong" Member="PhongBan" ThisKey="MaPB" OtherKey="MaPB" Type="PhongBan" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Luong" Member="Luongs">
@@ -62,7 +62,7 @@
     <Type Name="NhanVien">
       <Column Name="MaNhanVien" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TenNV" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="TenPB" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="MaPB" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
       <Column Name="HeSoLuong" Type="System.String" DbType="Char(100) NOT NULL" CanBeNull="false" />
       <Column Name="GioiTinh" Type="System.String" DbType="NVarChar(5) NOT NULL" CanBeNull="false" />
       <Column Name="NgaySinh" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
@@ -73,15 +73,15 @@
       <Association Name="NhanVien_PhuCap" Member="PhuCaps" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="PhuCap" />
       <Association Name="NhanVien_ThuongPhat" Member="ThuongPhats" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="ThuongPhat" />
       <Association Name="Luong_NhanVien" Member="Luong" ThisKey="HeSoLuong" OtherKey="HeSoLuong" Type="Luong" IsForeignKey="true" />
-      <Association Name="PhongBan_NhanVien" Member="PhongBan" ThisKey="TenPB" OtherKey="TenPB" Type="PhongBan" IsForeignKey="true" />
+      <Association Name="PhongBan_NhanVien" Member="PhongBan" ThisKey="MaPB" OtherKey="MaPB" Type="PhongBan" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.PhongBan" Member="PhongBans">
     <Type Name="PhongBan">
-      <Column Name="MaPB" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
-      <Column Name="TenPB" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Association Name="PhongBan_HopDong" Member="HopDongs" ThisKey="TenPB" OtherKey="TenPB" Type="HopDong" />
-      <Association Name="PhongBan_NhanVien" Member="NhanViens" ThisKey="TenPB" OtherKey="TenPB" Type="NhanVien" />
+      <Column Name="MaPB" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenPB" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="PhongBan_HopDong" Member="HopDongs" ThisKey="MaPB" OtherKey="MaPB" Type="HopDong" />
+      <Association Name="PhongBan_NhanVien" Member="NhanViens" ThisKey="MaPB" OtherKey="MaPB" Type="NhanVien" />
     </Type>
   </Table>
   <Table Name="dbo.PhuCap" Member="PhuCaps">

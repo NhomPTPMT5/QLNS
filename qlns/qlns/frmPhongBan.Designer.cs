@@ -79,7 +79,7 @@
 			// cboPhongBan
 			// 
 			this.cboPhongBan.FormattingEnabled = true;
-			this.cboPhongBan.Location = new System.Drawing.Point(75, 187);
+			this.cboPhongBan.Location = new System.Drawing.Point(75, 139);
 			this.cboPhongBan.Name = "cboPhongBan";
 			this.cboPhongBan.Size = new System.Drawing.Size(131, 21);
 			this.cboPhongBan.TabIndex = 32;
@@ -87,7 +87,7 @@
 			// label6
 			// 
 			this.label6.AutoSize = true;
-			this.label6.Location = new System.Drawing.Point(6, 195);
+			this.label6.Location = new System.Drawing.Point(6, 191);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(62, 13);
 			this.label6.TabIndex = 25;
@@ -146,7 +146,7 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(6, 147);
+			this.label1.Location = new System.Drawing.Point(6, 142);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(42, 13);
 			this.label1.TabIndex = 10;
@@ -154,7 +154,7 @@
 			// 
 			// txtMaPB
 			// 
-			this.txtMaPB.Location = new System.Drawing.Point(75, 140);
+			this.txtMaPB.Location = new System.Drawing.Point(75, 188);
 			this.txtMaPB.Name = "txtMaPB";
 			this.txtMaPB.Size = new System.Drawing.Size(131, 20);
 			this.txtMaPB.TabIndex = 6;

@@ -16,11 +16,11 @@ namespace DAL
 			{
 				var phongbans = from pb in qlns.PhongBans
 								select new
-								{ pb.TenPB };
+								{ pb.MaPB };
 				foreach (var r in phongbans)
 				{
 					PhongBanDTO pbdto = new PhongBanDTO();
-					pbdto.TenPB = r.TenPB;
+					pbdto.MaPB = r.MaPB;
 					dsPhongBan.Add(pbdto);
 				}
 				return dsPhongBan;
@@ -37,12 +37,12 @@ namespace DAL
 			using (QLNSDataContext qlns = new QLNSDataContext())
 			{
 				var phongbans = from pb in qlns.PhongBans
-								select new { pb.MaPB, pb.TenPB};
+								select pb;
 								
 				foreach (var r in phongbans)
 				{
 					PhongBanDTO pbdto = new PhongBanDTO();
-					pbdto.MaPB = pbdto.MaPB;
+					pbdto.MaPB = r.MaPB;
 					pbdto.TenPB = r.TenPB;
 					dsPhongBan.Add(pbdto);
 				}

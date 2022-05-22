@@ -15,9 +15,9 @@ namespace BLL
 			return DAL.NhanVienDAL.LoadNV();
 		}
 
-		public static void insertNV(string manv, string tennv, string tenpb, string hesl, string gt, string ns, string dt)
+		public static void insertNV(string manv, string tennv, string mapb, string hesl, string gt, string ns, string dt)
 		{
-			 DAL.NhanVienDAL.insertNV(manv,tenpb,hesl,tennv,gt,ns,dt);
+			 DAL.NhanVienDAL.insertNV(manv, tennv, mapb, hesl, gt, ns, dt);
 		}
 
 		public static void deleteNV(string manv)
@@ -25,9 +25,9 @@ namespace BLL
 			DAL.NhanVienDAL.deleteNV(manv);
 		}
 
-		public static void updateNV(string manv, string tennv, string tenpb, string hesl, string gt, string ns, string dt)
+		public static void updateNV(string manv, string tennv, string mapb, string hesl, string gt, string ns, string dt)
 		{
-			DAL.NhanVienDAL.updateNV(manv, tenpb, hesl, tennv, gt, ns, dt);
+			DAL.NhanVienDAL.updateNV(manv, tennv, mapb, hesl, gt, ns, dt);
 		}
 	}
 

@@ -24,7 +24,7 @@ namespace qlns
 			dgvPhongBan.DataSource = dsPhongBan;
 
 			List<PhongBanDTO> dscboPhongBan = BLL.PhongBanBLL.LoadcboPB();
-			cboPhongBan.DisplayMember = "TenPB";
+			cboPhongBan.DisplayMember = "MaPB";
 			cboPhongBan.DataSource = dscboPhongBan;
 		}
 	}
