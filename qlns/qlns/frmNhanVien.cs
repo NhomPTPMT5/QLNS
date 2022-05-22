@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 using BLL;
 using DTO;
 
@@ -21,10 +22,6 @@ namespace qlns
 		
 		//NhanVienBLL nvbll = new NhanVienBLL();
 
-		private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-		{
-
-		}
 
 		//public void loadcbo()
 		//{
@@ -102,5 +99,35 @@ namespace qlns
 			List<NhanVienDTO> dsNhanVien = BLL.NhanVienBLL.LoadNV();
 			dgvNhanVien.DataSource = dsNhanVien;
 		}
+
+		private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e) //load data tu dgv sang txt
+		{
+			string gt;
+			if (e.RowIndex >= 0)
+			{
+				DataGridViewRow r = this.dgvNhanVien.Rows[e.RowIndex];
+				txtMaNV.Text = r.Cells[0].Value.ToString();
+				txtTenNV.Text = r.Cells[1].Value.ToString();
+				cboPhongBan.Text = r.Cells[2].Value.ToString();
+				txtHeSL.Text = r.Cells[3].Value.ToString();
+				gt =  r.Cells[4].Value.ToString();
+				if (gt == "Nam")
+					rdNam.Checked = true;
+				if (gt == "Nữ")
+					rdNu.Checked = true;
+				//DateTime dt = DateTime.ParseExact(dgvNhanVien.CurrentCell.Value.ToString(), "dd-MM-yyyy", CultureInfo.InvariantCulture);
+				//txtNS.Value = dt;
+				txtSDT.Text = r.Cells[6].Value.ToString();
+			}
+		}
+
+		private void dgvNhanVien_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e) 
+		{
+			//truyen data dgv vao datetimepicker
+			DateTime dt = DateTime.ParseExact(dgvNhanVien.CurrentRow.Cells[5].Value.ToString(), "dd-MM-yyyy", CultureInfo.InvariantCulture);
+			txtNS.Value = dt;
+		}
+
+		
 	}
 }

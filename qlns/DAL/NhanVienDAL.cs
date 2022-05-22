@@ -25,7 +25,7 @@ namespace DAL
 			{
 				var nhanviens = from nv in qlns.NhanViens
 								select nv;
-				foreach (var row in nhanviens)
+				foreach (var row in nhanviens)					//gan du lieu vao de tra ve danh sach nhan vien
 				{
 					NhanVienDTO nvdto = new NhanVienDTO();
 					nvdto.Manhanvien = row.MaNhanVien;
