@@ -19,8 +19,8 @@ namespace qlns
 		{
 			InitializeComponent();
 		}
-		
-		//NhanVienBLL nvbll = new NhanVienBLL();
+
+		NhanVienBLL nvbll = new NhanVienBLL();
 
 
 		//public void loadcbo()
@@ -30,8 +30,8 @@ namespace qlns
 
 		private void frmNhanVien_Load(object sender, EventArgs e)
 		{
-			//dgvNhanVien.DataSource = nvbll.LoadNV();
-
+			//	dgvNhanVien.DataSource = nvbll.LoadNV();
+			txtMaNV.Focus();
 			List<NhanVienDTO> dsNhanVien = BLL.NhanVienBLL.LoadNV();
 			dgvNhanVien.DataSource = dsNhanVien;
 
@@ -61,25 +61,26 @@ namespace qlns
 			}
 			string ns = txtNS.Text;
 			string dt = txtSDT.Text;
-			BLL.NhanVienBLL.insertNV(manv, tennv, mapb, hesl, gt, ns, dt);
-			List<NhanVienDTO> dsNhanVien = BLL.NhanVienBLL.LoadNV();
-			dgvNhanVien.DataSource = dsNhanVien;
+			//BLL.NhanVienBLL.insertNV(manv, tennv, mapb, hesl, gt, ns, dt);
+		    BLL.NhanVienBLL.insertNV(manv, tennv, mapb, hesl, gt, ns, dt);
+			//List<NhanVienDTO> dsNhanVien = BLL.NhanVienBLL.LoadNV();
+			dgvNhanVien.DataSource = NhanVienBLL.LoadNV();/*dsNhanVien*/;
 		}
 
 		private void btnXoa_Click(object sender, EventArgs e)
 		{
 			string manv = txtMaNV.Text;
 			BLL.NhanVienBLL.deleteNV(manv);
-			List<NhanVienDTO> dsNhanVien = BLL.NhanVienBLL.LoadNV();
-			dgvNhanVien.DataSource = dsNhanVien;
+			//List<NhanVienDTO> dsNhanVien = BLL.NhanVienBLL.LoadNV();
+			//dgvNhanVien.DataSource = dsNhanVien;
+			dgvNhanVien.DataSource = BLL.NhanVienBLL.LoadNV();
 
 		}
-		//string idNV;
-		//int id;
+		
 		private void btnSua_Click(object sender, EventArgs e)
 		{
-			
-		
+
+
 			string manv = txtMaNV.Text;
 			string tennv = txtTenNV.Text;
 			string mapb = cboPhongBan.Text;
@@ -96,8 +97,9 @@ namespace qlns
 			string ns = txtNS.Text;
 			string dt = txtSDT.Text;
 			BLL.NhanVienBLL.updateNV(manv, tennv, mapb, hesl, gt, ns, dt);
-			List<NhanVienDTO> dsNhanVien = BLL.NhanVienBLL.LoadNV();
-			dgvNhanVien.DataSource = dsNhanVien;
+			//List<NhanVienDTO> dsNhanVien = BLL.NhanVienBLL.LoadNV();
+			//dgvNhanVien.DataSource = dsNhanVien;
+			dgvNhanVien.DataSource = BLL.NhanVienBLL.LoadNV();
 		}
 
 		private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e) //load data tu dgv sang txt

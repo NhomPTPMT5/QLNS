@@ -38,7 +38,7 @@
 			this.btnTimKiem = new System.Windows.Forms.Button();
 			this.btnXoa = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
-			this.txtMaPB = new System.Windows.Forms.TextBox();
+			this.txtTenPB = new System.Windows.Forms.TextBox();
 			this.dgvPhongBan = new System.Windows.Forms.DataGridView();
 			this.MaPB = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,7 +68,7 @@
 			this.groupBox2.Controls.Add(this.btnTimKiem);
 			this.groupBox2.Controls.Add(this.btnXoa);
 			this.groupBox2.Controls.Add(this.label1);
-			this.groupBox2.Controls.Add(this.txtMaPB);
+			this.groupBox2.Controls.Add(this.txtTenPB);
 			this.groupBox2.Location = new System.Drawing.Point(671, 19);
 			this.groupBox2.Name = "groupBox2";
 			this.groupBox2.Size = new System.Drawing.Size(232, 354);
@@ -115,6 +115,7 @@
 			this.btnThem.TabIndex = 17;
 			this.btnThem.Text = "Thêm";
 			this.btnThem.UseVisualStyleBackColor = true;
+			this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
 			// 
 			// btnSua
 			// 
@@ -124,6 +125,7 @@
 			this.btnSua.TabIndex = 16;
 			this.btnSua.Text = "Sửa";
 			this.btnSua.UseVisualStyleBackColor = true;
+			this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
 			// 
 			// btnTimKiem
 			// 
@@ -142,6 +144,7 @@
 			this.btnXoa.TabIndex = 14;
 			this.btnXoa.Text = "Xóa";
 			this.btnXoa.UseVisualStyleBackColor = true;
+			this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
 			// 
 			// label1
 			// 
@@ -152,12 +155,12 @@
 			this.label1.TabIndex = 10;
 			this.label1.Text = "Mã PB:";
 			// 
-			// txtMaPB
+			// txtTenPB
 			// 
-			this.txtMaPB.Location = new System.Drawing.Point(75, 188);
-			this.txtMaPB.Name = "txtMaPB";
-			this.txtMaPB.Size = new System.Drawing.Size(131, 20);
-			this.txtMaPB.TabIndex = 6;
+			this.txtTenPB.Location = new System.Drawing.Point(75, 188);
+			this.txtTenPB.Name = "txtTenPB";
+			this.txtTenPB.Size = new System.Drawing.Size(131, 20);
+			this.txtTenPB.TabIndex = 6;
 			// 
 			// dgvPhongBan
 			// 
@@ -175,6 +178,7 @@
 			this.dgvPhongBan.ReadOnly = true;
 			this.dgvPhongBan.Size = new System.Drawing.Size(659, 348);
 			this.dgvPhongBan.TabIndex = 5;
+			this.dgvPhongBan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhongBan_CellClick);
 			// 
 			// MaPB
 			// 
@@ -222,7 +226,7 @@
 		private System.Windows.Forms.Button btnTimKiem;
 		private System.Windows.Forms.Button btnXoa;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.TextBox txtMaPB;
+		private System.Windows.Forms.TextBox txtTenPB;
 		private System.Windows.Forms.DataGridView dgvPhongBan;
 		private System.Windows.Forms.DataGridViewTextBoxColumn MaPB;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column1;

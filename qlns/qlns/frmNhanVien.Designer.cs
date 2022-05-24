@@ -331,7 +331,7 @@
 			this.btnXoa.Text = "Xóa";
 			this.btnXoa.UseVisualStyleBackColor = true;
 			this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-			// 
+			//// 
 			// txtHeSL
 			// 
 			this.txtHeSL.Location = new System.Drawing.Point(73, 183);
