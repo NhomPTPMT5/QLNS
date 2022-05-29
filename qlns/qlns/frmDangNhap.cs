@@ -7,15 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using DTO;
+using BLL;
 namespace qlns
 {
 	public partial class frmDangNhap : Form
 	{
-		public frmDangNhap()
-		{
-			InitializeComponent();
-		}
 
 		private void btnThoat_Click(object sender, EventArgs e)
 		{
@@ -24,5 +21,11 @@ namespace qlns
 			if (h == DialogResult.OK)
 				Application.Exit();
 		}
+
+		private void frmDangNhap_Load(object sender, EventArgs e)
+		{
+
+		}
 	}
+
 }
