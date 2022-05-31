@@ -72,6 +72,7 @@
       <Association Name="NhanVien_ctChucVu" Member="ctChucVus" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="ctChucVu" />
       <Association Name="NhanVien_PhuCap" Member="PhuCaps" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="PhuCap" />
       <Association Name="NhanVien_ThuongPhat" Member="ThuongPhats" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="ThuongPhat" />
+      <Association Name="NhanVien_Taikhoan" Member="Taikhoans" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="Taikhoan" />
       <Association Name="Luong_NhanVien" Member="Luong" ThisKey="HeSoLuong" OtherKey="HeSoLuong" Type="Luong" IsForeignKey="true" />
       <Association Name="PhongBan_NhanVien" Member="PhongBan" ThisKey="MaPB" OtherKey="MaPB" Type="PhongBan" IsForeignKey="true" />
     </Type>
@@ -102,6 +103,15 @@
       <Column Name="LyDo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="Ngay" Type="System.String" DbType="Char(50)" CanBeNull="true" />
       <Association Name="NhanVien_ThuongPhat" Member="NhanVien" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="NhanVien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Taikhoan" Member="Taikhoans">
+    <Type Name="Taikhoan">
+      <Column Name="MaNhanVien" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="TenDangNhap" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MatKhau" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TenQuyenHan" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="NhanVien_Taikhoan" Member="NhanVien" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="NhanVien" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

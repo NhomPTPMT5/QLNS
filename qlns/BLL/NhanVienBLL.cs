@@ -37,17 +37,22 @@ namespace BLL
 		{
 			using (QLNSDataContext qlns = new QLNSDataContext())
 			{
-				NhanVien nv = new NhanVien();
-				nv.MaNhanVien = manv;
-				nv.TenNV = tennv;
-				nv.MaPB = mapb;
-				nv.HeSoLuong = hesl;
-				nv.GioiTinh = gt;
-				nv.NgaySinh = ns;
-				nv.DienThoai = dt;
+				
+				
+					NhanVien nv = new NhanVien();
+					nv.MaNhanVien = manv;
+					nv.TenNV = tennv;
+					nv.MaPB = mapb;
+					nv.HeSoLuong = hesl;
+					nv.GioiTinh = gt;
+					nv.NgaySinh = ns;
+					nv.DienThoai = dt;
 
-				qlns.NhanViens.InsertOnSubmit(nv);
-				qlns.SubmitChanges();
+					qlns.NhanViens.InsertOnSubmit(nv);
+					qlns.SubmitChanges();
+					
+				
+				
 
 				//var nhanviens = from nv1 in qlns.NhanViens
 				//				select nv1;
