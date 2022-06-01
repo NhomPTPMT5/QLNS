@@ -22,16 +22,14 @@ namespace qlns
 		}
 
 		NhanVienBLL nvbll = new NhanVienBLL();
+		TaiKhoanBLL tk = new TaiKhoanBLL();
 
+		
 
-		//public void loadcbo()
-		//{
-		//	List<ComboBox> lis
-		//}
+		
 		
 		private void frmNhanVien_Load(object sender, EventArgs e)
 		{
-			//	dgvNhanVien.DataSource = nvbll.LoadNV();
 			txtMaNV.Focus();
 			List<NhanVienDTO> dsNhanVien = BLL.NhanVienBLL.LoadNV();
 			dgvNhanVien.DataSource = dsNhanVien;
@@ -40,19 +38,18 @@ namespace qlns
 			List<PhongBanDTO> dsPhongBan = BLL.PhongBanBLL.LoadcboPB();
 			cboPhongBan.DisplayMember = "MaPB";
 			cboPhongBan.DataSource = dsPhongBan;
-			
+
+			btnThem.Enabled = false;
+			btnXoa.Enabled = false;
+			btnSua.Enabled = false;
+
 			if (TaiKhoanBLL.Quyen() == true)
 			{
 				btnThem.Enabled = true;
 				btnXoa.Enabled = true;
 				btnSua.Enabled = true;
 			}
-			else 
-			{
-				btnThem.Enabled = false;
-				btnXoa.Enabled = false;
-				btnSua.Enabled = false;
-			}
+
 
 
 		}

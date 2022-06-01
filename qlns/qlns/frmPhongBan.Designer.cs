@@ -199,11 +199,12 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.Color.LightSkyBlue;
+			this.BackColor = System.Drawing.Color.LightSteelBlue;
 			this.ClientSize = new System.Drawing.Size(933, 397);
 			this.Controls.Add(this.gbNhanVien);
+			this.ForeColor = System.Drawing.SystemColors.ControlText;
 			this.Name = "frmPhongBan";
-			this.Text = "PhongBan";
+			this.Text = "Phong ban";
 			this.Load += new System.EventHandler(this.frmPhongBan_Load);
 			this.gbNhanVien.ResumeLayout(false);
 			this.groupBox2.ResumeLayout(false);

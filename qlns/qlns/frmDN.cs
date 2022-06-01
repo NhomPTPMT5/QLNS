@@ -18,23 +18,42 @@ namespace qlns
 			InitializeComponent();
 		}
 
-		
-
+		//string quyen;
+		TaiKhoanBLL tk = new TaiKhoanBLL();
 		private void btnLogin_Click(object sender, EventArgs e)
 		{
 			string tendn = txtTK.Text;
 			string mk = txtMK.Text;
+
 			if (TaiKhoanBLL.KTTK(tendn, mk) == true)
 			{
+				MessageBox.Show("Chào mừng User đăng nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				frmMain f = new frmMain();
+				//frmNhanVien f = new frmNhanVien();
 				f.Show();
-				MessageBox.Show("Đăng nhập thành công");
 				this.Hide();
+				//if (TaiKhoanBLL.Quyen() == true)
+				//{
+				//	MessageBox.Show("Chào mừng Admin đăng nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				//	frmMain f = new frmMain();
+				//	//frmNhanVien f = new frmNhanVien();
+				//	f.Show();
+				//	this.Hide();
+				//}
+				//if (TaiKhoanBLL.Quyen() == false)
+				////else
+				//{
+				//	MessageBox.Show("Chào mừng User đăng nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				//	frmMain f = new frmMain();
+				//	//frmNhanVien f = new frmNhanVien();
+				//	f.Show();
+				//	this.Hide();
+				//}				
 			}
-			else
+			else if (TaiKhoanBLL.KTTK(tendn, mk) == false)
+			{
 				MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác !");
-
-			
+			}
 		}
 
 		private void txtTK_Enter(object sender, EventArgs e)
@@ -54,10 +73,10 @@ namespace qlns
 			}
 		}
 
-		private void frmDN_Load(object sender, EventArgs e)
-		{
-			txtTK.Focus();
-		}
+		//private void frmDN_Load(object sender, EventArgs e)
+		//{
+		//	txtTK.Focus();
+		//}
 
 		private void btnThoat_Click(object sender, EventArgs e)
 		{
@@ -69,19 +88,14 @@ namespace qlns
 
 		private void chkHienMK_CheckedChanged(object sender, EventArgs e)
 		{
-			if (chkHienMK.Checked == true)
+			if (chkHienMK.Checked)
 			{
-				txtMK.Show();
+				txtMK.PasswordChar = (char)0;
 			}
-		}
-
-		private void chkHienMK_Click(object sender, EventArgs e)
-		{
-			//if()
-			//if (txtMK.PasswordChar == '*')
-			//{
-			//	txtMK.PasswordChar = '\0';
-			//}
-		}
+			else
+			{
+				txtMK.PasswordChar = '*';
+			}
+		}	
 	}
 }

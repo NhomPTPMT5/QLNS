@@ -83,7 +83,7 @@
 			this.btnThoat.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
 			this.btnThoat.Size = new System.Drawing.Size(167, 47);
 			this.btnThoat.TabIndex = 7;
-			this.btnThoat.Text = "Thoát ";
+			this.btnThoat.Text = "Đăng xuất";
 			this.btnThoat.UseMnemonic = false;
 			this.btnThoat.UseVisualStyleBackColor = true;
 			this.btnThoat.Click += new System.EventHandler(this.ibtnThoat_Click);

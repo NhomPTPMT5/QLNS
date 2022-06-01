@@ -155,7 +155,6 @@
 			this.chkHienMK.Text = "Hiện mật khẩu";
 			this.chkHienMK.UseVisualStyleBackColor = true;
 			this.chkHienMK.CheckedChanged += new System.EventHandler(this.chkHienMK_CheckedChanged);
-			this.chkHienMK.Click += new System.EventHandler(this.chkHienMK_Click);
 			// 
 			// panel4
 			// 
@@ -223,8 +222,8 @@
 			this.Controls.Add(this.pictureBox3);
 			this.Controls.Add(this.btnThoat);
 			this.Name = "frmDN";
-			this.Text = "frmDN";
-			this.Load += new System.EventHandler(this.frmDN_Load);
+			//this.Text = "frmDN";
+			//this.Load += new System.EventHandler(this.frmDN_Load);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

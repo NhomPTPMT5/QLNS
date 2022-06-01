@@ -23,16 +23,7 @@ namespace BLL
 		//		return dsTaiKhoan;
 		//	}
 		//}
-		public static bool Quyen()
-		{
-			QLNSDataContext qlns = new QLNSDataContext();
-			var taikhoans = from tk in qlns.Taikhoans
-							select tk.TenQuyenHan;
-			if (taikhoans.Equals("true"))
-				return true;
-			else
-				return false;
-		}
+		
 		//public TaiKhoanBLL(string tendn, string mk, string quyen)
 		//{
 		//	using (QLNSDataContext qlns = new QLNSDataContext())
@@ -44,13 +35,14 @@ namespace BLL
 		//	}
 		//}
 
+		
 
 		public static bool KTTK(string tendn, string mk)
 		{
 			using (QLNSDataContext qlns = new QLNSDataContext())
 			{
 				var taikhoans = from tk in qlns.Taikhoans
-								where tk.TenDangNhap == tendn && tk.MatKhau == mk
+								where tk.TenDangNhap == tendn && tk.MatKhau == mk 
 								select tk;
 				if (taikhoans.Any())		
 					return true;				
@@ -63,5 +55,31 @@ namespace BLL
 		{
 			return DAL.TKDAL.LoadTK();
 		}
+
+		public static bool Quyen()
+		{
+
+			bool q = true;
+			QLNSDataContext qlns = new QLNSDataContext();
+			var taikhoans = from tk in qlns.Taikhoans
+							select new { tk.TenQuyenHan };
+			
+			foreach (var row in taikhoans)
+			{
+				TaiKhoanDTO tkdto = new TaiKhoanDTO();
+				tkdto.Quyen = row.TenQuyenHan;
+				if (tkdto.Quyen.Equals("us"))
+				{
+					q = false;
+				}								
+			}
+			return q;
+
+		}
+
+		//public static bool Quyen()
+		//{
+		//  return DAL.TKDAL.Quyen();
+		//}
 	}
 }

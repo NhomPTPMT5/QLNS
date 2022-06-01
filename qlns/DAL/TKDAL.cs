@@ -24,9 +24,27 @@ namespace DAL
 					tkdto.Quyen = row.TenQuyenHan;
 					dsTaiKhoan.Add(tkdto);
 				}
-
 				return dsTaiKhoan;
 			}
+		}
+
+		
+		public static bool Quyen()
+		{
+			bool q = false;
+			//bool q = false;
+			QLNSDataContext qlns = new QLNSDataContext();
+			var taikhoans = from tk in qlns.Taikhoans
+							select new { tk.TenQuyenHan };
+			foreach (var row in taikhoans)
+			{
+				if(row.TenQuyenHan.Equals("ad"))
+					q = true;
+				else if(row.TenQuyenHan.Equals("us"))
+					q = false;
+			}
+			return q;
+
 		}
 	}
 }

@@ -79,10 +79,9 @@ namespace qlns
 
 		private void ibtnThoat_Click(object sender, EventArgs e)
 		{
-			DialogResult h = MessageBox.Show
-				("Bạn có chắc muốn thoát không?", "Thông báo !", MessageBoxButtons.OKCancel);
-			if (h == DialogResult.OK)
-				Application.Exit();
+			this.Hide();
+			frmDN fm = new frmDN();
+			fm.Show();
 		}
 
 		private void btnHome_Click(object sender, EventArgs e)
@@ -97,8 +96,8 @@ namespace qlns
 		
 		private void frmMain_Load(object sender, EventArgs e)
 		{
+			TaiKhoanBLL.Quyen();
 			
-		
 			
 		
 		}
