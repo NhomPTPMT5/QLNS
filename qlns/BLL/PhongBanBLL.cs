@@ -29,10 +29,7 @@ namespace BLL
 				pb.MaPB = mapb;
 				pb.TenPB = tenpb;
 				qlns.PhongBans.InsertOnSubmit(pb);
-				qlns.SubmitChanges();
-
-							
-
+				qlns.SubmitChanges();					
 			}
 		}
 

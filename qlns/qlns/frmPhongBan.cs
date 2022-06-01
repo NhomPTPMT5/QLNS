@@ -26,6 +26,21 @@ namespace qlns
 			List<PhongBanDTO> dscboPhongBan = BLL.PhongBanBLL.LoadcboPB();
 			cboPhongBan.DisplayMember = "MaPB";
 			cboPhongBan.DataSource = dscboPhongBan;
+
+			//TaiKhoanBLL tkdto = new TaiKhoanBLL();
+			//if (tkdto. == "true")
+			//{
+			//	btnThem.Enabled = true;
+			//	btnXoa.Enabled = true;
+			//	btnSua.Enabled = true;
+			//}
+			//if(tkdto.Quyen == "false")
+			//{
+			//	btnThem.Enabled = false;
+			//	btnXoa.Enabled = false;
+			//	btnSua.Enabled = false;
+				
+			//}
 		}
 
 		private void btnThem_Click(object sender, EventArgs e)

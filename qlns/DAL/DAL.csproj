@@ -55,6 +55,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLNS.dbml</DependentUpon>
     </Compile>
+    <Compile Include="TKDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DTO\DTO.csproj">

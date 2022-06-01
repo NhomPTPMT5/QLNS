@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
+
 using BLL;
 using DTO;
 
@@ -27,7 +28,7 @@ namespace qlns
 		//{
 		//	List<ComboBox> lis
 		//}
-
+		
 		private void frmNhanVien_Load(object sender, EventArgs e)
 		{
 			//	dgvNhanVien.DataSource = nvbll.LoadNV();
@@ -40,66 +41,103 @@ namespace qlns
 			cboPhongBan.DisplayMember = "MaPB";
 			cboPhongBan.DataSource = dsPhongBan;
 			
+			if (TaiKhoanBLL.Quyen() == true)
+			{
+				btnThem.Enabled = true;
+				btnXoa.Enabled = true;
+				btnSua.Enabled = true;
+			}
+			else 
+			{
+				btnThem.Enabled = false;
+				btnXoa.Enabled = false;
+				btnSua.Enabled = false;
+			}
+
+
 		}
 
 
 
 		private void btnThem_Click(object sender, EventArgs e)
 		{
-			string manv = txtMaNV.Text;
-			string tennv = txtTenNV.Text;
-			string mapb = cboPhongBan.Text;
-			string hesl = txtHeSL.Text;
-			string gt = "";
-			if (rdNam.Checked == true)
-			{
-				gt = "Nam";
+			try  {
+				string manv = txtMaNV.Text;
+				string tennv = txtTenNV.Text;
+				string mapb = cboPhongBan.Text;
+				string hesl = txtHeSL.Text;
+				string gt = "";
+				if (rdNam.Checked == true)
+				{
+					gt = "Nam";
+				}
+				if (rdNu.Checked == true)
+				{
+					gt = "Nữ";
+				}
+				string ns = txtNS.Text;
+				string dt = txtSDT.Text;
+				//BLL.NhanVienBLL.insertNV(manv, tennv, mapb, hesl, gt, ns, dt);
+				BLL.NhanVienBLL.insertNV(manv, tennv, mapb, hesl, gt, ns, dt);
+				//List<NhanVienDTO> dsNhanVien = BLL.NhanVienBLL.LoadNV();
+				dgvNhanVien.DataSource = NhanVienBLL.LoadNV();/*dsNhanVien*/;
+				MessageBox.Show("thêm thành công");
 			}
-			if (rdNu.Checked == true)
+			catch
 			{
-				gt = "Nữ";
+				MessageBox.Show("không thành công");
 			}
-			string ns = txtNS.Text;
-			string dt = txtSDT.Text;
-			//BLL.NhanVienBLL.insertNV(manv, tennv, mapb, hesl, gt, ns, dt);
-		    BLL.NhanVienBLL.insertNV(manv, tennv, mapb, hesl, gt, ns, dt);
-			//List<NhanVienDTO> dsNhanVien = BLL.NhanVienBLL.LoadNV();
-			dgvNhanVien.DataSource = NhanVienBLL.LoadNV();/*dsNhanVien*/;
+			
 		}
 
 		private void btnXoa_Click(object sender, EventArgs e)
 		{
-			string manv = txtMaNV.Text;
-			BLL.NhanVienBLL.deleteNV(manv);
-			//List<NhanVienDTO> dsNhanVien = BLL.NhanVienBLL.LoadNV();
-			//dgvNhanVien.DataSource = dsNhanVien;
-			dgvNhanVien.DataSource = BLL.NhanVienBLL.LoadNV();
+			try {
+				string manv = txtMaNV.Text;
+				BLL.NhanVienBLL.deleteNV(manv);
+				//List<NhanVienDTO> dsNhanVien = BLL.NhanVienBLL.LoadNV();
+				//dgvNhanVien.DataSource = dsNhanVien;
+				dgvNhanVien.DataSource = BLL.NhanVienBLL.LoadNV();
+				MessageBox.Show("đã xóa");
+			}
+			catch
+			{
+				MessageBox.Show("không thành công");
+			}
+			
+			
 
 		}
 		
 		private void btnSua_Click(object sender, EventArgs e)
 		{
 
-
-			string manv = txtMaNV.Text;
-			string tennv = txtTenNV.Text;
-			string mapb = cboPhongBan.Text;
-			string hesl = txtHeSL.Text;
-			string gt = "";
-			if (rdNam.Checked == true)
+			try {
+				string manv = txtMaNV.Text;
+				string tennv = txtTenNV.Text;
+				string mapb = cboPhongBan.Text;
+				string hesl = txtHeSL.Text;
+				string gt = "";
+				if (rdNam.Checked == true)
+				{
+					gt = "Nam";
+				}
+				if (rdNu.Checked == true)
+				{
+					gt = "Nữ";
+				}
+				string ns = txtNS.Text;
+				string dt = txtSDT.Text;
+				BLL.NhanVienBLL.updateNV(manv, tennv, mapb, hesl, gt, ns, dt);
+				//List<NhanVienDTO> dsNhanVien = BLL.NhanVienBLL.LoadNV();
+				//dgvNhanVien.DataSource = dsNhanVien;
+				dgvNhanVien.DataSource = BLL.NhanVienBLL.LoadNV();
+				MessageBox.Show("đã sửa");
+			} catch
 			{
-				gt = "Nam";
+				MessageBox.Show("không thành công");
 			}
-			if (rdNu.Checked == true)
-			{
-				gt = "Nữ";
-			}
-			string ns = txtNS.Text;
-			string dt = txtSDT.Text;
-			BLL.NhanVienBLL.updateNV(manv, tennv, mapb, hesl, gt, ns, dt);
-			//List<NhanVienDTO> dsNhanVien = BLL.NhanVienBLL.LoadNV();
-			//dgvNhanVien.DataSource = dsNhanVien;
-			dgvNhanVien.DataSource = BLL.NhanVienBLL.LoadNV();
+			
 		}
 
 		private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e) //load data tu dgv sang txt

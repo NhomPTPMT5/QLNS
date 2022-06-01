@@ -37,7 +37,7 @@
 			// button1
 			// 
 			this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.button1.Location = new System.Drawing.Point(346, 121);
+			this.button1.Location = new System.Drawing.Point(479, 94);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(75, 23);
 			this.button1.TabIndex = 0;
@@ -47,7 +47,7 @@
 			// textBox1
 			// 
 			this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.textBox1.Location = new System.Drawing.Point(181, 121);
+			this.textBox1.Location = new System.Drawing.Point(314, 94);
 			this.textBox1.Name = "textBox1";
 			this.textBox1.Size = new System.Drawing.Size(100, 20);
 			this.textBox1.TabIndex = 1;
@@ -56,7 +56,7 @@
 			// 
 			this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Location = new System.Drawing.Point(181, 168);
+			this.dataGridView1.Location = new System.Drawing.Point(314, 141);
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.Size = new System.Drawing.Size(240, 150);
 			this.dataGridView1.TabIndex = 2;
@@ -66,7 +66,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.LightSteelBlue;
-			this.ClientSize = new System.Drawing.Size(667, 450);
+			this.ClientSize = new System.Drawing.Size(933, 397);
 			this.Controls.Add(this.dataGridView1);
 			this.Controls.Add(this.textBox1);
 			this.Controls.Add(this.button1);

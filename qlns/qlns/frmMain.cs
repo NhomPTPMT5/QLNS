@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
-
+using DTO;
 namespace qlns
 {
 	public partial class frmMain : Form
@@ -93,9 +93,13 @@ namespace qlns
 				label1.Text = "Home";
 			}
 		}
-
+		
+		
 		private void frmMain_Load(object sender, EventArgs e)
 		{
+			
+		
+			
 		
 		}
 	}
