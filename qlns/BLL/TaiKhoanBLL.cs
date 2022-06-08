@@ -10,9 +10,7 @@ namespace BLL
 	public class TaiKhoanBLL
 	{
 		//public static string quyen;
-		public void DangNhap(string TenDN, string MK)
-		{
-		}
+
 		//public static List<TaiKhoanDTO> LoadTK()
 		//{
 		//	List<TaiKhoanDTO> dsTaiKhoan = new List<TaiKhoanDTO>();
@@ -23,7 +21,7 @@ namespace BLL
 		//		return dsTaiKhoan;
 		//	}
 		//}
-		
+
 		//public TaiKhoanBLL(string tendn, string mk, string quyen)
 		//{
 		//	using (QLNSDataContext qlns = new QLNSDataContext())
@@ -34,48 +32,107 @@ namespace BLL
 		//		tkdto.Quyen = quyen;
 		//	}
 		//}
-
 		
-
-		public static bool KTTK(string tendn, string mk)
+		public static bool KTQ()
 		{
 			using (QLNSDataContext qlns = new QLNSDataContext())
 			{
-				var taikhoans = from tk in qlns.Taikhoans
-								where tk.TenDangNhap == tendn && tk.MatKhau == mk 
-								select tk;
-				if (taikhoans.Any())		
-					return true;				
-				else
-					return false;
+				bool q = false;
+				var taikhoans = from tk1 in qlns.Taikhoans
+								select new { tk1.TenQuyenHan };
+				if (taikhoans.Equals("admin"))
+					q = true;
+				return q;
+
 			}
 		}
 
-		public static List<TaiKhoanDTO> LoadTK(string manv, string tendn, string mk, string quyen)
+		public static bool KTTK(string tendn, string mk, string q)//thừa nè
+		{
+			bool result = false;
+			using (QLNSDataContext qlns = new QLNSDataContext())
+			{
+				string s;
+				var taikhoans = from tk in qlns.Taikhoans
+								where tk.TenDangNhap == tendn && tk.MatKhau == mk && tk.TenQuyenHan == q
+								select tk;//chỗ này chỉ cần kiểm tra id và mk đúng thì trả về quyền hạn thôi
+				taikhoans.ToList().ForEach(o =>
+				{
+					s = o.TenQuyenHan;
+					if (s.Equals("admin"))
+						result = true;
+				});
+			}
+			return result;
+		}
+
+		public static bool CheckLogin(string _username, string _pass)
+		{
+			bool result = false;
+			using (QLNSDataContext qlns = new QLNSDataContext())
+			{
+				string s;
+				var kq = from acc in qlns.Taikhoans
+						 where acc.TenDangNhap == _username && acc.MatKhau == _pass
+						 select acc;
+				if (kq.Count()>0)
+					result = true;
+			}
+			return result;
+		}
+		public static string TypeUser (string _username, string _pass)
+		{
+			string result="";
+			using (QLNSDataContext qlns = new QLNSDataContext())
+			{
+				
+				var kq = from acc in qlns.Taikhoans
+						 where acc.TenDangNhap == _username && acc.MatKhau == _pass
+						 select acc;
+				if (kq.Count() > 0)
+					kq.ToList().ForEach(o => { result = o.TenQuyenHan;});
+				
+			}
+			return result;
+		}
+		public static List<TaiKhoanDTO> LoadTK()
 		{
 			return DAL.TKDAL.LoadTK();
 		}
 
+		public static List<TaiKhoanDTO> LayQ()
+		{
+			return DAL.TKDAL.layQ();
+		}
 		public static bool Quyen()
 		{
-
-			bool q = true;
-			QLNSDataContext qlns = new QLNSDataContext();
-			var taikhoans = from tk in qlns.Taikhoans
-							select new { tk.TenQuyenHan };
-			
-			foreach (var row in taikhoans)
-			{
-				TaiKhoanDTO tkdto = new TaiKhoanDTO();
-				tkdto.Quyen = row.TenQuyenHan;
-				if (tkdto.Quyen.Equals("us"))
-				{
-					q = false;
-				}								
-			}
-			return q;
-
+			return TKDAL.Quyen();
 		}
+
+		//}
+
+		//public static bool Quyen()
+		//{
+		//  return DAL.TKDAL.Quyen();
+		//}
+
+		//public static int Quyen()
+		//{		
+		//	using (QLNSDataContext qlns = new QLNSDataContext())
+		//	{
+		//		int q = 0;
+		//		var taikhoans = from tk in qlns.Taikhoans
+		//						//where tk.QuyenHan == 1
+		//						select new { tk.QuyenHan};
+		//		foreach (var t in taikhoans)
+		//		{
+		//			if (t.QuyenHan == 1)
+		//				return q = 1;
+		//		}
+		//		return q;
+		//	}
+
+		//}
 
 		//public static bool Quyen()
 		//{

@@ -7,22 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DTO;
-using BLL;
 
 namespace qlns
 {
-	public partial class frmUser : Form
+	public partial class Form1 : Form
 	{
-		public frmUser()
+		public Form1()
 		{
 			InitializeComponent();
 		}
 
-		private void frmUser_Load(object sender, EventArgs e)
+		private void Form1_Load(object sender, EventArgs e)
 		{
-			//List<TaiKhoanDTO> dstk = BLL.TaiKhoanBLL.LayQ();
-			//dgvUser.DataSource = dstk;
+			int c = 1;
+			float d;
+
 		}
 	}
 }

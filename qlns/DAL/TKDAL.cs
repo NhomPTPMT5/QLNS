@@ -28,22 +28,46 @@ namespace DAL
 			}
 		}
 
-		
+		public static List<TaiKhoanDTO> layQ()
+		{
+
+			List<TaiKhoanDTO> dsTaiKhoan = new List<TaiKhoanDTO>();
+			using (QLNSDataContext qlns = new QLNSDataContext())
+			{
+				var taikhoans = from tk in qlns.Taikhoans
+								where tk.TenQuyenHan == "admin"
+								select new {tk.TenQuyenHan };
+				foreach (var row in taikhoans)
+				{
+					TaiKhoanDTO tkdto = new TaiKhoanDTO();				
+					tkdto.Quyen = row.TenQuyenHan;
+					dsTaiKhoan.Add(tkdto);
+				}
+				return dsTaiKhoan;
+			}
+		}
+
+
 		public static bool Quyen()
 		{
 			bool q = false;
-			//bool q = false;
 			QLNSDataContext qlns = new QLNSDataContext();
 			var taikhoans = from tk in qlns.Taikhoans
 							select new { tk.TenQuyenHan };
 			foreach (var row in taikhoans)
 			{
-				if(row.TenQuyenHan.Equals("ad"))
+				if (row.TenQuyenHan == "admin")
 					q = true;
-				else if(row.TenQuyenHan.Equals("us"))
-					q = false;
 			}
 			return q;
+			//foreach (var row in taikhoans)
+			//{
+			//	if (row.TenQuyenHan == "admin")
+			//		q = true;				
+			//}
+			//return q;
+			//TaiKhoanDTO tkdto = new TaiKhoanDTO();
+			//tkdto.Quyen = 
 
 		}
 	}

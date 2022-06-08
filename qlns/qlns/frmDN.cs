@@ -16,66 +16,98 @@ namespace qlns
 		public frmDN()
 		{
 			InitializeComponent();
+
 		}
 
 		//string quyen;
+
 		TaiKhoanBLL tk = new TaiKhoanBLL();
+
+
+
+
 		private void btnLogin_Click(object sender, EventArgs e)
 		{
 			string tendn = txtTK.Text;
 			string mk = txtMK.Text;
 
-			if (TaiKhoanBLL.KTTK(tendn, mk) == true)
+			//List<TaiKhoanDTO> dsq = BLL.TaiKhoanBLL.LayQ();
+			//if (TaiKhoanBLL.KTTK(tendn, mk) == true)
+			//{
+			//	if (TaiKhoanBLL.KTQ(q) == false)
+			//	{
+			//		MessageBox.Show("Chào mừng User đăng nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			//		frmMain f = new frmMain();
+			//		f.Show();
+			//		this.Hide();
+			//	}
+			//	else if (TaiKhoanBLL.KTQ(q) == true)
+			//	{
+			//		MessageBox.Show("Chào mừng Admin đăng nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			//		frmMain f = new frmMain();
+			//		f.Show();
+			//		this.Hide();
+			//	}
+			//}
+			//else if (TaiKhoanBLL.KTTK(tendn, mk) == false)
+			//{
+			//	MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác !");
+			//}
+
+
+			//if (TaiKhoanBLL.KTTK(tendn, mk, "user") == true)
+			//{
+			//	MessageBox.Show("Chào mừng User đăng nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			//	frmMain f = new frmMain();
+			//	f.Show();
+			//	this.Hide();
+			//}
+			//else if (TaiKhoanBLL.KTTK(tendn, mk, "admin") == true)
+			//{
+			//	MessageBox.Show("Chào mừng Admin đăng nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			//	frmMain f = new frmMain();
+			//	f.Show();
+			//	this.Hide();
+			//}
+			//else
+			//	MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác !");
+			if (TaiKhoanBLL.CheckLogin(txtTK.Text, txtMK.Text))
 			{
-				MessageBox.Show("Chào mừng User đăng nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-				frmMain f = new frmMain();
-				//frmNhanVien f = new frmNhanVien();
-				f.Show();
+				string s = TaiKhoanBLL.TypeUser(txtTK.Text, txtMK.Text);
+				MessageBox.Show($"Chào mừng {txtTK.Text}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				frmMain f = new frmMain(s);
 				this.Hide();
-				//if (TaiKhoanBLL.Quyen() == true)
-				//{
-				//	MessageBox.Show("Chào mừng Admin đăng nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-				//	frmMain f = new frmMain();
-				//	//frmNhanVien f = new frmNhanVien();
-				//	f.Show();
-				//	this.Hide();
-				//}
-				//if (TaiKhoanBLL.Quyen() == false)
-				////else
-				//{
-				//	MessageBox.Show("Chào mừng User đăng nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-				//	frmMain f = new frmMain();
-				//	//frmNhanVien f = new frmNhanVien();
-				//	f.Show();
-				//	this.Hide();
-				//}				
+				f.ShowDialog();
+				this.Activate();
+
 			}
-			else if (TaiKhoanBLL.KTTK(tendn, mk) == false)
+			else
 			{
-				MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác !");
+				MessageBox.Show($"Tài khoản hoặc mật khẩu không chính xác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 			}
+
 		}
 
 		private void txtTK_Enter(object sender, EventArgs e)
 		{
 			if (txtTK.Text == "Tên tài khoản")
 			{
-				txtTK.Text = "";							
+				txtTK.Text = "";
 			}
-			
+
 		}
 
 		private void txtMK_Enter(object sender, EventArgs e)
 		{
 			if (txtMK.Text == "Mật khẩu")
 			{
-				txtMK.Text = "";			
+				txtMK.Text = "";
 			}
 		}
 
 		//private void frmDN_Load(object sender, EventArgs e)
 		//{
-		//	txtTK.Focus();
+		//	TaiKhoanBLL.LoadTK();
 		//}
 
 		private void btnThoat_Click(object sender, EventArgs e)
@@ -96,6 +128,6 @@ namespace qlns
 			{
 				txtMK.PasswordChar = '*';
 			}
-		}	
+		}
 	}
 }

@@ -14,12 +14,16 @@ namespace qlns
 	public partial class frmMain : Form
 	{
 		public Form currentChildForm;
-		public frmMain()
+		private string type;
+		public frmMain(string _type)
 		{
 			InitializeComponent();
+			this.Type = _type;
 		}
 
 		NhanVienBLL nvbll = new NhanVienBLL();
+
+		public string Type { get => type; set => type = value; }
 
 		public void OpenChildForm(Form childFrom)
 		{
@@ -51,7 +55,7 @@ namespace qlns
 			OpenChildForm(new frmUser());
 			label1.Text = btnUser.Text;
 		}
-
+		
 		private void ibtnXoa_Click(object sender, EventArgs e)
 		{
 			OpenChildForm(new frmNhanVien());
@@ -92,14 +96,32 @@ namespace qlns
 				label1.Text = "Home";
 			}
 		}
-		
-		
+
+		private void pnTitle_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
+
 		private void frmMain_Load(object sender, EventArgs e)
 		{
-			TaiKhoanBLL.Quyen();
-			
-			
-		
+			switch (type)
+			{
+				case "admin":
+					btnNhanVien.Enabled = btnPhongBan.Enabled = true;
+					break;
+				default:
+					btnNhanVien.Enabled = btnPhongBan.Enabled = false;
+					break;
+			}
 		}
+
+
+		//private void frmMain_Load(object sender, EventArgs e)
+		//{
+		//	TaiKhoanBLL.Quyen();
+
+
+
+		//}
 	}
 }

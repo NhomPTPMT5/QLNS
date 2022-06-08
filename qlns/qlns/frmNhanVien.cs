@@ -16,18 +16,19 @@ namespace qlns
 {
 	public partial class frmNhanVien : Form
 	{
+		
 		public frmNhanVien()
 		{
 			InitializeComponent();
+			tkdto.Quyen = this.Quyen;
 		}
-
+		private string quyen;
 		NhanVienBLL nvbll = new NhanVienBLL();
 		TaiKhoanBLL tk = new TaiKhoanBLL();
+		TaiKhoanDTO tkdto = new TaiKhoanDTO();
 
-		
+		public string Quyen { get => quyen; set => quyen = value; }
 
-		
-		
 		private void frmNhanVien_Load(object sender, EventArgs e)
 		{
 			txtMaNV.Focus();
@@ -39,19 +40,33 @@ namespace qlns
 			cboPhongBan.DisplayMember = "MaPB";
 			cboPhongBan.DataSource = dsPhongBan;
 
-			btnThem.Enabled = false;
-			btnXoa.Enabled = false;
-			btnSua.Enabled = false;
-
-			if (TaiKhoanBLL.Quyen() == true)
+			//btnThem.Enabled = false;
+			//btnXoa.Enabled = false;
+			//btnSua.Enabled = false;
+			//List<TaiKhoanDTO> quyen = BLL.TaiKhoanBLL.LayQ();
+			//if (TaiKhoanBLL.Quyen() == false)
+			//{
+			//	btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = true;
+			//}
+			switch (Quyen)
 			{
-				btnThem.Enabled = true;
-				btnXoa.Enabled = true;
-				btnSua.Enabled = true;
+				case "admin":
+					btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = true;
+					break;
+				default:
+					btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = false;
+					break;
 			}
-
-
-
+			//else if (TaiKhoanBLL.LayQ().Equals("user"))
+			//	btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = false;
+			//switch (Quyen)
+			//{
+			//	case "admin":
+			//		btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = true;
+			//		break;
+			//	default:
+			//		btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = false;
+			//}
 		}
 
 

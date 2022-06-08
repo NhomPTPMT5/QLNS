@@ -39,7 +39,7 @@
 			this.pnLogo = new System.Windows.Forms.Panel();
 			this.btnHome = new System.Windows.Forms.PictureBox();
 			this.pnBody = new System.Windows.Forms.Panel();
-			this.dvgMain = new System.Windows.Forms.DataGridView();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.pnTitle = new System.Windows.Forms.Panel();
 			this.label2 = new System.Windows.Forms.Label();
@@ -47,7 +47,7 @@
 			this.pnLogo.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
 			this.pnBody.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dvgMain)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.pnTitle.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -206,7 +206,7 @@
 			// 
 			this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
 			this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
-			this.btnHome.Location = new System.Drawing.Point(12, 38);
+			this.btnHome.Location = new System.Drawing.Point(12, 37);
 			this.btnHome.Name = "btnHome";
 			this.btnHome.Size = new System.Drawing.Size(139, 51);
 			this.btnHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -217,22 +217,24 @@
 			// pnBody
 			// 
 			this.pnBody.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-			this.pnBody.Controls.Add(this.dvgMain);
+			this.pnBody.Controls.Add(this.pictureBox1);
 			this.pnBody.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.pnBody.Location = new System.Drawing.Point(167, 57);
 			this.pnBody.Name = "pnBody";
 			this.pnBody.Size = new System.Drawing.Size(949, 436);
 			this.pnBody.TabIndex = 2;
 			// 
-			// dvgMain
+			// pictureBox1
 			// 
-			this.dvgMain.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.dvgMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dvgMain.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.dvgMain.Location = new System.Drawing.Point(0, 0);
-			this.dvgMain.Name = "dvgMain";
-			this.dvgMain.Size = new System.Drawing.Size(949, 436);
-			this.dvgMain.TabIndex = 0;
+			this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+			this.pictureBox1.InitialImage = null;
+			this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(949, 436);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox1.TabIndex = 0;
+			this.pictureBox1.TabStop = false;
 			// 
 			// label1
 			// 
@@ -255,6 +257,7 @@
 			this.pnTitle.Name = "pnTitle";
 			this.pnTitle.Size = new System.Drawing.Size(949, 57);
 			this.pnTitle.TabIndex = 1;
+			this.pnTitle.Paint += new System.Windows.Forms.PaintEventHandler(this.pnTitle_Paint);
 			// 
 			// label2
 			// 
@@ -283,7 +286,7 @@
 			this.pnLogo.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();
 			this.pnBody.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.dvgMain)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.pnTitle.ResumeLayout(false);
 			this.pnTitle.PerformLayout();
 			this.ResumeLayout(false);
@@ -305,6 +308,6 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Panel pnTitle;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.DataGridView dvgMain;
+		private System.Windows.Forms.PictureBox pictureBox1;
 	}
 }
