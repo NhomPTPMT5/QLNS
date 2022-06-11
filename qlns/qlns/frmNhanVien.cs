@@ -20,12 +20,13 @@ namespace qlns
 		public frmNhanVien()
 		{
 			InitializeComponent();
-			tkdto.Quyen = this.Quyen;
+			//tkdto.Quyen = this.Quyen;
+			//this.Quyen = _quyen;
 		}
 		private string quyen;
 		NhanVienBLL nvbll = new NhanVienBLL();
 		TaiKhoanBLL tk = new TaiKhoanBLL();
-		TaiKhoanDTO tkdto = new TaiKhoanDTO();
+		//TaiKhoanDTO tkdto = new TaiKhoanDTO();
 
 		public string Quyen { get => quyen; set => quyen = value; }
 
@@ -48,15 +49,15 @@ namespace qlns
 			//{
 			//	btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = true;
 			//}
-			switch (Quyen)
-			{
-				case "admin":
-					btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = true;
-					break;
-				default:
-					btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = false;
-					break;
-			}
+			//switch (Quyen)
+			//{
+			//	case "admin":
+			//		btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = true;
+			//		break;
+			//	default:
+			//		btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = false;
+			//		break;
+			//}
 			//else if (TaiKhoanBLL.LayQ().Equals("user"))
 			//	btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = false;
 			//switch (Quyen)
@@ -89,8 +90,8 @@ namespace qlns
 				}
 				string ns = txtNS.Text;
 				string dt = txtSDT.Text;
+				NhanVienBLL.insertNV(manv, tennv, mapb, hesl, gt, ns, dt);
 				//BLL.NhanVienBLL.insertNV(manv, tennv, mapb, hesl, gt, ns, dt);
-				BLL.NhanVienBLL.insertNV(manv, tennv, mapb, hesl, gt, ns, dt);
 				//List<NhanVienDTO> dsNhanVien = BLL.NhanVienBLL.LoadNV();
 				dgvNhanVien.DataSource = NhanVienBLL.LoadNV();/*dsNhanVien*/;
 				MessageBox.Show("thêm thành công");

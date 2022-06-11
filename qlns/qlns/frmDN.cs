@@ -30,31 +30,6 @@ namespace qlns
 		{
 			string tendn = txtTK.Text;
 			string mk = txtMK.Text;
-
-			//List<TaiKhoanDTO> dsq = BLL.TaiKhoanBLL.LayQ();
-			//if (TaiKhoanBLL.KTTK(tendn, mk) == true)
-			//{
-			//	if (TaiKhoanBLL.KTQ(q) == false)
-			//	{
-			//		MessageBox.Show("Chào mừng User đăng nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-			//		frmMain f = new frmMain();
-			//		f.Show();
-			//		this.Hide();
-			//	}
-			//	else if (TaiKhoanBLL.KTQ(q) == true)
-			//	{
-			//		MessageBox.Show("Chào mừng Admin đăng nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-			//		frmMain f = new frmMain();
-			//		f.Show();
-			//		this.Hide();
-			//	}
-			//}
-			//else if (TaiKhoanBLL.KTTK(tendn, mk) == false)
-			//{
-			//	MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác !");
-			//}
-
-
 			//if (TaiKhoanBLL.KTTK(tendn, mk, "user") == true)
 			//{
 			//	MessageBox.Show("Chào mừng User đăng nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -79,13 +54,11 @@ namespace qlns
 				this.Hide();
 				f.ShowDialog();
 				this.Activate();
-
 			}
 			else
 			{
 				MessageBox.Show($"Tài khoản hoặc mật khẩu không chính xác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 			}
-
 		}
 
 		private void txtTK_Enter(object sender, EventArgs e)
@@ -94,7 +67,6 @@ namespace qlns
 			{
 				txtTK.Text = "";
 			}
-
 		}
 
 		private void txtMK_Enter(object sender, EventArgs e)

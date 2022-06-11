@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Data.Linq;
 namespace DTO
 {
 	public class TaiKhoanDTO
@@ -16,9 +16,9 @@ namespace DTO
 		public string TenDN { get => tenDN; set => tenDN = value; }
 		public string MK { get => mK; set => mK = value; }
 		public string Quyen { get => quyen; set => quyen = value; }
-		
+
 		//public TaiKhoanDTO() { }
 
-		
+
 	}
 }
