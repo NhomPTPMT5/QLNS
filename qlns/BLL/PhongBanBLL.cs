@@ -33,7 +33,7 @@ namespace BLL
 
 		public static void updatePB(string mapb, string tenpb)
 		{
-			PhongBanDAL.updatePB(mapb,tenpb);
+			PhongBanDAL.updatePB(mapb, tenpb);
 		}
 
 

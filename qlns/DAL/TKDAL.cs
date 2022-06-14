@@ -28,12 +28,13 @@ namespace DAL
 			}
 		}
 
+
 		public static bool CheckLogin(string _username, string _pass)
 		{
 			bool result = false;
 			using (QLNSDataContext qlns = new QLNSDataContext())
 			{
-				
+				//string s;
 				var kq = from acc in qlns.Taikhoans
 						 where acc.TenDangNhap == _username && acc.MatKhau == _pass
 						 select acc;
@@ -42,7 +43,6 @@ namespace DAL
 			}
 			return result;
 		}
-
 		public static string TypeUser(string _username, string _pass)
 		{
 			string result = "";

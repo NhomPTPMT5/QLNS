@@ -24,10 +24,8 @@ namespace DAL
 					nvdto.Tennv = row.TenNV;
 					nvdto.Mapb = row.MaPB;
 					nvdto.Hesoluong = row.HeSoLuong;
-
 					nvdto.Gioitinh = row.GioiTinh;
 					nvdto.Ngaysinh = row.NgaySinh;
-
 					nvdto.Dienthoai = row.DienThoai;
 					dsNhanVien.Add(nvdto);
 				}

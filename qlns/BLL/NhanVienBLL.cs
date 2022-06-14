@@ -35,7 +35,7 @@ namespace BLL
 
 		public static void insertNV(string manv, string tennv, string mapb, string hesl, string gt, string ns, string dt)
 		{
-			 NhanVienDAL.insertNV(manv, tennv, mapb, hesl, gt, ns, dt);
+			NhanVienDAL.insertNV(manv, tennv, mapb, hesl, gt, ns, dt);
 		}
 
 		public static void deleteNV(string manv)
@@ -51,5 +51,5 @@ namespace BLL
 
 	}
 
-	
+
 }
