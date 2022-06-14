@@ -29,17 +29,17 @@
 		private void InitializeComponent()
 		{
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
-			this.button3 = new System.Windows.Forms.Button();
-			this.button2 = new System.Windows.Forms.Button();
-			this.textBox4 = new System.Windows.Forms.TextBox();
-			this.textBox3 = new System.Windows.Forms.TextBox();
-			this.textBox2 = new System.Windows.Forms.TextBox();
+			this.btnXoa = new System.Windows.Forms.Button();
+			this.btnSua = new System.Windows.Forms.Button();
+			this.txtQuyen = new System.Windows.Forms.TextBox();
+			this.txtMK = new System.Windows.Forms.TextBox();
+			this.txtTK = new System.Windows.Forms.TextBox();
 			this.label4 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.button1 = new System.Windows.Forms.Button();
+			this.txtManv = new System.Windows.Forms.TextBox();
+			this.btnThem = new System.Windows.Forms.Button();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.dgvUser = new System.Windows.Forms.DataGridView();
 			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,17 +53,17 @@
 			// 
 			// groupBox2
 			// 
-			this.groupBox2.Controls.Add(this.button3);
-			this.groupBox2.Controls.Add(this.button2);
-			this.groupBox2.Controls.Add(this.textBox4);
-			this.groupBox2.Controls.Add(this.textBox3);
-			this.groupBox2.Controls.Add(this.textBox2);
+			this.groupBox2.Controls.Add(this.btnXoa);
+			this.groupBox2.Controls.Add(this.btnSua);
+			this.groupBox2.Controls.Add(this.txtQuyen);
+			this.groupBox2.Controls.Add(this.txtMK);
+			this.groupBox2.Controls.Add(this.txtTK);
 			this.groupBox2.Controls.Add(this.label4);
 			this.groupBox2.Controls.Add(this.label3);
 			this.groupBox2.Controls.Add(this.label2);
 			this.groupBox2.Controls.Add(this.label1);
-			this.groupBox2.Controls.Add(this.textBox1);
-			this.groupBox2.Controls.Add(this.button1);
+			this.groupBox2.Controls.Add(this.txtManv);
+			this.groupBox2.Controls.Add(this.btnThem);
 			this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.groupBox2.Location = new System.Drawing.Point(668, 12);
 			this.groupBox2.Name = "groupBox2";
@@ -72,53 +72,55 @@
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Tài khoản";
 			// 
-			// button3
+			// btnXoa
 			// 
-			this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-			this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button3.Location = new System.Drawing.Point(91, 329);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(89, 28);
-			this.button3.TabIndex = 10;
-			this.button3.Text = "Xóa";
-			this.button3.UseVisualStyleBackColor = false;
+			this.btnXoa.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.btnXoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+			this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnXoa.Location = new System.Drawing.Point(91, 329);
+			this.btnXoa.Name = "btnXoa";
+			this.btnXoa.Size = new System.Drawing.Size(89, 28);
+			this.btnXoa.TabIndex = 10;
+			this.btnXoa.Text = "Xóa";
+			this.btnXoa.UseVisualStyleBackColor = false;
+			this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
 			// 
-			// button2
+			// btnSua
 			// 
-			this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-			this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button2.Location = new System.Drawing.Point(158, 284);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(89, 28);
-			this.button2.TabIndex = 9;
-			this.button2.Text = "Sửa";
-			this.button2.UseVisualStyleBackColor = false;
+			this.btnSua.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.btnSua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+			this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnSua.Location = new System.Drawing.Point(158, 284);
+			this.btnSua.Name = "btnSua";
+			this.btnSua.Size = new System.Drawing.Size(89, 28);
+			this.btnSua.TabIndex = 9;
+			this.btnSua.Text = "Sửa";
+			this.btnSua.UseVisualStyleBackColor = false;
+			this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
 			// 
-			// textBox4
+			// txtQuyen
 			// 
-			this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.textBox4.Location = new System.Drawing.Point(111, 223);
-			this.textBox4.Name = "textBox4";
-			this.textBox4.Size = new System.Drawing.Size(136, 22);
-			this.textBox4.TabIndex = 8;
+			this.txtQuyen.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.txtQuyen.Location = new System.Drawing.Point(111, 223);
+			this.txtQuyen.Name = "txtQuyen";
+			this.txtQuyen.Size = new System.Drawing.Size(136, 22);
+			this.txtQuyen.TabIndex = 8;
 			// 
-			// textBox3
+			// txtMK
 			// 
-			this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.textBox3.Location = new System.Drawing.Point(111, 175);
-			this.textBox3.Name = "textBox3";
-			this.textBox3.Size = new System.Drawing.Size(136, 22);
-			this.textBox3.TabIndex = 7;
+			this.txtMK.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.txtMK.Location = new System.Drawing.Point(111, 175);
+			this.txtMK.Name = "txtMK";
+			this.txtMK.Size = new System.Drawing.Size(136, 22);
+			this.txtMK.TabIndex = 7;
 			// 
-			// textBox2
+			// txtTK
 			// 
-			this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.textBox2.Location = new System.Drawing.Point(111, 130);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(136, 22);
-			this.textBox2.TabIndex = 6;
+			this.txtTK.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.txtTK.Location = new System.Drawing.Point(111, 130);
+			this.txtTK.Name = "txtTK";
+			this.txtTK.Size = new System.Drawing.Size(136, 22);
+			this.txtTK.TabIndex = 6;
 			// 
 			// label4
 			// 
@@ -156,25 +158,26 @@
 			this.label1.TabIndex = 2;
 			this.label1.Text = "Mã nhân viên:";
 			// 
-			// textBox1
+			// txtManv
 			// 
-			this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.textBox1.Location = new System.Drawing.Point(111, 81);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(136, 22);
-			this.textBox1.TabIndex = 1;
+			this.txtManv.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.txtManv.Location = new System.Drawing.Point(111, 81);
+			this.txtManv.Name = "txtManv";
+			this.txtManv.Size = new System.Drawing.Size(136, 22);
+			this.txtManv.TabIndex = 1;
 			// 
-			// button1
+			// btnThem
 			// 
-			this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button1.Location = new System.Drawing.Point(18, 284);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(89, 28);
-			this.button1.TabIndex = 0;
-			this.button1.Text = "Tạo tài khoản";
-			this.button1.UseVisualStyleBackColor = false;
+			this.btnThem.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.btnThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+			this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnThem.Location = new System.Drawing.Point(18, 284);
+			this.btnThem.Name = "btnThem";
+			this.btnThem.Size = new System.Drawing.Size(89, 28);
+			this.btnThem.TabIndex = 0;
+			this.btnThem.Text = "Tạo tài khoản";
+			this.btnThem.UseVisualStyleBackColor = false;
+			this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
 			// 
 			// groupBox1
 			// 
@@ -202,6 +205,8 @@
 			this.dgvUser.RowHeadersVisible = false;
 			this.dgvUser.Size = new System.Drawing.Size(638, 330);
 			this.dgvUser.TabIndex = 2;
+			this.dgvUser.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUser_CellClick);
+			this.dgvUser.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUser_CellContentClick);
 			// 
 			// Column1
 			// 
@@ -249,17 +254,17 @@
 		#endregion
 
 		private System.Windows.Forms.GroupBox groupBox2;
-		private System.Windows.Forms.Button button3;
-		private System.Windows.Forms.Button button2;
-		private System.Windows.Forms.TextBox textBox4;
-		private System.Windows.Forms.TextBox textBox3;
-		private System.Windows.Forms.TextBox textBox2;
+		private System.Windows.Forms.Button btnXoa;
+		private System.Windows.Forms.Button btnSua;
+		private System.Windows.Forms.TextBox txtQuyen;
+		private System.Windows.Forms.TextBox txtMK;
+		private System.Windows.Forms.TextBox txtTK;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.TextBox textBox1;
-		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.TextBox txtManv;
+		private System.Windows.Forms.Button btnThem;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.DataGridView dgvUser;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column1;

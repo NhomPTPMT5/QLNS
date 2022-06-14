@@ -28,7 +28,6 @@ namespace DAL
 			}
 		}
 
-
 		public static bool CheckLogin(string _username, string _pass)
 		{
 			bool result = false;
@@ -43,6 +42,7 @@ namespace DAL
 			}
 			return result;
 		}
+
 		public static string TypeUser(string _username, string _pass)
 		{
 			string result = "";
@@ -59,6 +59,50 @@ namespace DAL
 			return result;
 		}
 
+		public static void insertTK(string manv, string tendn, string mk, string quyen)
+		{
+			using (QLNSDataContext qlns = new QLNSDataContext())
+			{
+				Taikhoan tk = new Taikhoan();
+				tk.MaNhanVien = manv;
+				tk.TenDangNhap = tendn;
+				tk.MatKhau = mk;
+				tk.TenQuyenHan = quyen;
+				
+				qlns.Taikhoans.InsertOnSubmit(tk);
+				qlns.SubmitChanges();
+			}
+		}
+
+		public static void deleteTK(string manv)
+		{
+			using (QLNSDataContext qlns = new QLNSDataContext())
+			{
+				var tks = (from tk in qlns.Taikhoans
+								 where tk.MaNhanVien == manv
+								 select tk).FirstOrDefault();
+
+				qlns.Taikhoans.DeleteOnSubmit(tks);
+				qlns.SubmitChanges();
+			}
+		}
+
+		public static void updateTK(string manv, string tendn, string mk, string quyen)
+		{
+			using (QLNSDataContext qlns = new QLNSDataContext())
+			{
+				var tks = (from tk in qlns.Taikhoans
+								 where tk.MaNhanVien == manv
+								 select tk).FirstOrDefault();
+
+				tks.MaNhanVien = manv;
+				tks.TenDangNhap = tendn;
+				tks.MatKhau = mk;
+				tks.TenQuyenHan = quyen;
+
+				qlns.SubmitChanges();
+			}
+		}
 		//public static List<TaiKhoanDTO> layQ()
 		//{
 

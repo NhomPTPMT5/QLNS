@@ -21,8 +21,7 @@ namespace qlns
 
 		private void frmUser_Load(object sender, EventArgs e)
 		{
-			//List<TaiKhoanDTO> dstk = BLL.TaiKhoanBLL.LayQ();
-			//dgvUser.DataSource = dstk;
+			dgvUser.DataSource = TaiKhoanBLL.LoadTK();
 		}
 
 		private void dgvUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -30,14 +29,67 @@ namespace qlns
 
 		}
 
-		private void textBox1_TextChanged(object sender, EventArgs e)
+		private void btnThem_Click(object sender, EventArgs e)
 		{
-
+			try
+			{
+				string manv = txtManv.Text;
+				string tendn = txtTK.Text;
+				string mk = txtMK.Text;
+				string quyen = txtQuyen.Text;
+				TaiKhoanBLL.insertTK(manv, tendn, mk, quyen);
+				dgvUser.DataSource = TaiKhoanBLL.LoadTK();
+				MessageBox.Show("tạo tài khoản thành công !");
+			}
+			catch
+			{
+				MessageBox.Show("tạo tài khoản thất bại !");
+			}
 		}
 
-		private void button1_Click(object sender, EventArgs e)
+		private void btnSua_Click(object sender, EventArgs e)
 		{
+			try
+			{
+				string manv = txtManv.Text;
+				string tendn = txtTK.Text;
+				string mk = txtMK.Text;
+				string quyen = txtQuyen.Text;
+				TaiKhoanBLL.updateTK(manv, tendn, mk, quyen);
+				dgvUser.DataSource = TaiKhoanBLL.LoadTK();
+				MessageBox.Show(" sửa tài khoản thành công !");
+			}
+			catch
+			{
+				MessageBox.Show("sửa tài khoản thất bại !");
+			}
+		}
 
+		private void btnXoa_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				string manv = txtManv.Text;
+				TaiKhoanBLL.deleteTK(manv);
+				dgvUser.DataSource = TaiKhoanBLL.LoadTK();
+				MessageBox.Show("xóa tài khoản thành công !");
+			}
+			catch
+			{
+				MessageBox.Show("xóa tài khoản thất bại !");
+			}
+		}
+
+		private void dgvUser_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			if (e.RowIndex >= 0)
+			{
+				DataGridViewRow r = this.dgvUser.Rows[e.RowIndex];
+				txtManv.Text = r.Cells[0].Value.ToString();
+				txtTK.Text = r.Cells[1].Value.ToString();
+				txtMK.Text = r.Cells[2].Value.ToString();
+				txtQuyen.Text = r.Cells[3].Value.ToString();
+			}
 		}
 	}
 }
