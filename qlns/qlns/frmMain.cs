@@ -55,7 +55,7 @@ namespace qlns
 			OpenChildForm(new frmUser());
 			label1.Text = btnUser.Text;
 		}
-		
+
 		private void ibtnXoa_Click(object sender, EventArgs e)
 		{
 			OpenChildForm(new frmNhanVien());
