@@ -176,6 +176,7 @@
 			this.dgvPhongBan.Location = new System.Drawing.Point(6, 25);
 			this.dgvPhongBan.Name = "dgvPhongBan";
 			this.dgvPhongBan.ReadOnly = true;
+			this.dgvPhongBan.RowHeadersVisible = false;
 			this.dgvPhongBan.Size = new System.Drawing.Size(659, 348);
 			this.dgvPhongBan.TabIndex = 5;
 			this.dgvPhongBan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhongBan_CellClick);

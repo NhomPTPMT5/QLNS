@@ -94,6 +94,23 @@ namespace DAL
 			}
 		}
 
+		public static List<NhanVienDTO> loadcboMNV()
+		{
+			List<NhanVienDTO> dsnv = new List<NhanVienDTO>();
+			using (QLNSDataContext qlns = new QLNSDataContext())
+			{
+				var nvs = from nv in qlns.NhanViens
+								select new
+								{ nv.MaNhanVien };
+				foreach (var r in nvs)
+				{
+					NhanVienDTO nvdto = new NhanVienDTO();
+					nvdto.Manhanvien = r.MaNhanVien;
+					dsnv.Add(nvdto);
+				}
+				return dsnv;
+			}
+		}
 		////public static void insertNV(string manv, string tennv, string mapb, string hesl, string gt, string ns, string dt)
 		////{
 		////	using (QLNSDataContext qlns = new QLNSDataContext())

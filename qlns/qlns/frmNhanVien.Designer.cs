@@ -288,7 +288,7 @@
 			this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
 			this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
 			this.iconPictureBox1.IconSize = 65;
-			this.iconPictureBox1.Location = new System.Drawing.Point(13, 19);
+			this.iconPictureBox1.Location = new System.Drawing.Point(75, 19);
 			this.iconPictureBox1.Name = "iconPictureBox1";
 			this.iconPictureBox1.Size = new System.Drawing.Size(74, 65);
 			this.iconPictureBox1.TabIndex = 18;
@@ -296,41 +296,45 @@
 			// 
 			// btnThem
 			// 
+			this.btnThem.BackColor = System.Drawing.Color.Aqua;
 			this.btnThem.Location = new System.Drawing.Point(28, 296);
 			this.btnThem.Name = "btnThem";
 			this.btnThem.Size = new System.Drawing.Size(75, 23);
 			this.btnThem.TabIndex = 17;
 			this.btnThem.Text = "Thêm";
-			this.btnThem.UseVisualStyleBackColor = true;
+			this.btnThem.UseVisualStyleBackColor = false;
 			this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
 			// 
 			// btnSua
 			// 
+			this.btnSua.BackColor = System.Drawing.Color.Aqua;
 			this.btnSua.Location = new System.Drawing.Point(28, 325);
 			this.btnSua.Name = "btnSua";
 			this.btnSua.Size = new System.Drawing.Size(75, 23);
 			this.btnSua.TabIndex = 16;
 			this.btnSua.Text = "Sửa";
-			this.btnSua.UseVisualStyleBackColor = true;
+			this.btnSua.UseVisualStyleBackColor = false;
 			this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
 			// 
 			// btnTimKiem
 			// 
+			this.btnTimKiem.BackColor = System.Drawing.Color.Aqua;
 			this.btnTimKiem.Location = new System.Drawing.Point(131, 325);
 			this.btnTimKiem.Name = "btnTimKiem";
 			this.btnTimKiem.Size = new System.Drawing.Size(75, 23);
 			this.btnTimKiem.TabIndex = 15;
 			this.btnTimKiem.Text = "Tìm kiếm";
-			this.btnTimKiem.UseVisualStyleBackColor = true;
+			this.btnTimKiem.UseVisualStyleBackColor = false;
 			// 
 			// btnXoa
 			// 
+			this.btnXoa.BackColor = System.Drawing.Color.Aqua;
 			this.btnXoa.Location = new System.Drawing.Point(131, 296);
 			this.btnXoa.Name = "btnXoa";
 			this.btnXoa.Size = new System.Drawing.Size(75, 23);
 			this.btnXoa.TabIndex = 14;
 			this.btnXoa.Text = "Xóa";
-			this.btnXoa.UseVisualStyleBackColor = true;
+			this.btnXoa.UseVisualStyleBackColor = false;
 			this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
 			// 
 			// txtHeSL

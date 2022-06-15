@@ -48,7 +48,10 @@ namespace BLL
 			NhanVienDAL.updateNV(manv, tennv, mapb, hesl, gt, ns, dt);
 		}
 
-
+		public static List<NhanVienDTO> loadcboMNV()
+		{
+			return NhanVienDAL.loadcboMNV();
+		}
 	}
 
 
