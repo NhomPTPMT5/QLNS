@@ -77,7 +77,7 @@ namespace qlns
 				string manv = txtMaNV.Text;
 				string tennv = txtTenNV.Text;
 				string mapb = cboPhongBan.Text;
-				string hesl = txtHeSL.Text;
+				
 				string gt = "";
 				if (rdNam.Checked == true)
 				{
@@ -89,7 +89,7 @@ namespace qlns
 				}
 				string ns = txtNS.Text;
 				string dt = txtSDT.Text;
-				NhanVienBLL.insertNV(manv, tennv, mapb, hesl, gt, ns, dt);
+				NhanVienBLL.insertNV(manv, tennv, mapb, gt, ns, dt);
 				//BLL.NhanVienBLL.insertNV(manv, tennv, mapb, hesl, gt, ns, dt);
 				//List<NhanVienDTO> dsNhanVien = BLL.NhanVienBLL.LoadNV();
 				dgvNhanVien.DataSource = NhanVienBLL.LoadNV();/*dsNhanVien*/;
@@ -128,7 +128,7 @@ namespace qlns
 				string manv = txtMaNV.Text;
 				string tennv = txtTenNV.Text;
 				string mapb = cboPhongBan.Text;
-				string hesl = txtHeSL.Text;
+				
 				string gt = "";
 				if (rdNam.Checked == true)
 				{
@@ -140,7 +140,7 @@ namespace qlns
 				}
 				string ns = txtNS.Text;
 				string dt = txtSDT.Text;
-				BLL.NhanVienBLL.updateNV(manv, tennv, mapb, hesl, gt, ns, dt);
+				BLL.NhanVienBLL.updateNV(manv, tennv, mapb, gt, ns, dt);
 				//List<NhanVienDTO> dsNhanVien = BLL.NhanVienBLL.LoadNV();
 				//dgvNhanVien.DataSource = dsNhanVien;
 				dgvNhanVien.DataSource = BLL.NhanVienBLL.LoadNV();
@@ -161,7 +161,7 @@ namespace qlns
 				txtMaNV.Text = r.Cells[0].Value.ToString();
 				txtTenNV.Text = r.Cells[1].Value.ToString();
 				cboPhongBan.Text = r.Cells[2].Value.ToString();
-				txtHeSL.Text = r.Cells[3].Value.ToString();
+				
 				gt =  r.Cells[4].Value.ToString();
 				if (gt == "Nam")
 					rdNam.Checked = true;
@@ -180,6 +180,9 @@ namespace qlns
 			txtNS.Value = dt;
 		}
 
-		
+		private void btnTimKiem_Click(object sender, EventArgs e)
+		{
+			
+		}
 	}
 }

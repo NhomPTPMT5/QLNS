@@ -234,6 +234,7 @@
 			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox1.TabIndex = 0;
 			this.pictureBox1.TabStop = false;
+			
 			// 
 			// label1
 			// 
@@ -256,7 +257,7 @@
 			this.pnTitle.Name = "pnTitle";
 			this.pnTitle.Size = new System.Drawing.Size(949, 57);
 			this.pnTitle.TabIndex = 1;
-			this.pnTitle.Paint += new System.Windows.Forms.PaintEventHandler(this.pnTitle_Paint);
+		
 			// 
 			// label2
 			// 

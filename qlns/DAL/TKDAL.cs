@@ -38,7 +38,9 @@ namespace DAL
 						 where acc.TenDangNhap == _username && acc.MatKhau == _pass
 						 select acc;
 				if (kq.Count() > 0)
+				{
 					result = true;
+				}
 			}
 			return result;
 		}
@@ -58,6 +60,8 @@ namespace DAL
 			}
 			return result;
 		}
+
+		
 
 		public static void insertTK(string manv, string tendn, string mk, string quyen)
 		{

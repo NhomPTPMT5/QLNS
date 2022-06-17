@@ -16,7 +16,6 @@ namespace qlns
 		public frmDN()
 		{
 			InitializeComponent();
-
 		}
 
 		//string quyen;
@@ -100,6 +99,11 @@ namespace qlns
 			{
 				txtMK.PasswordChar = '*';
 			}
+		}
+
+		private void frmDN_Load(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

@@ -14,25 +14,45 @@ namespace qlns
 {
 	public partial class frmChamCong : Form
 	{
-		public frmChamCong()
-		{
+		public frmChamCong(string type)
+		{			
 			InitializeComponent();
+			this._user = type;	
+		}
+		
+		private string _user;
+
+
+		void LoadData(string _user)
+		{
+			flowLayoutPanel.Controls.Clear();
+			var d = new DateTime();
+			int day = d.GetLastDayOfMonth(dtpCC.Value).Day;
+			for (int i = 1; i <= day; i++)
+			{
+				CheckBox ck = new CheckBox();
+				ck.Name = $"Day{i}";
+				ck.Text = $"Ngày {i}";
+				flowLayoutPanel.Controls.Add(ck);
+				if (_user.Equals("admin"))
+					ck.Enabled = true;
+				else
+				{
+					dtpCC.Enabled = false;
+					ck.Enabled = false;
+					if (i == dtpCC.Value.Day) ck.Enabled = true;
+				}
+			}
 		}
 
 		private void frmChamCong_Load(object sender, EventArgs e)
 		{
-			dtpThoiGian.Value = DateTime.Now;
-			cboManv.DataSource = NhanVienBLL.loadcboMNV();
-			cboManv.DisplayMember = "Manhanvien";
-			dgvNhanVien.DataSource = NhanVienBLL.LoadNV();
+			LoadData(_user);
 		}
 
-		private void cboManv_SelectedIndexChanged(object sender, EventArgs e)
+		private void dtpCC_ValueChanged(object sender, EventArgs e)
 		{
-			if (cboManv.SelectedIndex != -1)
-			{
-
-			}
+			LoadData(_user);
 		}
 	}
 }

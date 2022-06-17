@@ -14,14 +14,14 @@ namespace qlns
 	public partial class frmMain : Form
 	{
 		public Form currentChildForm;
-		private string type;
+
+		private static string type;
+
 		public frmMain(string _type)
 		{
 			InitializeComponent();
 			this.Type = _type;
 		}
-
-		NhanVienBLL nvbll = new NhanVienBLL();
 
 		public string Type { get => type; set => type = value; }
 
@@ -40,15 +40,6 @@ namespace qlns
 			childFrom.BringToFront();
 			childFrom.Show();
 		}
-
-		//private void (object sender, EventArgs e)
-		//{
-		//	DialogResult h = MessageBox.Show
-		//		("Bạn có chắc muốn thoát không?", "Thông báo !", MessageBoxButtons.OKCancel);
-		//	if (h == DialogResult.OK)
-		//		Application.Exit();
-		//}
-
 
 		private void ibtnThem_Click(object sender, EventArgs e)
 		{
@@ -71,7 +62,7 @@ namespace qlns
 
 		private void ibtnChamCong_Click(object sender, EventArgs e)
 		{
-			OpenChildForm(new frmChamCong());
+			OpenChildForm(new frmChamCong(type));
 			label1.Text = btnChamCong.Text;
 		}
 
@@ -97,14 +88,11 @@ namespace qlns
 			}
 		}
 
-		private void pnTitle_Paint(object sender, PaintEventArgs e)
-		{
-
-		}
+		
 
 		private void frmMain_Load(object sender, EventArgs e)
 		{
-			switch (type)
+			switch (Type)
 			{
 				case "admin":
 					btnNhanVien.Enabled = btnPhongBan.Enabled = true;
@@ -114,6 +102,8 @@ namespace qlns
 					break;
 			}
 		}
+
+		
 
 
 		//private void frmMain_Load(object sender, EventArgs e)

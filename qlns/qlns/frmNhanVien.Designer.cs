@@ -29,13 +29,6 @@
 		private void InitializeComponent()
 		{
 			this.dgvNhanVien = new System.Windows.Forms.DataGridView();
-			this.MaNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.txtMaNV = new System.Windows.Forms.TextBox();
 			this.gbNhanVien = new System.Windows.Forms.GroupBox();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -54,11 +47,16 @@
 			this.btnSua = new System.Windows.Forms.Button();
 			this.btnTimKiem = new System.Windows.Forms.Button();
 			this.btnXoa = new System.Windows.Forms.Button();
-			this.txtHeSL = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+			this.MaNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
 			this.gbNhanVien.SuspendLayout();
 			this.groupBox2.SuspendLayout();
@@ -80,69 +78,14 @@
             this.Column5,
             this.Column6,
             this.Column8});
-			this.dgvNhanVien.Location = new System.Drawing.Point(6, 25);
+			this.dgvNhanVien.Location = new System.Drawing.Point(6, 19);
 			this.dgvNhanVien.Name = "dgvNhanVien";
 			this.dgvNhanVien.ReadOnly = true;
 			this.dgvNhanVien.RowHeadersVisible = false;
-			this.dgvNhanVien.Size = new System.Drawing.Size(659, 348);
+			this.dgvNhanVien.Size = new System.Drawing.Size(659, 354);
 			this.dgvNhanVien.TabIndex = 5;
 			this.dgvNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_CellClick);
 			this.dgvNhanVien.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvNhanVien_CellMouseClick);
-			// 
-			// MaNhanVien
-			// 
-			this.MaNhanVien.DataPropertyName = "MaNhanVien";
-			this.MaNhanVien.FillWeight = 59.36768F;
-			this.MaNhanVien.HeaderText = "Mã nhân viên";
-			this.MaNhanVien.Name = "MaNhanVien";
-			this.MaNhanVien.ReadOnly = true;
-			// 
-			// Column4
-			// 
-			this.Column4.DataPropertyName = "TenNV";
-			this.Column4.FillWeight = 141.3516F;
-			this.Column4.HeaderText = "Tên nhân viên";
-			this.Column4.Name = "Column4";
-			this.Column4.ReadOnly = true;
-			// 
-			// Column1
-			// 
-			this.Column1.DataPropertyName = "MaPB";
-			this.Column1.HeaderText = "Phòng ban";
-			this.Column1.Name = "Column1";
-			this.Column1.ReadOnly = true;
-			// 
-			// Column3
-			// 
-			this.Column3.DataPropertyName = "HeSoLuong";
-			this.Column3.FillWeight = 59.36768F;
-			this.Column3.HeaderText = "Hệ số lương";
-			this.Column3.Name = "Column3";
-			this.Column3.ReadOnly = true;
-			// 
-			// Column5
-			// 
-			this.Column5.DataPropertyName = "GioiTinh";
-			this.Column5.FillWeight = 59.36768F;
-			this.Column5.HeaderText = "Giới tính";
-			this.Column5.Name = "Column5";
-			this.Column5.ReadOnly = true;
-			// 
-			// Column6
-			// 
-			this.Column6.DataPropertyName = "NgaySinh";
-			this.Column6.FillWeight = 59.36768F;
-			this.Column6.HeaderText = "Ngày sinh";
-			this.Column6.Name = "Column6";
-			this.Column6.ReadOnly = true;
-			// 
-			// Column8
-			// 
-			this.Column8.DataPropertyName = "DienThoai";
-			this.Column8.FillWeight = 59.36768F;
-			this.Column8.HeaderText = "SDT";
-			this.Column8.Name = "Column8";
-			this.Column8.ReadOnly = true;
 			// 
 			// txtMaNV
 			// 
@@ -179,9 +122,7 @@
 			this.groupBox2.Controls.Add(this.btnSua);
 			this.groupBox2.Controls.Add(this.btnTimKiem);
 			this.groupBox2.Controls.Add(this.btnXoa);
-			this.groupBox2.Controls.Add(this.txtHeSL);
 			this.groupBox2.Controls.Add(this.label3);
-			this.groupBox2.Controls.Add(this.label2);
 			this.groupBox2.Controls.Add(this.label1);
 			this.groupBox2.Controls.Add(this.txtMaNV);
 			this.groupBox2.Location = new System.Drawing.Point(671, 19);
@@ -211,7 +152,7 @@
 			// rdNu
 			// 
 			this.rdNu.AutoSize = true;
-			this.rdNu.Location = new System.Drawing.Point(157, 209);
+			this.rdNu.Location = new System.Drawing.Point(165, 198);
 			this.rdNu.Name = "rdNu";
 			this.rdNu.Size = new System.Drawing.Size(39, 17);
 			this.rdNu.TabIndex = 28;
@@ -222,7 +163,7 @@
 			// rdNam
 			// 
 			this.rdNam.AutoSize = true;
-			this.rdNam.Location = new System.Drawing.Point(75, 209);
+			this.rdNam.Location = new System.Drawing.Point(75, 198);
 			this.rdNam.Name = "rdNam";
 			this.rdNam.Size = new System.Drawing.Size(47, 17);
 			this.rdNam.TabIndex = 27;
@@ -260,7 +201,7 @@
 			// label4
 			// 
 			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(5, 215);
+			this.label4.Location = new System.Drawing.Point(6, 198);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(50, 13);
 			this.label4.TabIndex = 23;
@@ -325,6 +266,7 @@
 			this.btnTimKiem.TabIndex = 15;
 			this.btnTimKiem.Text = "Tìm kiếm";
 			this.btnTimKiem.UseVisualStyleBackColor = false;
+			this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
 			// 
 			// btnXoa
 			// 
@@ -337,13 +279,6 @@
 			this.btnXoa.UseVisualStyleBackColor = false;
 			this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
 			// 
-			// txtHeSL
-			// 
-			this.txtHeSL.Location = new System.Drawing.Point(73, 183);
-			this.txtHeSL.Name = "txtHeSL";
-			this.txtHeSL.Size = new System.Drawing.Size(132, 20);
-			this.txtHeSL.TabIndex = 13;
-			// 
 			// label3
 			// 
 			this.label3.AutoSize = true;
@@ -353,15 +288,6 @@
 			this.label3.TabIndex = 12;
 			this.label3.Text = "Tên NV:";
 			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(5, 190);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(40, 13);
-			this.label2.TabIndex = 11;
-			this.label2.Text = "Hệ SL:";
-			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
@@ -370,6 +296,62 @@
 			this.label1.Size = new System.Drawing.Size(43, 13);
 			this.label1.TabIndex = 10;
 			this.label1.Text = "Mã NV:";
+			// 
+			// MaNhanVien
+			// 
+			this.MaNhanVien.DataPropertyName = "MaNhanVien";
+			this.MaNhanVien.FillWeight = 59.36768F;
+			this.MaNhanVien.HeaderText = "Mã nhân viên";
+			this.MaNhanVien.Name = "MaNhanVien";
+			this.MaNhanVien.ReadOnly = true;
+			// 
+			// Column4
+			// 
+			this.Column4.DataPropertyName = "TenNV";
+			this.Column4.FillWeight = 141.3516F;
+			this.Column4.HeaderText = "Tên nhân viên";
+			this.Column4.Name = "Column4";
+			this.Column4.ReadOnly = true;
+			// 
+			// Column1
+			// 
+			this.Column1.DataPropertyName = "MaPB";
+			this.Column1.HeaderText = "Phòng ban";
+			this.Column1.Name = "Column1";
+			this.Column1.ReadOnly = true;
+			// 
+			// Column3
+			// 
+			this.Column3.DataPropertyName = "HeSoLuong";
+			this.Column3.FillWeight = 59.36768F;
+			this.Column3.HeaderText = "Hệ số lương";
+			this.Column3.Name = "Column3";
+			this.Column3.ReadOnly = true;
+			this.Column3.Visible = false;
+			// 
+			// Column5
+			// 
+			this.Column5.DataPropertyName = "GioiTinh";
+			this.Column5.FillWeight = 59.36768F;
+			this.Column5.HeaderText = "Giới tính";
+			this.Column5.Name = "Column5";
+			this.Column5.ReadOnly = true;
+			// 
+			// Column6
+			// 
+			this.Column6.DataPropertyName = "NgaySinh";
+			this.Column6.FillWeight = 59.36768F;
+			this.Column6.HeaderText = "Ngày sinh";
+			this.Column6.Name = "Column6";
+			this.Column6.ReadOnly = true;
+			// 
+			// Column8
+			// 
+			this.Column8.DataPropertyName = "DienThoai";
+			this.Column8.FillWeight = 59.36768F;
+			this.Column8.HeaderText = "SDT";
+			this.Column8.Name = "Column8";
+			this.Column8.ReadOnly = true;
 			// 
 			// frmNhanVien
 			// 
@@ -399,9 +381,7 @@
 		private System.Windows.Forms.Button btnSua;
 		private System.Windows.Forms.Button btnTimKiem;
 		private System.Windows.Forms.Button btnXoa;
-		private System.Windows.Forms.TextBox txtHeSL;
 		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label1;
 		private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
 		private System.Windows.Forms.Button btnThem;

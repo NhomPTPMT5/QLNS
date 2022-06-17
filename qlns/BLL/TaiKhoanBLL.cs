@@ -9,6 +9,7 @@ namespace BLL
 {
 	public class TaiKhoanBLL
 	{
+		
 		public static List<TaiKhoanDTO> LoadTK()
 		{
 			return DAL.TKDAL.LoadTK();

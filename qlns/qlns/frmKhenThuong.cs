@@ -16,5 +16,10 @@ namespace qlns
 		{
 			InitializeComponent();
 		}
+
+		private void frmKhenThuong_Load(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

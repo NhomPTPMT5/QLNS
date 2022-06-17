@@ -12,7 +12,7 @@ namespace DTO
 		private string tennv;
 		private string mapb;
 		//private string mahd;
-		private string hesoluong;
+		
 
 		private string gioitinh;
 		//private string ngaysinh;
@@ -27,7 +27,7 @@ namespace DTO
 
 		public string Tennv { get => tennv; set => tennv = value; }
 		public string Mapb { get => mapb; set => mapb = value; }
-		public string Hesoluong { get => hesoluong; set => hesoluong = value; }
+		
 		public string Gioitinh { get => gioitinh; set => gioitinh = value; }
 		public string Ngaysinh { get => ngaysinh; set => ngaysinh = value; }
 

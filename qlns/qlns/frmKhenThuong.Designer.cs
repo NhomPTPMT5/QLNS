@@ -38,6 +38,7 @@
 			this.ClientSize = new System.Drawing.Size(933, 397);
 			this.Name = "frmKhenThuong";
 			this.Text = "frmKhenThuong";
+			this.Load += new System.EventHandler(this.frmKhenThuong_Load);
 			this.ResumeLayout(false);
 
 		}

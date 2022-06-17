@@ -91,5 +91,10 @@ namespace qlns
 				txtQuyen.Text = r.Cells[3].Value.ToString();
 			}
 		}
+
+		private void groupBox1_Enter(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

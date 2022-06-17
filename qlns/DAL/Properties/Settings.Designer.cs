@@ -33,5 +33,27 @@ namespace DAL.Properties {
                 return ((string)(this["QLNHANSUConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-VSQTOGR\\SQLEXPRESS;Initial Catalog=QLNHANSU;Persist Security " +
+            "Info=True;User ID=sa")]
+        public string QLNHANSUConnectionString1 {
+            get {
+                return ((string)(this["QLNHANSUConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-VSQTOGR\\SQLEXPRESS;Initial Catalog=QLNHANSU;Integrated Securi" +
+            "ty=True")]
+        public string QLNHANSUConnectionString2 {
+            get {
+                return ((string)(this["QLNHANSUConnectionString2"]));
+            }
+        }
     }
 }
