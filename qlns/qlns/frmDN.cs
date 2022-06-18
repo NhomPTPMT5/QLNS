@@ -49,7 +49,7 @@ namespace qlns
 			{
 				string s = TaiKhoanBLL.TypeUser(txtTK.Text, txtMK.Text);
 				MessageBox.Show($"Chào mừng {txtTK.Text}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-				frmMain f = new frmMain(s);
+				frmMain f = new frmMain(s,txtTK.Text);
 				this.Hide();
 				f.ShowDialog();
 				this.Activate();

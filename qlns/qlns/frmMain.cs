@@ -15,15 +15,18 @@ namespace qlns
 	{
 		public Form currentChildForm;
 
-		private static string type;
+		private  string type;
+		private  string username;
 
-		public frmMain(string _type)
+		public frmMain(string _type,string _username)
 		{
 			InitializeComponent();
 			this.Type = _type;
+			this.Username = _username;
 		}
 
 		public string Type { get => type; set => type = value; }
+		public string Username { get => username; set => username = value; }
 
 		public void OpenChildForm(Form childFrom)
 		{
@@ -62,7 +65,7 @@ namespace qlns
 
 		private void ibtnChamCong_Click(object sender, EventArgs e)
 		{
-			OpenChildForm(new frmChamCong(type));
+			OpenChildForm(new frmChamCong(username));
 			label1.Text = btnChamCong.Text;
 		}
 

@@ -1,15 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLNHANSU" Class="QLNSDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-VSQTOGR\SQLEXPRESS;Initial Catalog=QLNHANSU;Integrated Security=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="QLNHANSUConnectionString2" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.ChamCong" Member="ChamCongs">
-    <Type Name="ChamCong">
-      <Column Name="MaChamCong" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TenDangNhap" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ngay" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="thang" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="nam" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Taikhoan_ChamCong" Member="Taikhoan" ThisKey="TenDangNhap" OtherKey="TenDangNhap" Type="Taikhoan" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.Luong" Member="Luongs">
     <Type Name="Luong">
       <Column Name="MaLuong" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -46,9 +36,20 @@
       <Column Name="TenDangNhap" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MatKhau" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="TenQuyenHan" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Association Name="Taikhoan_ChamCong" Member="ChamCongs" ThisKey="TenDangNhap" OtherKey="TenDangNhap" Type="ChamCong" />
       <Association Name="Taikhoan_Luong" Member="Luongs" ThisKey="TenDangNhap" OtherKey="TenDangNhap" Type="Luong" />
+      <Association Name="Taikhoan_ChamCong" Member="ChamCongs" ThisKey="TenDangNhap" OtherKey="TenDangNhap" Type="ChamCong" />
       <Association Name="NhanVien_Taikhoan" Member="NhanVien" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="NhanVien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChamCong" Member="ChamCongs">
+    <Type Name="ChamCong">
+      <Column Name="MaChamCong" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenDangNhap" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Ngay" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Thang" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Nam" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="checks" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Taikhoan_ChamCong" Member="Taikhoan" ThisKey="TenDangNhap" OtherKey="TenDangNhap" Type="Taikhoan" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

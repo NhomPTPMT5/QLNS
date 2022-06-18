@@ -10,7 +10,14 @@ namespace BLL
 {
 	public static class ChamCongBLL
 	{
-		
+
+		public static List<ChamCongDTO> loadChamCong(string _user)
+		{
+			return ChamCongDAL.loadChamCong(_user);
+		}
+
+	
+
 		/// <summary>
 		/// Lấy ra ngày cuối cùng trong tháng có chứa 
 		/// 1 ngày bất kỳ được truyền vào
