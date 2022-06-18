@@ -16,7 +16,15 @@ namespace BLL
 			return ChamCongDAL.loadChamCong(_user);
 		}
 
-	
+		public static List<ChamCongDTO> loadcc(string _user)
+		{
+			return ChamCongDAL.loadcc(_user);
+		}
+
+		public static void luu( string tendn, int ngay, int thang, int nam, bool check)
+		{
+			ChamCongDAL.luu( tendn, ngay, thang, nam, check);
+		}
 
 		/// <summary>
 		/// Lấy ra ngày cuối cùng trong tháng có chứa 

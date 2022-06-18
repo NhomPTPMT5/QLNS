@@ -26,5 +26,7 @@ namespace DTO
 		{
 			this.Machamcong = _id;this.Tendn = _tendn;this.Ngay = _ngay;this.Thang = _thang; this.Nam = _nam; this.Check = _check;
 		}
+
+		public ChamCongDTO() { }
 	}
 }

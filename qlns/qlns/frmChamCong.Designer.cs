@@ -29,11 +29,11 @@
 		private void InitializeComponent()
 		{
 			this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-			this.btnLuu = new System.Windows.Forms.Button();
 			this.dtpCC = new System.Windows.Forms.DateTimePicker();
 			this.dgvChamCong = new System.Windows.Forms.DataGridView();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.lbsnl = new System.Windows.Forms.Label();
+			this.btnSave = new FontAwesome.Sharp.IconButton();
 			((System.ComponentModel.ISupportInitialize)(this.dgvChamCong)).BeginInit();
 			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
@@ -45,16 +45,7 @@
 			this.flowLayoutPanel.Name = "flowLayoutPanel";
 			this.flowLayoutPanel.Size = new System.Drawing.Size(403, 329);
 			this.flowLayoutPanel.TabIndex = 3;
-			// 
-			// btnLuu
-			// 
-			this.btnLuu.Location = new System.Drawing.Point(602, 369);
-			this.btnLuu.Name = "btnLuu";
-			this.btnLuu.Size = new System.Drawing.Size(75, 23);
-			this.btnLuu.TabIndex = 0;
-			this.btnLuu.Text = "Lưu";
-			this.btnLuu.UseVisualStyleBackColor = true;
-			this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+			this.flowLayoutPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel_Paint);
 			// 
 			// dtpCC
 			// 
@@ -99,13 +90,32 @@
 			this.lbsnl.TabIndex = 0;
 			this.lbsnl.Text = "lbsnl";
 			// 
+			// btnSave
+			// 
+			this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnSave.ForeColor = System.Drawing.Color.Black;
+			this.btnSave.IconChar = FontAwesome.Sharp.IconChar.Fax;
+			this.btnSave.IconColor = System.Drawing.Color.Black;
+			this.btnSave.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnSave.Location = new System.Drawing.Point(796, 369);
+			this.btnSave.Name = "btnSave";
+			this.btnSave.Size = new System.Drawing.Size(126, 55);
+			this.btnSave.TabIndex = 6;
+			this.btnSave.Text = "Điểm danh";
+			this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnSave.UseVisualStyleBackColor = false;
+			this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+			// 
 			// frmChamCong
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.LightSteelBlue;
-			this.ClientSize = new System.Drawing.Size(933, 397);
-			this.Controls.Add(this.btnLuu);
+			this.ClientSize = new System.Drawing.Size(933, 408);
+			this.Controls.Add(this.btnSave);
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.dgvChamCong);
 			this.Controls.Add(this.flowLayoutPanel);
@@ -126,7 +136,7 @@
 		private System.Windows.Forms.DateTimePicker dtpCC;
 		private System.Windows.Forms.DataGridView dgvChamCong;
 		private System.Windows.Forms.GroupBox groupBox1;
-		private System.Windows.Forms.Button btnLuu;
 		private System.Windows.Forms.Label lbsnl;
+		private FontAwesome.Sharp.IconButton btnSave;
 	}
 }
