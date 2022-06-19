@@ -19,8 +19,6 @@ namespace qlns
 		public frmNhanVien()
 		{
 			InitializeComponent();
-			//tkdto.Quyen = this.Quyen;
-			//this.Quyen = _quyen;
 		}
 		private string quyen;
 		NhanVienBLL nvbll = new NhanVienBLL();
@@ -34,7 +32,6 @@ namespace qlns
 			txtMaNV.Focus();
 			List<NhanVienDTO> dsNhanVien = BLL.NhanVienBLL.LoadNV();
 			dgvNhanVien.DataSource = dsNhanVien;
-
 
 			List<PhongBanDTO> dsPhongBan = BLL.PhongBanBLL.LoadcboPB();
 			cboPhongBan.DisplayMember = "MaPB";
@@ -77,7 +74,7 @@ namespace qlns
 				string manv = txtMaNV.Text;
 				string tennv = txtTenNV.Text;
 				string mapb = cboPhongBan.Text;
-				
+				string luong = txtLuongCB.Text;
 				string gt = "";
 				if (rdNam.Checked == true)
 				{
@@ -87,9 +84,9 @@ namespace qlns
 				{
 					gt = "Nữ";
 				}
-				string ns = txtNS.Text;
+				string ns = dtpNS.Text;
 				string dt = txtSDT.Text;
-				NhanVienBLL.insertNV(manv, tennv, mapb, gt, ns, dt);
+				NhanVienBLL.insertNV(manv, tennv, mapb,luong, gt, ns, dt);
 				//BLL.NhanVienBLL.insertNV(manv, tennv, mapb, hesl, gt, ns, dt);
 				//List<NhanVienDTO> dsNhanVien = BLL.NhanVienBLL.LoadNV();
 				dgvNhanVien.DataSource = NhanVienBLL.LoadNV();/*dsNhanVien*/;
@@ -128,7 +125,7 @@ namespace qlns
 				string manv = txtMaNV.Text;
 				string tennv = txtTenNV.Text;
 				string mapb = cboPhongBan.Text;
-				
+				string luong = txtLuongCB.Text;
 				string gt = "";
 				if (rdNam.Checked == true)
 				{
@@ -138,9 +135,9 @@ namespace qlns
 				{
 					gt = "Nữ";
 				}
-				string ns = txtNS.Text;
+				string ns = dtpNS.Text;
 				string dt = txtSDT.Text;
-				BLL.NhanVienBLL.updateNV(manv, tennv, mapb, gt, ns, dt);
+				BLL.NhanVienBLL.updateNV(manv, tennv, mapb,luong, gt, ns, dt);
 				//List<NhanVienDTO> dsNhanVien = BLL.NhanVienBLL.LoadNV();
 				//dgvNhanVien.DataSource = dsNhanVien;
 				dgvNhanVien.DataSource = BLL.NhanVienBLL.LoadNV();
@@ -161,28 +158,26 @@ namespace qlns
 				txtMaNV.Text = r.Cells[0].Value.ToString();
 				txtTenNV.Text = r.Cells[1].Value.ToString();
 				cboPhongBan.Text = r.Cells[2].Value.ToString();
-				
-				gt =  r.Cells[4].Value.ToString();
+				txtLuongCB.Text = r.Cells[3].Value.ToString();
+				gt = r.Cells[4].Value.ToString();
 				if (gt == "Nam")
 					rdNam.Checked = true;
 				if (gt == "Nữ")
 					rdNu.Checked = true;
-				//DateTime dt = DateTime.ParseExact(dgvNhanVien.CurrentCell.Value.ToString(), "dd-MM-yyyy", CultureInfo.InvariantCulture);
-				//txtNS.Value = dt;
+				DateTime dt = DateTime.ParseExact(dgvNhanVien.CurrentRow.Cells[5].Value.ToString(), "dd-MM-yyyy", CultureInfo.InvariantCulture);
+				dtpNS.Value = dt;
 				txtSDT.Text = r.Cells[6].Value.ToString();
 			}
 		}
 
-		private void dgvNhanVien_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e) 
-		{
-			//truyen data dgv vao datetimepicker
-			DateTime dt = DateTime.ParseExact(dgvNhanVien.CurrentRow.Cells[5].Value.ToString(), "dd-MM-yyyy", CultureInfo.InvariantCulture);
-			txtNS.Value = dt;
-		}
 
-		private void btnTimKiem_Click(object sender, EventArgs e)
+		private void dgvNhanVien_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
 		{
+			//DateTime dt = DateTime.ParseExact(dgvNhanVien.CurrentRow.Cells[5].Value.ToString(), "dd-MM-yyyy", CultureInfo.InvariantCulture);
+			//dtpNS.Value = dt;
 			
 		}
+
+		
 	}
 }

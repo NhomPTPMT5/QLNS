@@ -38,7 +38,10 @@ namespace BLL
 		//	}
 		//}
 
-
+		public static string  GetUserNameByMaNV(string manv)
+		{
+			return DAL.TKDAL.GetUserNameByMaNV(manv);
+		}
 		public static bool CheckLogin(string _username, string _pass)
 		{
 			return TKDAL.CheckLogin(_username, _pass);

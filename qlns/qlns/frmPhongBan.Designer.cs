@@ -57,6 +57,7 @@
 			this.gbNhanVien.Size = new System.Drawing.Size(909, 384);
 			this.gbNhanVien.TabIndex = 11;
 			this.gbNhanVien.TabStop = false;
+			this.gbNhanVien.Enter += new System.EventHandler(this.gbNhanVien_Enter);
 			// 
 			// groupBox2
 			// 

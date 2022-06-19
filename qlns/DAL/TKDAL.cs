@@ -27,7 +27,18 @@ namespace DAL
 				return dsTaiKhoan;
 			}
 		}
-
+		public static string GetUserNameByMaNV(string idnv)
+		{
+			string tendangnhap = "";
+			using (QLNSDataContext qlns = new QLNSDataContext())
+			{
+				var s = (from acc in qlns.Taikhoans
+						where acc.MaNhanVien == idnv
+						select acc).SingleOrDefault();
+				tendangnhap = s.TenDangNhap;
+			}
+			return tendangnhap;
+		}
 		public static bool CheckLogin(string _username, string _pass)
 		{
 			bool result = false;
@@ -61,7 +72,7 @@ namespace DAL
 			return result;
 		}
 
-		
+
 
 		public static void insertTK(string manv, string tendn, string mk, string quyen)
 		{
@@ -72,7 +83,7 @@ namespace DAL
 				tk.TenDangNhap = tendn;
 				tk.MatKhau = mk;
 				tk.TenQuyenHan = quyen;
-				
+
 				qlns.Taikhoans.InsertOnSubmit(tk);
 				qlns.SubmitChanges();
 			}
@@ -83,8 +94,8 @@ namespace DAL
 			using (QLNSDataContext qlns = new QLNSDataContext())
 			{
 				var tks = (from tk in qlns.Taikhoans
-								 where tk.MaNhanVien == manv
-								 select tk).FirstOrDefault();
+						   where tk.MaNhanVien == manv
+						   select tk).FirstOrDefault();
 
 				qlns.Taikhoans.DeleteOnSubmit(tks);
 				qlns.SubmitChanges();
@@ -96,8 +107,8 @@ namespace DAL
 			using (QLNSDataContext qlns = new QLNSDataContext())
 			{
 				var tks = (from tk in qlns.Taikhoans
-								 where tk.MaNhanVien == manv
-								 select tk).FirstOrDefault();
+						   where tk.MaNhanVien == manv
+						   select tk).FirstOrDefault();
 
 				tks.MaNhanVien = manv;
 				tks.TenDangNhap = tendn;

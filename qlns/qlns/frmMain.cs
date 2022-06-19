@@ -65,7 +65,7 @@ namespace qlns
 
 		private void ibtnChamCong_Click(object sender, EventArgs e)
 		{
-			OpenChildForm(new frmChamCong(username));
+			OpenChildForm(new frmChamCong(type,username));
 			label1.Text = btnChamCong.Text;
 		}
 
@@ -98,15 +98,25 @@ namespace qlns
 			switch (Type)
 			{
 				case "admin":
-					btnNhanVien.Enabled = btnPhongBan.Enabled = true;
+					btnNhanVien.Enabled = btnPhongBan.Enabled =btnUser.Enabled = true;
 					break;
 				default:
-					btnNhanVien.Enabled = btnPhongBan.Enabled = false;
+					btnNhanVien.Enabled = btnPhongBan.Enabled = btnUser.Enabled = false;
 					break;
 			}
 		}
 
-		
+		private void pnTitle_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
+
+		private void pictureBox1_Click(object sender, EventArgs e)
+		{
+
+		}
+
+
 
 
 		//private void frmMain_Load(object sender, EventArgs e)

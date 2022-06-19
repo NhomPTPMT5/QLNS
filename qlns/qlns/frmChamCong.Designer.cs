@@ -32,6 +32,8 @@
 			this.dtpCC = new System.Windows.Forms.DateTimePicker();
 			this.dgvChamCong = new System.Windows.Forms.DataGridView();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.txtLuong = new System.Windows.Forms.TextBox();
+			this.label1 = new System.Windows.Forms.Label();
 			this.lbsnl = new System.Windows.Forms.Label();
 			this.btnSave = new FontAwesome.Sharp.IconButton();
 			((System.ComponentModel.ISupportInitialize)(this.dgvChamCong)).BeginInit();
@@ -45,7 +47,6 @@
 			this.flowLayoutPanel.Name = "flowLayoutPanel";
 			this.flowLayoutPanel.Size = new System.Drawing.Size(403, 329);
 			this.flowLayoutPanel.TabIndex = 3;
-			this.flowLayoutPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel_Paint);
 			// 
 			// dtpCC
 			// 
@@ -55,6 +56,7 @@
 			this.dtpCC.Name = "dtpCC";
 			this.dtpCC.Size = new System.Drawing.Size(184, 20);
 			this.dtpCC.TabIndex = 2;
+			this.dtpCC.Value = new System.DateTime(2022, 6, 19, 12, 50, 0, 0);
 			this.dtpCC.ValueChanged += new System.EventHandler(this.dtpCC_ValueChanged);
 			// 
 			// dgvChamCong
@@ -69,10 +71,11 @@
 			this.dgvChamCong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dgvChamCong.Size = new System.Drawing.Size(502, 247);
 			this.dgvChamCong.TabIndex = 4;
-			this.dgvChamCong.Click += new System.EventHandler(this.dgvChamCong_Click);
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Controls.Add(this.txtLuong);
+			this.groupBox1.Controls.Add(this.label1);
 			this.groupBox1.Controls.Add(this.lbsnl);
 			this.groupBox1.Location = new System.Drawing.Point(12, 288);
 			this.groupBox1.Name = "groupBox1";
@@ -81,10 +84,27 @@
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Lương";
 			// 
+			// txtLuong
+			// 
+			this.txtLuong.Enabled = false;
+			this.txtLuong.Location = new System.Drawing.Point(193, 60);
+			this.txtLuong.Name = "txtLuong";
+			this.txtLuong.Size = new System.Drawing.Size(126, 20);
+			this.txtLuong.TabIndex = 2;
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(99, 67);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(64, 13);
+			this.label1.TabIndex = 1;
+			this.label1.Text = "Tổng lương:";
+			// 
 			// lbsnl
 			// 
 			this.lbsnl.AutoSize = true;
-			this.lbsnl.Location = new System.Drawing.Point(6, 39);
+			this.lbsnl.Location = new System.Drawing.Point(99, 31);
 			this.lbsnl.Name = "lbsnl";
 			this.lbsnl.Size = new System.Drawing.Size(28, 13);
 			this.lbsnl.TabIndex = 0;
@@ -138,5 +158,7 @@
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.Label lbsnl;
 		private FontAwesome.Sharp.IconButton btnSave;
+		private System.Windows.Forms.TextBox txtLuong;
+		private System.Windows.Forms.Label label1;
 	}
 }

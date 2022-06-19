@@ -12,7 +12,7 @@ namespace DTO
 		private string tennv;
 		private string mapb;
 		//private string mahd;
-		
+		private string luongcb;
 
 		private string gioitinh;
 		//private string ngaysinh;
@@ -22,19 +22,12 @@ namespace DTO
 
 
 		public string Manhanvien { get => manhanvien; set => manhanvien = value; }
-
-
-
 		public string Tennv { get => tennv; set => tennv = value; }
 		public string Mapb { get => mapb; set => mapb = value; }
-		
+		public string Luongcb { get => luongcb; set => luongcb = value; }
 		public string Gioitinh { get => gioitinh; set => gioitinh = value; }
 		public string Ngaysinh { get => ngaysinh; set => ngaysinh = value; }
-
 		public string Dienthoai { get => dienthoai; set => dienthoai = value; }
-
-
-
 
 		public NhanVienDTO() { }
 		//public NhanVienDTO(string manv1, string mapb1, string mahd1, int hesoluong1, string tennv1, string gioitinh1, string socm1, string dienthoai1)

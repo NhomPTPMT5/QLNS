@@ -45,25 +45,50 @@ namespace qlns
 
 		private void btnThem_Click(object sender, EventArgs e)
 		{
-			string mapb = cboPhongBan.Text;
-			string tenpb =  txtTenPB.Text;
-			PhongBanBLL.insertPB(mapb, tenpb);
-			dgvPhongBan.DataSource = PhongBanBLL.LoadPB();
+			try {
+				string mapb = cboPhongBan.Text;
+				string tenpb = txtTenPB.Text;
+				PhongBanBLL.insertPB(mapb, tenpb);
+				dgvPhongBan.DataSource = PhongBanBLL.LoadPB();
+				MessageBox.Show("them thanh cong");
+			}
+			catch
+			{
+				MessageBox.Show("that bai");
+			}
+			
 		}
 
 		private void btnXoa_Click(object sender, EventArgs e)
 		{
-			string mapb = cboPhongBan.Text;
-			PhongBanBLL.deletePB(mapb);
-			dgvPhongBan.DataSource = PhongBanBLL.LoadPB();
+			try
+			{
+				string mapb = cboPhongBan.Text;
+				PhongBanBLL.deletePB(mapb);
+				dgvPhongBan.DataSource = PhongBanBLL.LoadPB();
+				MessageBox.Show(" thanh cong");
+			}
+			catch
+			{
+				MessageBox.Show("that bai");
+			}
+			
 		}
 
 		private void btnSua_Click(object sender, EventArgs e)
 		{
-			string mapb = cboPhongBan.Text;
-			string tenpb = txtTenPB.Text;
-			PhongBanBLL.updatePB(mapb, tenpb);
-			dgvPhongBan.DataSource = PhongBanBLL.LoadPB();
+			try
+			{
+				string mapb = cboPhongBan.Text;
+				string tenpb = txtTenPB.Text;
+				PhongBanBLL.updatePB(mapb, tenpb);
+				dgvPhongBan.DataSource = PhongBanBLL.LoadPB();
+				MessageBox.Show(" thanh cong");
+			}
+			catch
+			{
+				MessageBox.Show("that bai");
+			}
 		}
 
 		private void dgvPhongBan_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -71,6 +96,11 @@ namespace qlns
 			DataGridViewRow r = this.dgvPhongBan.Rows[e.RowIndex];
 			cboPhongBan.Text = r.Cells[0].Value.ToString();
 			txtTenPB.Text = r.Cells[1].Value.ToString();
+		}
+
+		private void gbNhanVien_Enter(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

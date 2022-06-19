@@ -23,32 +23,24 @@ namespace DAL
 
 
 
-		public static List<ChamCongDTO> loadChamCong(string _user)
+		public static List<TaiKhoanDTO> LoadTK(string idnv)
 		{
-			List<ChamCongDTO> dschamcong = new List<ChamCongDTO>();
+			List<TaiKhoanDTO> dsTaiKhoan = new List<TaiKhoanDTO>();
 			using (QLNSDataContext qlns = new QLNSDataContext())
 			{
-				var chamcongs = from cc in qlns.ChamCongs
-								join tk in qlns.Taikhoans
-								on cc.TenDangNhap equals tk.TenDangNhap 
-								where tk.TenQuyenHan == _user
-								select new 
-								{
-									cc.MaChamCong,
-									tk.TenDangNhap,
-									cc.Ngay,
-									cc.Thang,
-									cc.Nam,
-									cc.checks
-								};
-				foreach (var r in chamcongs)
+				var username = from tk in qlns.Taikhoans
+							   where tk.MaNhanVien == idnv
+							   select new { tk.TenDangNhap } ;
+				foreach (var row in username)
 				{
-					ChamCongDTO c = new ChamCongDTO(r.MaChamCong, r.TenDangNhap, (int)r.Ngay, (int)r.Thang, (int)r.Nam, (bool)r.checks);
-					dschamcong.Add(c);
+					TaiKhoanDTO tkdto = new TaiKhoanDTO();
+					tkdto.TenDN = row.TenDangNhap;
+					dsTaiKhoan.Add(tkdto);
 				}
+				return dsTaiKhoan;
 			}
-			return dschamcong;
 		}
+
 
 		public static void luu(string tendn, int ngay, int thang, int nam, bool check )
 		{

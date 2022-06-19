@@ -23,7 +23,7 @@ namespace DAL
 					nvdto.Manhanvien = row.MaNhanVien;
 					nvdto.Tennv = row.TenNV;
 					nvdto.Mapb = row.MaPB;
-				
+					nvdto.Luongcb = row.NgayLuong;
 					nvdto.Gioitinh = row.GioiTinh;
 					nvdto.Ngaysinh = row.NgaySinh;
 					nvdto.Dienthoai = row.DienThoai;
@@ -34,14 +34,16 @@ namespace DAL
 			}
 		}
 
-		public static void insertNV(string manv, string tennv, string mapb, string gt, string ns, string dt)
+
+		public static void insertNV(string manv, string tennv, string mapb,string luong, string gt, string ns, string dt)
 		{
 			using (QLNSDataContext qlns = new QLNSDataContext())
 			{
 				NhanVien nv = new NhanVien();
 				nv.MaNhanVien = manv;
 				nv.TenNV = tennv;
-				nv.MaPB = mapb;			
+				nv.MaPB = mapb;
+				nv.NgayLuong = luong;
 				nv.GioiTinh = gt;
 				nv.NgaySinh = ns;
 				nv.DienThoai = dt;
@@ -65,7 +67,7 @@ namespace DAL
 			}
 		}
 
-		public static void updateNV(string manv, string tennv, string mapb, string gt, string ns, string dt)
+		public static void updateNV(string manv, string tennv, string mapb, string luong, string gt, string ns, string dt)
 		{
 			using (QLNSDataContext qlns = new QLNSDataContext())
 			{
@@ -76,7 +78,7 @@ namespace DAL
 				nvs.MaNhanVien = manv;
 				nvs.TenNV = tennv;
 				nvs.MaPB = mapb;
-			
+				nvs.NgayLuong = luong;
 				nvs.GioiTinh = gt;
 				nvs.NgaySinh = ns;
 				nvs.DienThoai = dt;

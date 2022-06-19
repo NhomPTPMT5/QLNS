@@ -33,9 +33,9 @@ namespace BLL
 		//}
 
 
-		public static void insertNV(string manv, string tennv, string mapb, string gt, string ns, string dt)
+		public static void insertNV(string manv, string tennv, string mapb, string luong, string gt, string ns, string dt)
 		{
-			NhanVienDAL.insertNV(manv, tennv, mapb, gt, ns, dt);
+			NhanVienDAL.insertNV(manv, tennv, mapb, luong, gt, ns, dt);
 		}
 
 		public static void deleteNV(string manv)
@@ -43,9 +43,9 @@ namespace BLL
 			NhanVienDAL.deleteNV(manv);
 		}
 
-		public static void updateNV(string manv, string tennv, string mapb, string gt, string ns, string dt)
+		public static void updateNV(string manv, string tennv, string mapb,string luong, string gt, string ns, string dt)
 		{
-			NhanVienDAL.updateNV(manv, tennv, mapb, gt, ns, dt);
+			NhanVienDAL.updateNV(manv, tennv, mapb, luong, gt, ns, dt);
 		}
 
 		public static List<NhanVienDTO> loadcboMNV()

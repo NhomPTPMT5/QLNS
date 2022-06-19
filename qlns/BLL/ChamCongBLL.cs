@@ -11,9 +11,9 @@ namespace BLL
 	public static class ChamCongBLL
 	{
 
-		public static List<ChamCongDTO> loadChamCong(string _user)
+		public static List<TaiKhoanDTO> LoadTK(string username)
 		{
-			return ChamCongDAL.loadChamCong(_user);
+			return ChamCongDAL.LoadTK(username);
 		}
 
 		public static List<ChamCongDTO> loadcc(string _user)
